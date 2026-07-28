@@ -1,0 +1,356 @@
+[
+  {
+    "id": "correlativa_01",
+    "source": "Ordenanza CS N° 232/23 - Anexo I - Plan de Correlatividades - UNLaR",
+    "asignatura": "Álgebra y Geometría Analítica I",
+    "text": "Asignatura: Álgebra y Geometría Analítica I (N° 1) de la carrera Ingeniería en Sistemas de Información, Plan 2024. Corresponde al 1° año de la carrera.\nRégimen de cursado: 1C.\nPara cursar Álgebra y Geometría Analítica I se necesita tener REGULAR: no tiene correlativas (no corresponde).\nPara rendir el examen final de Álgebra y Geometría Analítica I se necesita tener APROBADA: no tiene correlativas (no corresponde)."
+  },
+  {
+    "id": "correlativa_02",
+    "source": "Ordenanza CS N° 232/23 - Anexo I - Plan de Correlatividades - UNLaR",
+    "asignatura": "Análisis Matemático I",
+    "text": "Asignatura: Análisis Matemático I (N° 2) de la carrera Ingeniería en Sistemas de Información, Plan 2024. Corresponde al 1° año de la carrera.\nRégimen de cursado: 1C.\nPara cursar Análisis Matemático I se necesita tener REGULAR: no tiene correlativas (no corresponde).\nPara rendir el examen final de Análisis Matemático I se necesita tener APROBADA: no tiene correlativas (no corresponde)."
+  },
+  {
+    "id": "correlativa_03",
+    "source": "Ordenanza CS N° 232/23 - Anexo I - Plan de Correlatividades - UNLaR",
+    "asignatura": "Algoritmo y Estructura de Datos I",
+    "text": "Asignatura: Algoritmo y Estructura de Datos I (N° 3) de la carrera Ingeniería en Sistemas de Información, Plan 2024. Corresponde al 1° año de la carrera.\nRégimen de cursado: 1C.\nPara cursar Algoritmo y Estructura de Datos I se necesita tener REGULAR: no tiene correlativas (no corresponde).\nPara rendir el examen final de Algoritmo y Estructura de Datos I se necesita tener APROBADA: no tiene correlativas (no corresponde)."
+  },
+  {
+    "id": "correlativa_04",
+    "source": "Ordenanza CS N° 232/23 - Anexo I - Plan de Correlatividades - UNLaR",
+    "asignatura": "Informática I",
+    "text": "Asignatura: Informática I (N° 4) de la carrera Ingeniería en Sistemas de Información, Plan 2024. Corresponde al 1° año de la carrera.\nRégimen de cursado: 1C.\nPara cursar Informática I se necesita tener REGULAR: no tiene correlativas (no corresponde).\nPara rendir el examen final de Informática I se necesita tener APROBADA: no tiene correlativas (no corresponde)."
+  },
+  {
+    "id": "correlativa_05",
+    "source": "Ordenanza CS N° 232/23 - Anexo I - Plan de Correlatividades - UNLaR",
+    "asignatura": "Álgebra y Geometría Analítica II",
+    "text": "Asignatura: Álgebra y Geometría Analítica II (N° 5) de la carrera Ingeniería en Sistemas de Información, Plan 2024. Corresponde al 1° año de la carrera.\nRégimen de cursado: 2C.\nPara cursar Álgebra y Geometría Analítica II se necesita tener REGULAR: 1 (Álgebra y Geometría Analítica I).\nPara rendir el examen final de Álgebra y Geometría Analítica II se necesita tener APROBADA: 1 (Álgebra y Geometría Analítica I)."
+  },
+  {
+    "id": "correlativa_06",
+    "source": "Ordenanza CS N° 232/23 - Anexo I - Plan de Correlatividades - UNLaR",
+    "asignatura": "Análisis Matemático II",
+    "text": "Asignatura: Análisis Matemático II (N° 6) de la carrera Ingeniería en Sistemas de Información, Plan 2024. Corresponde al 1° año de la carrera.\nRégimen de cursado: 2C.\nPara cursar Análisis Matemático II se necesita tener REGULAR: 2 (Análisis Matemático I).\nPara rendir el examen final de Análisis Matemático II se necesita tener APROBADA: 2 (Análisis Matemático I)."
+  },
+  {
+    "id": "correlativa_07",
+    "source": "Ordenanza CS N° 232/23 - Anexo I - Plan de Correlatividades - UNLaR",
+    "asignatura": "Algoritmo y Estructura de Datos II",
+    "text": "Asignatura: Algoritmo y Estructura de Datos II (N° 7) de la carrera Ingeniería en Sistemas de Información, Plan 2024. Corresponde al 1° año de la carrera.\nRégimen de cursado: 2C.\nPara cursar Algoritmo y Estructura de Datos II se necesita tener REGULAR: 3 (Algoritmo y Estructura de Datos I).\nPara rendir el examen final de Algoritmo y Estructura de Datos II se necesita tener APROBADA: 3 (Algoritmo y Estructura de Datos I)."
+  },
+  {
+    "id": "correlativa_08",
+    "source": "Ordenanza CS N° 232/23 - Anexo I - Plan de Correlatividades - UNLaR",
+    "asignatura": "Física I",
+    "text": "Asignatura: Física I (N° 8) de la carrera Ingeniería en Sistemas de Información, Plan 2024. Corresponde al 1° año de la carrera.\nRégimen de cursado: 2C.\nPara cursar Física I se necesita tener REGULAR: 1 (Álgebra y Geometría Analítica I).\nPara rendir el examen final de Física I se necesita tener APROBADA: 1 (Álgebra y Geometría Analítica I), 2 (Análisis Matemático I)."
+  },
+  {
+    "id": "correlativa_09",
+    "source": "Ordenanza CS N° 232/23 - Anexo I - Plan de Correlatividades - UNLaR",
+    "asignatura": "Informática II",
+    "text": "Asignatura: Informática II (N° 9) de la carrera Ingeniería en Sistemas de Información, Plan 2024. Corresponde al 1° año de la carrera.\nRégimen de cursado: 2C.\nPara cursar Informática II se necesita tener REGULAR: 4 (Informática I).\nPara rendir el examen final de Informática II se necesita tener APROBADA: 4 (Informática I)."
+  },
+  {
+    "id": "correlativa_10",
+    "source": "Ordenanza CS N° 232/23 - Anexo I - Plan de Correlatividades - UNLaR",
+    "asignatura": "Programación I",
+    "text": "Asignatura: Programación I (N° 10) de la carrera Ingeniería en Sistemas de Información, Plan 2024. Corresponde al 2° año de la carrera.\nRégimen de cursado: 1C.\nPara cursar Programación I se necesita tener REGULAR: 7 (Algoritmo y Estructura de Datos II).\nPara rendir el examen final de Programación I se necesita tener APROBADA: 7 (Algoritmo y Estructura de Datos II), 9 (Informática II)."
+  },
+  {
+    "id": "correlativa_11",
+    "source": "Ordenanza CS N° 232/23 - Anexo I - Plan de Correlatividades - UNLaR",
+    "asignatura": "Análisis Matemático III",
+    "text": "Asignatura: Análisis Matemático III (N° 11) de la carrera Ingeniería en Sistemas de Información, Plan 2024. Corresponde al 2° año de la carrera.\nRégimen de cursado: 1C.\nPara cursar Análisis Matemático III se necesita tener REGULAR: 5 (Álgebra y Geometría Analítica II), 6 (Análisis Matemático II).\nPara rendir el examen final de Análisis Matemático III se necesita tener APROBADA: 5 (Álgebra y Geometría Analítica II), 6 (Análisis Matemático II)."
+  },
+  {
+    "id": "correlativa_12",
+    "source": "Ordenanza CS N° 232/23 - Anexo I - Plan de Correlatividades - UNLaR",
+    "asignatura": "Física II",
+    "text": "Asignatura: Física II (N° 12) de la carrera Ingeniería en Sistemas de Información, Plan 2024. Corresponde al 2° año de la carrera.\nRégimen de cursado: 1C.\nPara cursar Física II se necesita tener REGULAR: 8 (Física I).\nPara rendir el examen final de Física II se necesita tener APROBADA: 8 (Física I)."
+  },
+  {
+    "id": "correlativa_13",
+    "source": "Ordenanza CS N° 232/23 - Anexo I - Plan de Correlatividades - UNLaR",
+    "asignatura": "Sistemas de Información I",
+    "text": "Asignatura: Sistemas de Información I (N° 13) de la carrera Ingeniería en Sistemas de Información, Plan 2024. Corresponde al 2° año de la carrera.\nRégimen de cursado: 1C.\nPara cursar Sistemas de Información I se necesita tener REGULAR: 9 (Informática II).\nPara rendir el examen final de Sistemas de Información I se necesita tener APROBADA: 9 (Informática II)."
+  },
+  {
+    "id": "correlativa_14",
+    "source": "Ordenanza CS N° 232/23 - Anexo I - Plan de Correlatividades - UNLaR",
+    "asignatura": "Computación I",
+    "text": "Asignatura: Computación I (N° 14) de la carrera Ingeniería en Sistemas de Información, Plan 2024. Corresponde al 2° año de la carrera.\nRégimen de cursado: 1C.\nPara cursar Computación I se necesita tener REGULAR: 7 (Algoritmo y Estructura de Datos II), 9 (Informática II).\nPara rendir el examen final de Computación I se necesita tener APROBADA: 7 (Algoritmo y Estructura de Datos II), 9 (Informática II)."
+  },
+  {
+    "id": "correlativa_15",
+    "source": "Ordenanza CS N° 232/23 - Anexo I - Plan de Correlatividades - UNLaR",
+    "asignatura": "Inglés I",
+    "text": "Asignatura: Inglés I (N° 15) de la carrera Ingeniería en Sistemas de Información, Plan 2024. Corresponde al 2° año de la carrera.\nRégimen de cursado: 1C.\nPara cursar Inglés I se necesita tener REGULAR: no tiene correlativas (no corresponde).\nPara rendir el examen final de Inglés I se necesita tener APROBADA: no tiene correlativas (no corresponde)."
+  },
+  {
+    "id": "correlativa_16",
+    "source": "Ordenanza CS N° 232/23 - Anexo I - Plan de Correlatividades - UNLaR",
+    "asignatura": "Programación II",
+    "text": "Asignatura: Programación II (N° 16) de la carrera Ingeniería en Sistemas de Información, Plan 2024. Corresponde al 2° año de la carrera.\nRégimen de cursado: 2C.\nPara cursar Programación II se necesita tener REGULAR: 10 (Programación I).\nPara rendir el examen final de Programación II se necesita tener APROBADA: 10 (Programación I)."
+  },
+  {
+    "id": "correlativa_17",
+    "source": "Ordenanza CS N° 232/23 - Anexo I - Plan de Correlatividades - UNLaR",
+    "asignatura": "Probabilidad y Estadística",
+    "text": "Asignatura: Probabilidad y Estadística (N° 17) de la carrera Ingeniería en Sistemas de Información, Plan 2024. Corresponde al 2° año de la carrera.\nRégimen de cursado: 2C.\nPara cursar Probabilidad y Estadística se necesita tener REGULAR: 11 (Análisis Matemático III).\nPara rendir el examen final de Probabilidad y Estadística se necesita tener APROBADA: 11 (Análisis Matemático III)."
+  },
+  {
+    "id": "correlativa_18",
+    "source": "Ordenanza CS N° 232/23 - Anexo I - Plan de Correlatividades - UNLaR",
+    "asignatura": "Sistemas de Información II",
+    "text": "Asignatura: Sistemas de Información II (N° 18) de la carrera Ingeniería en Sistemas de Información, Plan 2024. Corresponde al 2° año de la carrera.\nRégimen de cursado: 2C.\nPara cursar Sistemas de Información II se necesita tener REGULAR: 13 (Sistemas de Información I).\nPara rendir el examen final de Sistemas de Información II se necesita tener APROBADA: 13 (Sistemas de Información I)."
+  },
+  {
+    "id": "correlativa_19",
+    "source": "Ordenanza CS N° 232/23 - Anexo I - Plan de Correlatividades - UNLaR",
+    "asignatura": "Inglés II",
+    "text": "Asignatura: Inglés II (N° 19) de la carrera Ingeniería en Sistemas de Información, Plan 2024. Corresponde al 2° año de la carrera.\nRégimen de cursado: 2C.\nPara cursar Inglés II se necesita tener REGULAR: 15 (Inglés I).\nPara rendir el examen final de Inglés II se necesita tener APROBADA: 15 (Inglés I)."
+  },
+  {
+    "id": "correlativa_20",
+    "source": "Ordenanza CS N° 232/23 - Anexo I - Plan de Correlatividades - UNLaR",
+    "asignatura": "Análisis Matemático IV",
+    "text": "Asignatura: Análisis Matemático IV (N° 20) de la carrera Ingeniería en Sistemas de Información, Plan 2024. Corresponde al 2° año de la carrera.\nRégimen de cursado: 2C.\nPara cursar Análisis Matemático IV se necesita tener REGULAR: 11 (Análisis Matemático III).\nPara rendir el examen final de Análisis Matemático IV se necesita tener APROBADA: 11 (Análisis Matemático III)."
+  },
+  {
+    "id": "correlativa_21",
+    "source": "Ordenanza CS N° 232/23 - Anexo I - Plan de Correlatividades - UNLaR",
+    "asignatura": "Computación II",
+    "text": "Asignatura: Computación II (N° 21) de la carrera Ingeniería en Sistemas de Información, Plan 2024. Corresponde al 2° año de la carrera.\nRégimen de cursado: 2C.\nPara cursar Computación II se necesita tener REGULAR: 14 (Computación I).\nPara rendir el examen final de Computación II se necesita tener APROBADA: 14 (Computación I)."
+  },
+  {
+    "id": "correlativa_22",
+    "source": "Ordenanza CS N° 232/23 - Anexo I - Plan de Correlatividades - UNLaR",
+    "asignatura": "Programación III",
+    "text": "Asignatura: Programación III (N° 22) de la carrera Ingeniería en Sistemas de Información, Plan 2024. Corresponde al 3° año de la carrera.\nRégimen de cursado: 1C.\nPara cursar Programación III se necesita tener REGULAR: 16 (Programación II).\nPara rendir el examen final de Programación III se necesita tener APROBADA: 16 (Programación II)."
+  },
+  {
+    "id": "correlativa_23",
+    "source": "Ordenanza CS N° 232/23 - Anexo I - Plan de Correlatividades - UNLaR",
+    "asignatura": "Liderazgo, Negociación y Trabajo en Equipo",
+    "text": "Asignatura: Liderazgo, Negociación y Trabajo en Equipo (N° 23) de la carrera Ingeniería en Sistemas de Información, Plan 2024. Corresponde al 3° año de la carrera.\nRégimen de cursado: 1C.\nPara cursar Liderazgo, Negociación y Trabajo en Equipo se necesita tener REGULAR: 15 (Inglés I).\nPara rendir el examen final de Liderazgo, Negociación y Trabajo en Equipo se necesita tener APROBADA: 19 (Inglés II)."
+  },
+  {
+    "id": "correlativa_24",
+    "source": "Ordenanza CS N° 232/23 - Anexo I - Plan de Correlatividades - UNLaR",
+    "asignatura": "Arquitectura Avanzada de Hardware I",
+    "text": "Asignatura: Arquitectura Avanzada de Hardware I (N° 24) de la carrera Ingeniería en Sistemas de Información, Plan 2024. Corresponde al 3° año de la carrera.\nRégimen de cursado: 1C.\nPara cursar Arquitectura Avanzada de Hardware I se necesita tener REGULAR: 12 (Física II), 21 (Computación II).\nPara rendir el examen final de Arquitectura Avanzada de Hardware I se necesita tener APROBADA: 12 (Física II), 21 (Computación II)."
+  },
+  {
+    "id": "correlativa_25",
+    "source": "Ordenanza CS N° 232/23 - Anexo I - Plan de Correlatividades - UNLaR",
+    "asignatura": "Base de Datos I",
+    "text": "Asignatura: Base de Datos I (N° 25) de la carrera Ingeniería en Sistemas de Información, Plan 2024. Corresponde al 3° año de la carrera.\nRégimen de cursado: 1C.\nPara cursar Base de Datos I se necesita tener REGULAR: 18 (Sistemas de Información II), 21 (Computación II).\nPara rendir el examen final de Base de Datos I se necesita tener APROBADA: 18 (Sistemas de Información II), 21 (Computación II)."
+  },
+  {
+    "id": "correlativa_26",
+    "source": "Ordenanza CS N° 232/23 - Anexo I - Plan de Correlatividades - UNLaR",
+    "asignatura": "Análisis y Producción de Textos para la Comunicación",
+    "text": "Asignatura: Análisis y Producción de Textos para la Comunicación (N° 26) de la carrera Ingeniería en Sistemas de Información, Plan 2024. Corresponde al 3° año de la carrera.\nRégimen de cursado: 1C.\nPara cursar Análisis y Producción de Textos para la Comunicación se necesita tener REGULAR: 19 (Inglés II).\nPara rendir el examen final de Análisis y Producción de Textos para la Comunicación se necesita tener APROBADA: 19 (Inglés II)."
+  },
+  {
+    "id": "correlativa_27",
+    "source": "Ordenanza CS N° 232/23 - Anexo I - Plan de Correlatividades - UNLaR",
+    "asignatura": "Cálculo Numérico",
+    "text": "Asignatura: Cálculo Numérico (N° 27) de la carrera Ingeniería en Sistemas de Información, Plan 2024. Corresponde al 3° año de la carrera.\nRégimen de cursado: 1C.\nPara cursar Cálculo Numérico se necesita tener REGULAR: 17 (Probabilidad y Estadística), 21 (Computación II).\nPara rendir el examen final de Cálculo Numérico se necesita tener APROBADA: 17 (Probabilidad y Estadística), 20 (Análisis Matemático IV)."
+  },
+  {
+    "id": "correlativa_28",
+    "source": "Ordenanza CS N° 232/23 - Anexo I - Plan de Correlatividades - UNLaR",
+    "asignatura": "Organización, Gestión Empresarial",
+    "text": "Asignatura: Organización, Gestión Empresarial (N° 28) de la carrera Ingeniería en Sistemas de Información, Plan 2024. Corresponde al 3° año de la carrera.\nRégimen de cursado: 1C.\nPara cursar Organización, Gestión Empresarial se necesita tener REGULAR: 18 (Sistemas de Información II).\nPara rendir el examen final de Organización, Gestión Empresarial se necesita tener APROBADA: 18 (Sistemas de Información II)."
+  },
+  {
+    "id": "correlativa_29",
+    "source": "Ordenanza CS N° 232/23 - Anexo I - Plan de Correlatividades - UNLaR",
+    "asignatura": "Programación IV",
+    "text": "Asignatura: Programación IV (N° 29) de la carrera Ingeniería en Sistemas de Información, Plan 2024. Corresponde al 3° año de la carrera.\nRégimen de cursado: 2C.\nPara cursar Programación IV se necesita tener REGULAR: 22 (Programación III).\nPara rendir el examen final de Programación IV se necesita tener APROBADA: 22 (Programación III)."
+  },
+  {
+    "id": "correlativa_30",
+    "source": "Ordenanza CS N° 232/23 - Anexo I - Plan de Correlatividades - UNLaR",
+    "asignatura": "Proyectos de Sistemas y Gerenciamiento",
+    "text": "Asignatura: Proyectos de Sistemas y Gerenciamiento (N° 30) de la carrera Ingeniería en Sistemas de Información, Plan 2024. Corresponde al 3° año de la carrera.\nRégimen de cursado: 2C.\nPara cursar Proyectos de Sistemas y Gerenciamiento se necesita tener REGULAR: 23 (Liderazgo, Negociación y Trabajo en Equipo), 26 (Análisis y Producción de Textos para la Comunicación).\nPara rendir el examen final de Proyectos de Sistemas y Gerenciamiento se necesita tener APROBADA: 23 (Liderazgo, Negociación y Trabajo en Equipo), 26 (Análisis y Producción de Textos para la Comunicación)."
+  },
+  {
+    "id": "correlativa_31",
+    "source": "Ordenanza CS N° 232/23 - Anexo I - Plan de Correlatividades - UNLaR",
+    "asignatura": "Base de Datos II",
+    "text": "Asignatura: Base de Datos II (N° 31) de la carrera Ingeniería en Sistemas de Información, Plan 2024. Corresponde al 3° año de la carrera.\nRégimen de cursado: 2C.\nPara cursar Base de Datos II se necesita tener REGULAR: 25 (Base de Datos I).\nPara rendir el examen final de Base de Datos II se necesita tener APROBADA: 25 (Base de Datos I)."
+  },
+  {
+    "id": "correlativa_32",
+    "source": "Ordenanza CS N° 232/23 - Anexo I - Plan de Correlatividades - UNLaR",
+    "asignatura": "Arquitectura Avanzada de Hardware II",
+    "text": "Asignatura: Arquitectura Avanzada de Hardware II (N° 32) de la carrera Ingeniería en Sistemas de Información, Plan 2024. Corresponde al 3° año de la carrera.\nRégimen de cursado: 2C.\nPara cursar Arquitectura Avanzada de Hardware II se necesita tener REGULAR: 24 (Arquitectura Avanzada de Hardware I).\nPara rendir el examen final de Arquitectura Avanzada de Hardware II se necesita tener APROBADA: 24 (Arquitectura Avanzada de Hardware I)."
+  },
+  {
+    "id": "correlativa_33",
+    "source": "Ordenanza CS N° 232/23 - Anexo I - Plan de Correlatividades - UNLaR",
+    "asignatura": "Redes de Datos I",
+    "text": "Asignatura: Redes de Datos I (N° 33) de la carrera Ingeniería en Sistemas de Información, Plan 2024. Corresponde al 3° año de la carrera.\nRégimen de cursado: 2C.\nPara cursar Redes de Datos I se necesita tener REGULAR: 27 (Cálculo Numérico).\nPara rendir el examen final de Redes de Datos I se necesita tener APROBADA: 27 (Cálculo Numérico)."
+  },
+  {
+    "id": "correlativa_34",
+    "source": "Ordenanza CS N° 232/23 - Anexo I - Plan de Correlatividades - UNLaR",
+    "asignatura": "Programación V",
+    "text": "Asignatura: Programación V (N° 34) de la carrera Ingeniería en Sistemas de Información, Plan 2024. Corresponde al 4° año de la carrera.\nRégimen de cursado: 1C.\nPara cursar Programación V se necesita tener REGULAR: 29 (Programación IV).\nPara rendir el examen final de Programación V se necesita tener APROBADA: 29 (Programación IV)."
+  },
+  {
+    "id": "correlativa_35",
+    "source": "Ordenanza CS N° 232/23 - Anexo I - Plan de Correlatividades - UNLaR",
+    "asignatura": "Inteligencia Artificial",
+    "text": "Asignatura: Inteligencia Artificial (N° 35) de la carrera Ingeniería en Sistemas de Información, Plan 2024. Corresponde al 4° año de la carrera.\nRégimen de cursado: 1C.\nPara cursar Inteligencia Artificial se necesita tener REGULAR: 30 (Proyectos de Sistemas y Gerenciamiento).\nPara rendir el examen final de Inteligencia Artificial se necesita tener APROBADA: 30 (Proyectos de Sistemas y Gerenciamiento)."
+  },
+  {
+    "id": "correlativa_36",
+    "source": "Ordenanza CS N° 232/23 - Anexo I - Plan de Correlatividades - UNLaR",
+    "asignatura": "Seminario de Actualización Tecnológica",
+    "text": "Asignatura: Seminario de Actualización Tecnológica (N° 36) de la carrera Ingeniería en Sistemas de Información, Plan 2024. Corresponde al 4° año de la carrera.\nRégimen de cursado: 1C.\nPara cursar Seminario de Actualización Tecnológica se necesita tener REGULAR: 31 (Base de Datos II).\nPara rendir el examen final de Seminario de Actualización Tecnológica se necesita tener APROBADA: 31 (Base de Datos II)."
+  },
+  {
+    "id": "correlativa_37",
+    "source": "Ordenanza CS N° 232/23 - Anexo I - Plan de Correlatividades - UNLaR",
+    "asignatura": "Seguridad Informática",
+    "text": "Asignatura: Seguridad Informática (N° 37) de la carrera Ingeniería en Sistemas de Información, Plan 2024. Corresponde al 4° año de la carrera.\nRégimen de cursado: 1C.\nPara cursar Seguridad Informática se necesita tener REGULAR: 30 (Proyectos de Sistemas y Gerenciamiento), 32 (Arquitectura Avanzada de Hardware II).\nPara rendir el examen final de Seguridad Informática se necesita tener APROBADA: 30 (Proyectos de Sistemas y Gerenciamiento), 32 (Arquitectura Avanzada de Hardware II)."
+  },
+  {
+    "id": "correlativa_38",
+    "source": "Ordenanza CS N° 232/23 - Anexo I - Plan de Correlatividades - UNLaR",
+    "asignatura": "Ingeniería de Software I",
+    "text": "Asignatura: Ingeniería de Software I (N° 38) de la carrera Ingeniería en Sistemas de Información, Plan 2024. Corresponde al 4° año de la carrera.\nRégimen de cursado: 1C.\nPara cursar Ingeniería de Software I se necesita tener REGULAR: 32 (Arquitectura Avanzada de Hardware II).\nPara rendir el examen final de Ingeniería de Software I se necesita tener APROBADA: 32 (Arquitectura Avanzada de Hardware II)."
+  },
+  {
+    "id": "correlativa_39",
+    "source": "Ordenanza CS N° 232/23 - Anexo I - Plan de Correlatividades - UNLaR",
+    "asignatura": "Redes de Datos II",
+    "text": "Asignatura: Redes de Datos II (N° 39) de la carrera Ingeniería en Sistemas de Información, Plan 2024. Corresponde al 4° año de la carrera.\nRégimen de cursado: 1C.\nPara cursar Redes de Datos II se necesita tener REGULAR: 33 (Redes de Datos I).\nPara rendir el examen final de Redes de Datos II se necesita tener APROBADA: 33 (Redes de Datos I)."
+  },
+  {
+    "id": "correlativa_40",
+    "source": "Ordenanza CS N° 232/23 - Anexo I - Plan de Correlatividades - UNLaR",
+    "asignatura": "Programación VI",
+    "text": "Asignatura: Programación VI (N° 40) de la carrera Ingeniería en Sistemas de Información, Plan 2024. Corresponde al 4° año de la carrera.\nRégimen de cursado: 2C.\nPara cursar Programación VI se necesita tener REGULAR: 34 (Programación V).\nPara rendir el examen final de Programación VI se necesita tener APROBADA: 34 (Programación V)."
+  },
+  {
+    "id": "correlativa_41",
+    "source": "Ordenanza CS N° 232/23 - Anexo I - Plan de Correlatividades - UNLaR",
+    "asignatura": "Economía y Evaluación de Proyectos",
+    "text": "Asignatura: Economía y Evaluación de Proyectos (N° 41) de la carrera Ingeniería en Sistemas de Información, Plan 2024. Corresponde al 4° año de la carrera.\nRégimen de cursado: 2C.\nPara cursar Economía y Evaluación de Proyectos se necesita tener REGULAR: 35 (Inteligencia Artificial).\nPara rendir el examen final de Economía y Evaluación de Proyectos se necesita tener APROBADA: 35 (Inteligencia Artificial)."
+  },
+  {
+    "id": "correlativa_42",
+    "source": "Ordenanza CS N° 232/23 - Anexo I - Plan de Correlatividades - UNLaR",
+    "asignatura": "Seminario de Innovación y Prototipado",
+    "text": "Asignatura: Seminario de Innovación y Prototipado (N° 42) de la carrera Ingeniería en Sistemas de Información, Plan 2024. Corresponde al 4° año de la carrera.\nRégimen de cursado: 2C.\nPara cursar Seminario de Innovación y Prototipado se necesita tener REGULAR: 36 (Seminario de Actualización Tecnológica), 37 (Seguridad Informática).\nPara rendir el examen final de Seminario de Innovación y Prototipado se necesita tener APROBADA: 36 (Seminario de Actualización Tecnológica), 37 (Seguridad Informática)."
+  },
+  {
+    "id": "correlativa_43",
+    "source": "Ordenanza CS N° 232/23 - Anexo I - Plan de Correlatividades - UNLaR",
+    "asignatura": "Proyectos y Desarrollos Telemáticos",
+    "text": "Asignatura: Proyectos y Desarrollos Telemáticos (N° 43) de la carrera Ingeniería en Sistemas de Información, Plan 2024. Corresponde al 4° año de la carrera.\nRégimen de cursado: 2C.\nPara cursar Proyectos y Desarrollos Telemáticos se necesita tener REGULAR: 39 (Redes de Datos II).\nPara rendir el examen final de Proyectos y Desarrollos Telemáticos se necesita tener APROBADA: 39 (Redes de Datos II)."
+  },
+  {
+    "id": "correlativa_44",
+    "source": "Ordenanza CS N° 232/23 - Anexo I - Plan de Correlatividades - UNLaR",
+    "asignatura": "Sistemas Operativos Avanzados",
+    "text": "Asignatura: Sistemas Operativos Avanzados (N° 44) de la carrera Ingeniería en Sistemas de Información, Plan 2024. Corresponde al 4° año de la carrera.\nRégimen de cursado: 2C.\nPara cursar Sistemas Operativos Avanzados se necesita tener REGULAR: 39 (Redes de Datos II).\nPara rendir el examen final de Sistemas Operativos Avanzados se necesita tener APROBADA: 39 (Redes de Datos II)."
+  },
+  {
+    "id": "correlativa_45",
+    "source": "Ordenanza CS N° 232/23 - Anexo I - Plan de Correlatividades - UNLaR",
+    "asignatura": "Investigación Operativa",
+    "text": "Asignatura: Investigación Operativa (N° 45) de la carrera Ingeniería en Sistemas de Información, Plan 2024. Corresponde al 4° año de la carrera.\nRégimen de cursado: 2C.\nPara cursar Investigación Operativa se necesita tener REGULAR: 35 (Inteligencia Artificial).\nPara rendir el examen final de Investigación Operativa se necesita tener APROBADA: 35 (Inteligencia Artificial)."
+  },
+  {
+    "id": "correlativa_46",
+    "source": "Ordenanza CS N° 232/23 - Anexo I - Plan de Correlatividades - UNLaR",
+    "asignatura": "Ingeniería de Software II",
+    "text": "Asignatura: Ingeniería de Software II (N° 46) de la carrera Ingeniería en Sistemas de Información, Plan 2024. Corresponde al 4° año de la carrera.\nRégimen de cursado: 2C.\nPara cursar Ingeniería de Software II se necesita tener REGULAR: 38 (Ingeniería de Software I).\nPara rendir el examen final de Ingeniería de Software II se necesita tener APROBADA: 38 (Ingeniería de Software I)."
+  },
+  {
+    "id": "correlativa_47",
+    "source": "Ordenanza CS N° 232/23 - Anexo I - Plan de Correlatividades - UNLaR",
+    "asignatura": "Modelos y Simulación de Sistemas",
+    "text": "Asignatura: Modelos y Simulación de Sistemas (N° 47) de la carrera Ingeniería en Sistemas de Información, Plan 2024. Corresponde al 5° año de la carrera.\nRégimen de cursado: 1C.\nPara cursar Modelos y Simulación de Sistemas se necesita tener REGULAR: 45 (Investigación Operativa).\nPara rendir el examen final de Modelos y Simulación de Sistemas se necesita tener APROBADA: 45 (Investigación Operativa)."
+  },
+  {
+    "id": "correlativa_48",
+    "source": "Ordenanza CS N° 232/23 - Anexo I - Plan de Correlatividades - UNLaR",
+    "asignatura": "Calidad de Software",
+    "text": "Asignatura: Calidad de Software (N° 48) de la carrera Ingeniería en Sistemas de Información, Plan 2024. Corresponde al 5° año de la carrera.\nRégimen de cursado: 1C.\nPara cursar Calidad de Software se necesita tener REGULAR: 44 (Sistemas Operativos Avanzados), 46 (Ingeniería de Software II).\nPara rendir el examen final de Calidad de Software se necesita tener APROBADA: 44 (Sistemas Operativos Avanzados), 46 (Ingeniería de Software II)."
+  },
+  {
+    "id": "correlativa_49",
+    "source": "Ordenanza CS N° 232/23 - Anexo I - Plan de Correlatividades - UNLaR",
+    "asignatura": "Legislación y Ética Profesional",
+    "text": "Asignatura: Legislación y Ética Profesional (N° 49) de la carrera Ingeniería en Sistemas de Información, Plan 2024. Corresponde al 5° año de la carrera.\nRégimen de cursado: 1C.\nPara cursar Legislación y Ética Profesional se necesita tener REGULAR: 41 (Economía y Evaluación de Proyectos), 42 (Seminario de Innovación y Prototipado).\nPara rendir el examen final de Legislación y Ética Profesional se necesita tener APROBADA: 41 (Economía y Evaluación de Proyectos), 42 (Seminario de Innovación y Prototipado)."
+  },
+  {
+    "id": "correlativa_50",
+    "source": "Ordenanza CS N° 232/23 - Anexo I - Plan de Correlatividades - UNLaR",
+    "asignatura": "Auditoría y Peritaje de Sistemas Informáticos",
+    "text": "Asignatura: Auditoría y Peritaje de Sistemas Informáticos (N° 50) de la carrera Ingeniería en Sistemas de Información, Plan 2024. Corresponde al 5° año de la carrera.\nRégimen de cursado: 1C.\nPara cursar Auditoría y Peritaje de Sistemas Informáticos se necesita tener REGULAR: 40 (Programación VI), 46 (Ingeniería de Software II).\nPara rendir el examen final de Auditoría y Peritaje de Sistemas Informáticos se necesita tener APROBADA: 40 (Programación VI), 46 (Ingeniería de Software II)."
+  },
+  {
+    "id": "correlativa_51",
+    "source": "Ordenanza CS N° 232/23 - Anexo I - Plan de Correlatividades - UNLaR",
+    "asignatura": "Reingeniería de Procesos",
+    "text": "Asignatura: Reingeniería de Procesos (N° 51) de la carrera Ingeniería en Sistemas de Información, Plan 2024. Corresponde al 5° año de la carrera.\nRégimen de cursado: 2C.\nPara cursar Reingeniería de Procesos se necesita tener REGULAR: 46 (Ingeniería de Software II).\nPara rendir el examen final de Reingeniería de Procesos se necesita tener APROBADA: 46 (Ingeniería de Software II)."
+  },
+  {
+    "id": "correlativa_52",
+    "source": "Ordenanza CS N° 232/23 - Anexo I - Plan de Correlatividades - UNLaR",
+    "asignatura": "Servicios Web",
+    "text": "Asignatura: Servicios Web (N° 52) de la carrera Ingeniería en Sistemas de Información, Plan 2024. Corresponde al 5° año de la carrera.\nRégimen de cursado: 2C.\nPara cursar Servicios Web se necesita tener REGULAR: 45 (Investigación Operativa).\nPara rendir el examen final de Servicios Web se necesita tener APROBADA: 45 (Investigación Operativa)."
+  },
+  {
+    "id": "correlativa_53",
+    "source": "Ordenanza CS N° 232/23 - Anexo I - Plan de Correlatividades - UNLaR",
+    "asignatura": "Práctica Profesional Supervisada",
+    "text": "Asignatura: Práctica Profesional Supervisada (N° 53) de la carrera Ingeniería en Sistemas de Información, Plan 2024. Corresponde al 5° año de la carrera.\nRégimen de cursado: Anual.\nPara cursar Práctica Profesional Supervisada se necesita tener REGULAR: 40 (Programación VI), 41 (Economía y Evaluación de Proyectos), 42 (Seminario de Innovación y Prototipado), 43 (Proyectos y Desarrollos Telemáticos), 44 (Sistemas Operativos Avanzados), 45 (Investigación Operativa), 46 (Ingeniería de Software II).\nPara rendir el examen final de Práctica Profesional Supervisada se necesita tener APROBADA: 47 (Modelos y Simulación de Sistemas), 48 (Calidad de Software), 49 (Legislación y Ética Profesional), 50 (Auditoría y Peritaje de Sistemas Informáticos), 51 (Reingeniería de Procesos), 52 (Servicios Web)."
+  },
+  {
+    "id": "correlativa_54",
+    "source": "Ordenanza CS N° 232/23 - Anexo I - Plan de Correlatividades - UNLaR",
+    "asignatura": "Trabajo Final Integrador",
+    "text": "Asignatura: Trabajo Final Integrador (N° 54) de la carrera Ingeniería en Sistemas de Información, Plan 2024. Corresponde al 5° año de la carrera.\nRégimen de cursado: Anual.\nPara cursar Trabajo Final Integrador se necesita tener REGULAR: 40 (Programación VI), 41 (Economía y Evaluación de Proyectos), 42 (Seminario de Innovación y Prototipado), 43 (Proyectos y Desarrollos Telemáticos), 44 (Sistemas Operativos Avanzados), 45 (Investigación Operativa), 46 (Ingeniería de Software II).\nPara rendir el examen final de Trabajo Final Integrador se necesita tener APROBADA: 53 (Práctica Profesional Supervisada)."
+  },
+  {
+    "id": "correlativa_anio_01",
+    "source": "Ordenanza CS N° 232/23 - Anexo II - Estructura Matricial (diagrama 'Camino crítico de correlatividades para el cursado')",
+    "anio": 1,
+    "text": "El primer año de la carrera Ingeniería en Sistemas de Información, Plan 2024, tiene 9 asignaturas. Son las siguientes: Álgebra y Geometría Analítica I (N° 1); Análisis Matemático I (N° 2); Algoritmo y Estructura de Datos I (N° 3); Informática I (N° 4); Álgebra y Geometría Analítica II (N° 5); Análisis Matemático II (N° 6); Algoritmo y Estructura de Datos II (N° 7); Física I (N° 8); Informática II (N° 9)."
+  },
+  {
+    "id": "correlativa_anio_02",
+    "source": "Ordenanza CS N° 232/23 - Anexo II - Estructura Matricial (diagrama 'Camino crítico de correlatividades para el cursado')",
+    "anio": 2,
+    "text": "El segundo año de la carrera Ingeniería en Sistemas de Información, Plan 2024, tiene 12 asignaturas. Son las siguientes: Programación I (N° 10); Análisis Matemático III (N° 11); Física II (N° 12); Sistemas de Información I (N° 13); Computación I (N° 14); Inglés I (N° 15); Programación II (N° 16); Probabilidad y Estadística (N° 17); Sistemas de Información II (N° 18); Inglés II (N° 19); Análisis Matemático IV (N° 20); Computación II (N° 21)."
+  },
+  {
+    "id": "correlativa_anio_03",
+    "source": "Ordenanza CS N° 232/23 - Anexo II - Estructura Matricial (diagrama 'Camino crítico de correlatividades para el cursado')",
+    "anio": 3,
+    "text": "El tercer año de la carrera Ingeniería en Sistemas de Información, Plan 2024, tiene 12 asignaturas. Son las siguientes: Programación III (N° 22); Liderazgo, Negociación y Trabajo en Equipo (N° 23); Arquitectura Avanzada de Hardware I (N° 24); Base de Datos I (N° 25); Análisis y Producción de Textos para la Comunicación (N° 26); Cálculo Numérico (N° 27); Organización, Gestión Empresarial (N° 28); Programación IV (N° 29); Proyectos de Sistemas y Gerenciamiento (N° 30); Base de Datos II (N° 31); Arquitectura Avanzada de Hardware II (N° 32); Redes de Datos I (N° 33)."
+  },
+  {
+    "id": "correlativa_anio_04",
+    "source": "Ordenanza CS N° 232/23 - Anexo II - Estructura Matricial (diagrama 'Camino crítico de correlatividades para el cursado')",
+    "anio": 4,
+    "text": "El cuarto año de la carrera Ingeniería en Sistemas de Información, Plan 2024, tiene 13 asignaturas. Son las siguientes: Programación V (N° 34); Inteligencia Artificial (N° 35); Seminario de Actualización Tecnológica (N° 36); Seguridad Informática (N° 37); Ingeniería de Software I (N° 38); Redes de Datos II (N° 39); Programación VI (N° 40); Economía y Evaluación de Proyectos (N° 41); Seminario de Innovación y Prototipado (N° 42); Proyectos y Desarrollos Telemáticos (N° 43); Sistemas Operativos Avanzados (N° 44); Investigación Operativa (N° 45); Ingeniería de Software II (N° 46)."
+  },
+  {
+    "id": "correlativa_anio_05",
+    "source": "Ordenanza CS N° 232/23 - Anexo II - Estructura Matricial (diagrama 'Camino crítico de correlatividades para el cursado')",
+    "anio": 5,
+    "text": "El quinto año de la carrera Ingeniería en Sistemas de Información, Plan 2024, tiene 8 asignaturas. Son las siguientes: Modelos y Simulación de Sistemas (N° 47); Calidad de Software (N° 48); Legislación y Ética Profesional (N° 49); Auditoría y Peritaje de Sistemas Informáticos (N° 50); Reingeniería de Procesos (N° 51); Servicios Web (N° 52); Práctica Profesional Supervisada (N° 53); Trabajo Final Integrador (N° 54)."
+  }
+]

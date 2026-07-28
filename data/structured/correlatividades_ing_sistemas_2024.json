@@ -1,0 +1,677 @@
+{
+  "carrera": "Ingeniería en Sistemas de Información",
+  "plan": "Plan 2024",
+  "fuente": "Ordenanza CS N° 232/23 - Anexo I - Plan de Correlatividades - UNLaR",
+  "asignaturas": [
+    {
+      "n": 1,
+      "nombre": "Álgebra y Geometría Analítica I",
+      "regimen": "1C",
+      "regular_para_cursar": [],
+      "aprobada_para_rendir_final": [],
+      "anio": 1
+    },
+    {
+      "n": 2,
+      "nombre": "Análisis Matemático I",
+      "regimen": "1C",
+      "regular_para_cursar": [],
+      "aprobada_para_rendir_final": [],
+      "anio": 1
+    },
+    {
+      "n": 3,
+      "nombre": "Algoritmo y Estructura de Datos I",
+      "regimen": "1C",
+      "regular_para_cursar": [],
+      "aprobada_para_rendir_final": [],
+      "anio": 1
+    },
+    {
+      "n": 4,
+      "nombre": "Informática I",
+      "regimen": "1C",
+      "regular_para_cursar": [],
+      "aprobada_para_rendir_final": [],
+      "anio": 1
+    },
+    {
+      "n": 5,
+      "nombre": "Álgebra y Geometría Analítica II",
+      "regimen": "2C",
+      "regular_para_cursar": [
+        1
+      ],
+      "aprobada_para_rendir_final": [
+        1
+      ],
+      "anio": 1
+    },
+    {
+      "n": 6,
+      "nombre": "Análisis Matemático II",
+      "regimen": "2C",
+      "regular_para_cursar": [
+        2
+      ],
+      "aprobada_para_rendir_final": [
+        2
+      ],
+      "anio": 1
+    },
+    {
+      "n": 7,
+      "nombre": "Algoritmo y Estructura de Datos II",
+      "regimen": "2C",
+      "regular_para_cursar": [
+        3
+      ],
+      "aprobada_para_rendir_final": [
+        3
+      ],
+      "anio": 1
+    },
+    {
+      "n": 8,
+      "nombre": "Física I",
+      "regimen": "2C",
+      "regular_para_cursar": [
+        1
+      ],
+      "aprobada_para_rendir_final": [
+        1,
+        2
+      ],
+      "anio": 1
+    },
+    {
+      "n": 9,
+      "nombre": "Informática II",
+      "regimen": "2C",
+      "regular_para_cursar": [
+        4
+      ],
+      "aprobada_para_rendir_final": [
+        4
+      ],
+      "anio": 1
+    },
+    {
+      "n": 10,
+      "nombre": "Programación I",
+      "regimen": "1C",
+      "regular_para_cursar": [
+        7
+      ],
+      "aprobada_para_rendir_final": [
+        7,
+        9
+      ],
+      "anio": 2
+    },
+    {
+      "n": 11,
+      "nombre": "Análisis Matemático III",
+      "regimen": "1C",
+      "regular_para_cursar": [
+        5,
+        6
+      ],
+      "aprobada_para_rendir_final": [
+        5,
+        6
+      ],
+      "anio": 2
+    },
+    {
+      "n": 12,
+      "nombre": "Física II",
+      "regimen": "1C",
+      "regular_para_cursar": [
+        8
+      ],
+      "aprobada_para_rendir_final": [
+        8
+      ],
+      "anio": 2
+    },
+    {
+      "n": 13,
+      "nombre": "Sistemas de Información I",
+      "regimen": "1C",
+      "regular_para_cursar": [
+        9
+      ],
+      "aprobada_para_rendir_final": [
+        9
+      ],
+      "anio": 2
+    },
+    {
+      "n": 14,
+      "nombre": "Computación I",
+      "regimen": "1C",
+      "regular_para_cursar": [
+        7,
+        9
+      ],
+      "aprobada_para_rendir_final": [
+        7,
+        9
+      ],
+      "anio": 2
+    },
+    {
+      "n": 15,
+      "nombre": "Inglés I",
+      "regimen": "1C",
+      "regular_para_cursar": [],
+      "aprobada_para_rendir_final": [],
+      "anio": 2
+    },
+    {
+      "n": 16,
+      "nombre": "Programación II",
+      "regimen": "2C",
+      "regular_para_cursar": [
+        10
+      ],
+      "aprobada_para_rendir_final": [
+        10
+      ],
+      "anio": 2
+    },
+    {
+      "n": 17,
+      "nombre": "Probabilidad y Estadística",
+      "regimen": "2C",
+      "regular_para_cursar": [
+        11
+      ],
+      "aprobada_para_rendir_final": [
+        11
+      ],
+      "anio": 2
+    },
+    {
+      "n": 18,
+      "nombre": "Sistemas de Información II",
+      "regimen": "2C",
+      "regular_para_cursar": [
+        13
+      ],
+      "aprobada_para_rendir_final": [
+        13
+      ],
+      "anio": 2
+    },
+    {
+      "n": 19,
+      "nombre": "Inglés II",
+      "regimen": "2C",
+      "regular_para_cursar": [
+        15
+      ],
+      "aprobada_para_rendir_final": [
+        15
+      ],
+      "anio": 2
+    },
+    {
+      "n": 20,
+      "nombre": "Análisis Matemático IV",
+      "regimen": "2C",
+      "regular_para_cursar": [
+        11
+      ],
+      "aprobada_para_rendir_final": [
+        11
+      ],
+      "anio": 2
+    },
+    {
+      "n": 21,
+      "nombre": "Computación II",
+      "regimen": "2C",
+      "regular_para_cursar": [
+        14
+      ],
+      "aprobada_para_rendir_final": [
+        14
+      ],
+      "anio": 2
+    },
+    {
+      "n": 22,
+      "nombre": "Programación III",
+      "regimen": "1C",
+      "regular_para_cursar": [
+        16
+      ],
+      "aprobada_para_rendir_final": [
+        16
+      ],
+      "anio": 3
+    },
+    {
+      "n": 23,
+      "nombre": "Liderazgo, Negociación y Trabajo en Equipo",
+      "regimen": "1C",
+      "regular_para_cursar": [
+        15
+      ],
+      "aprobada_para_rendir_final": [
+        19
+      ],
+      "anio": 3
+    },
+    {
+      "n": 24,
+      "nombre": "Arquitectura Avanzada de Hardware I",
+      "regimen": "1C",
+      "regular_para_cursar": [
+        12,
+        21
+      ],
+      "aprobada_para_rendir_final": [
+        12,
+        21
+      ],
+      "anio": 3
+    },
+    {
+      "n": 25,
+      "nombre": "Base de Datos I",
+      "regimen": "1C",
+      "regular_para_cursar": [
+        18,
+        21
+      ],
+      "aprobada_para_rendir_final": [
+        18,
+        21
+      ],
+      "anio": 3
+    },
+    {
+      "n": 26,
+      "nombre": "Análisis y Producción de Textos para la Comunicación",
+      "regimen": "1C",
+      "regular_para_cursar": [
+        19
+      ],
+      "aprobada_para_rendir_final": [
+        19
+      ],
+      "anio": 3
+    },
+    {
+      "n": 27,
+      "nombre": "Cálculo Numérico",
+      "regimen": "1C",
+      "regular_para_cursar": [
+        17,
+        21
+      ],
+      "aprobada_para_rendir_final": [
+        17,
+        20
+      ],
+      "anio": 3
+    },
+    {
+      "n": 28,
+      "nombre": "Organización, Gestión Empresarial",
+      "regimen": "1C",
+      "regular_para_cursar": [
+        18
+      ],
+      "aprobada_para_rendir_final": [
+        18
+      ],
+      "anio": 3
+    },
+    {
+      "n": 29,
+      "nombre": "Programación IV",
+      "regimen": "2C",
+      "regular_para_cursar": [
+        22
+      ],
+      "aprobada_para_rendir_final": [
+        22
+      ],
+      "anio": 3
+    },
+    {
+      "n": 30,
+      "nombre": "Proyectos de Sistemas y Gerenciamiento",
+      "regimen": "2C",
+      "regular_para_cursar": [
+        23,
+        26
+      ],
+      "aprobada_para_rendir_final": [
+        23,
+        26
+      ],
+      "anio": 3
+    },
+    {
+      "n": 31,
+      "nombre": "Base de Datos II",
+      "regimen": "2C",
+      "regular_para_cursar": [
+        25
+      ],
+      "aprobada_para_rendir_final": [
+        25
+      ],
+      "anio": 3
+    },
+    {
+      "n": 32,
+      "nombre": "Arquitectura Avanzada de Hardware II",
+      "regimen": "2C",
+      "regular_para_cursar": [
+        24
+      ],
+      "aprobada_para_rendir_final": [
+        24
+      ],
+      "anio": 3
+    },
+    {
+      "n": 33,
+      "nombre": "Redes de Datos I",
+      "regimen": "2C",
+      "regular_para_cursar": [
+        27
+      ],
+      "aprobada_para_rendir_final": [
+        27
+      ],
+      "anio": 3
+    },
+    {
+      "n": 34,
+      "nombre": "Programación V",
+      "regimen": "1C",
+      "regular_para_cursar": [
+        29
+      ],
+      "aprobada_para_rendir_final": [
+        29
+      ],
+      "anio": 4
+    },
+    {
+      "n": 35,
+      "nombre": "Inteligencia Artificial",
+      "regimen": "1C",
+      "regular_para_cursar": [
+        30
+      ],
+      "aprobada_para_rendir_final": [
+        30
+      ],
+      "anio": 4
+    },
+    {
+      "n": 36,
+      "nombre": "Seminario de Actualización Tecnológica",
+      "regimen": "1C",
+      "regular_para_cursar": [
+        31
+      ],
+      "aprobada_para_rendir_final": [
+        31
+      ],
+      "anio": 4
+    },
+    {
+      "n": 37,
+      "nombre": "Seguridad Informática",
+      "regimen": "1C",
+      "regular_para_cursar": [
+        30,
+        32
+      ],
+      "aprobada_para_rendir_final": [
+        30,
+        32
+      ],
+      "anio": 4
+    },
+    {
+      "n": 38,
+      "nombre": "Ingeniería de Software I",
+      "regimen": "1C",
+      "regular_para_cursar": [
+        32
+      ],
+      "aprobada_para_rendir_final": [
+        32
+      ],
+      "anio": 4
+    },
+    {
+      "n": 39,
+      "nombre": "Redes de Datos II",
+      "regimen": "1C",
+      "regular_para_cursar": [
+        33
+      ],
+      "aprobada_para_rendir_final": [
+        33
+      ],
+      "anio": 4
+    },
+    {
+      "n": 40,
+      "nombre": "Programación VI",
+      "regimen": "2C",
+      "regular_para_cursar": [
+        34
+      ],
+      "aprobada_para_rendir_final": [
+        34
+      ],
+      "anio": 4
+    },
+    {
+      "n": 41,
+      "nombre": "Economía y Evaluación de Proyectos",
+      "regimen": "2C",
+      "regular_para_cursar": [
+        35
+      ],
+      "aprobada_para_rendir_final": [
+        35
+      ],
+      "anio": 4
+    },
+    {
+      "n": 42,
+      "nombre": "Seminario de Innovación y Prototipado",
+      "regimen": "2C",
+      "regular_para_cursar": [
+        36,
+        37
+      ],
+      "aprobada_para_rendir_final": [
+        36,
+        37
+      ],
+      "anio": 4
+    },
+    {
+      "n": 43,
+      "nombre": "Proyectos y Desarrollos Telemáticos",
+      "regimen": "2C",
+      "regular_para_cursar": [
+        39
+      ],
+      "aprobada_para_rendir_final": [
+        39
+      ],
+      "anio": 4
+    },
+    {
+      "n": 44,
+      "nombre": "Sistemas Operativos Avanzados",
+      "regimen": "2C",
+      "regular_para_cursar": [
+        39
+      ],
+      "aprobada_para_rendir_final": [
+        39
+      ],
+      "anio": 4
+    },
+    {
+      "n": 45,
+      "nombre": "Investigación Operativa",
+      "regimen": "2C",
+      "regular_para_cursar": [
+        35
+      ],
+      "aprobada_para_rendir_final": [
+        35
+      ],
+      "anio": 4
+    },
+    {
+      "n": 46,
+      "nombre": "Ingeniería de Software II",
+      "regimen": "2C",
+      "regular_para_cursar": [
+        38
+      ],
+      "aprobada_para_rendir_final": [
+        38
+      ],
+      "anio": 4
+    },
+    {
+      "n": 47,
+      "nombre": "Modelos y Simulación de Sistemas",
+      "regimen": "1C",
+      "regular_para_cursar": [
+        45
+      ],
+      "aprobada_para_rendir_final": [
+        45
+      ],
+      "anio": 5
+    },
+    {
+      "n": 48,
+      "nombre": "Calidad de Software",
+      "regimen": "1C",
+      "regular_para_cursar": [
+        44,
+        46
+      ],
+      "aprobada_para_rendir_final": [
+        44,
+        46
+      ],
+      "anio": 5
+    },
+    {
+      "n": 49,
+      "nombre": "Legislación y Ética Profesional",
+      "regimen": "1C",
+      "regular_para_cursar": [
+        41,
+        42
+      ],
+      "aprobada_para_rendir_final": [
+        41,
+        42
+      ],
+      "anio": 5
+    },
+    {
+      "n": 50,
+      "nombre": "Auditoría y Peritaje de Sistemas Informáticos",
+      "regimen": "1C",
+      "regular_para_cursar": [
+        40,
+        46
+      ],
+      "aprobada_para_rendir_final": [
+        40,
+        46
+      ],
+      "anio": 5
+    },
+    {
+      "n": 51,
+      "nombre": "Reingeniería de Procesos",
+      "regimen": "2C",
+      "regular_para_cursar": [
+        46
+      ],
+      "aprobada_para_rendir_final": [
+        46
+      ],
+      "anio": 5
+    },
+    {
+      "n": 52,
+      "nombre": "Servicios Web",
+      "regimen": "2C",
+      "regular_para_cursar": [
+        45
+      ],
+      "aprobada_para_rendir_final": [
+        45
+      ],
+      "anio": 5
+    },
+    {
+      "n": 53,
+      "nombre": "Práctica Profesional Supervisada",
+      "regimen": "Anual",
+      "regular_para_cursar": [
+        40,
+        41,
+        42,
+        43,
+        44,
+        45,
+        46
+      ],
+      "aprobada_para_rendir_final": [
+        47,
+        48,
+        49,
+        50,
+        51,
+        52
+      ],
+      "anio": 5
+    },
+    {
+      "n": 54,
+      "nombre": "Trabajo Final Integrador",
+      "regimen": "Anual",
+      "regular_para_cursar": [
+        40,
+        41,
+        42,
+        43,
+        44,
+        45,
+        46
+      ],
+      "aprobada_para_rendir_final": [
+        53
+      ],
+      "anio": 5
+    }
+  ],
+  "fuente_anio": "Ordenanza CS N° 232/23 - Anexo II - Estructura Matricial (diagrama 'Camino crítico de correlatividades para el cursado')"
+}

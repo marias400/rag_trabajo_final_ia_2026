@@ -1,0 +1,17 @@
+# Extracción de PDFs (01_extract_pdfs.py)
+pdfplumber
+pytesseract
+# ⚠️ pytesseract es solo el "puente" en Python. El OCR en sí (tesseract.exe)
+# se instala aparte, no es un paquete de pip:
+#   Windows: https://github.com/UB-Mannheim/tesseract/wiki (agregar idioma "spa")
+#   Linux:   sudo apt install tesseract-ocr tesseract-ocr-spa poppler-utils
+
+# Vector DB y embeddings (03, 04, 05_rag_query.py, app/streamlit_app.py)
+chromadb
+sentence-transformers
+
+# Llamadas a LMStudio (05_rag_query.py, app/streamlit_app.py)
+requests
+
+# Interfaz web (app/streamlit_app.py)
+streamlit

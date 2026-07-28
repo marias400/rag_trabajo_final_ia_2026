@@ -1,0 +1,14 @@
+# Base vectorial generada (no versionar, pesa y se regenera)
+chroma_db/
+
+# Entornos y cache de Python
+__pycache__/
+*.pyc
+.venv/
+venv/
+
+# Archivos temporales de LMStudio / modelos locales
+*.gguf
+
+# Datos procesados intermedios grandes (opcional, si pesan mucho)
+# data/processed/*.json
