@@ -2,292 +2,385 @@
 """
 app/streamlit_app.py
 ---------------------
-Interfaz web del asistente RAG sobre el plan de estudios de Ingeniería en
-Sistemas de Información (UNLaR). Reusa la misma lógica de recuperación +
-prompt + llamada a LMStudio que scripts/05_rag_query.py, pero en formato
-chat con Streamlit.
+Interfaz web del asistente RAG sobre el plan de estudios de la UNLaR.
 
-Requisito previo: tener LMStudio corriendo con un modelo cargado y el
-servidor local iniciado (por defecto en http://localhost:1234), y haber
-corrido antes 03_build_vectordb.py para tener chroma_db/ generado.
+Reusa TODA la logica de rag_core.py (la misma que usa scripts/05_rag_query.py
+--chat en consola): recuperacion en ChromaDB, el router conversacional que
+decide en cada turno si hace falta volver a buscar en la base o si alcanza
+con lo ya conversado, y las llamadas a LMStudio. Nada de eso esta duplicado
+aca: si se arregla o mejora en rag_core.py, esta app lo hereda automaticamente.
 
 Uso:
     streamlit run app/streamlit_app.py
-
-Los parámetros de conexión (rutas, modelo, temperatura) están en la barra
-lateral, con los mismos defaults que 05_rag_query.py, así no hace falta
-tocar código para cambiarlos.
 """
 
-import re
+import sys
+from pathlib import Path
+
+SCRIPTS_DIR = Path(__file__).parent.parent / "scripts"
+if str(SCRIPTS_DIR) not in sys.path:
+    sys.path.insert(0, str(SCRIPTS_DIR))
 
 import streamlit as st
-
-try:
-    import chromadb
-except ImportError:
-    st.error("Falta chromadb. Instalalo con: pip install chromadb --break-system-packages")
-    st.stop()
-
-try:
-    from sentence_transformers import SentenceTransformer
-except ImportError:
-    st.error("Falta sentence-transformers. Instalalo con: pip install sentence-transformers --break-system-packages")
-    st.stop()
-
-try:
-    import requests
-except ImportError:
-    st.error("Falta requests. Instalalo con: pip install requests --break-system-packages")
-    st.stop()
+import rag_core
+import importlib
+importlib.reload(rag_core)
 
 
-SYSTEM_PROMPT = (
-    "Sos un asistente que responde preguntas sobre el plan de estudios de "
-    "Ingeniería en Sistemas de Información de la UNLaR, usando la información "
-    "de los fragmentos de contexto que se te proveen.\n\n"
-    "Cómo responder:\n"
-    "- Basate en los fragmentos relevantes, aunque no todos coincidan entre sí "
-    "o algunos no vengan al caso. Si uno solo responde la pregunta, alcanza.\n"
-    "- Dá la respuesta completa: si el fragmento tiene varios datos relacionados "
-    "con la pregunta (por ejemplo, requisitos para cursar Y para rendir el "
-    "final), incluí todos, no solo el primero que encuentres.\n"
-    "- Citá de qué fragmento sacaste cada dato (ej. 'según el Fragmento 1...'), "
-    "así el usuario puede verificarlo.\n"
-    "- Si un fragmento viene de un escaneo con errores de OCR (texto cortado, "
-    "tablas desordenadas, palabras sueltas), ignoralo sin mencionarlo como "
-    "motivo de duda sobre el resto.\n"
-    "- Si de verdad ningún fragmento contiene la respuesta, decilo "
-    "directamente en vez de inventar información.\n"
-    "- Respondé en español, de forma natural y completa, sin ser telegráfico "
-    "ni tampoco extenderte de más."
-)
+N_HISTORY_TURNS = 6
 
-
-# ---------------------------------------------------------------------------
-# Recursos cacheados: el modelo de embeddings y la colección de ChromaDB no
-# cambian entre preguntas, así que se cargan una sola vez por sesión/params.
-# ---------------------------------------------------------------------------
 
 @st.cache_resource(show_spinner="Cargando modelo de embeddings...")
-def load_embedding_model(model_name: str) -> SentenceTransformer:
-    return SentenceTransformer(model_name)
+def load_embedding_model(model_name: str):
+    return rag_core.get_embedding_model(model_name)
 
 
 @st.cache_resource(show_spinner="Conectando a ChromaDB...")
 def load_collection(db_path: str, collection_name: str):
-    client = chromadb.PersistentClient(path=db_path)
     try:
-        return client.get_collection(collection_name)
+        return rag_core.get_chroma_collection(db_path, collection_name)
     except Exception as e:
         st.error(
-            f"No se pudo abrir la colección '{collection_name}' en '{db_path}'.\n\n"
-            f"¿Corriste 03_build_vectordb.py? Detalle: {e}"
+            f"No se pudo abrir la coleccion '{collection_name}' en '{db_path}'.\n\n"
+            f"Corri 03_build_vectordb.py? Detalle: {e}"
         )
         st.stop()
 
 
-ORDINAL_ANIO = {
-    "primer": 1, "1er": 1, "1ro": 1,
-    "segundo": 2, "2do": 2,
-    "tercer": 3, "tercero": 3, "3er": 3,
-    "cuarto": 4, "4to": 4,
-    "quinto": 5, "5to": 5,
-}
-
-
-def detect_anio_query(query: str) -> int | None:
-    """
-    Si la pregunta menciona explícitamente un año de la carrera (ej. "primer año",
-    "2do año", "año 3"), devuelve el número de año (1-5). Si no, devuelve None.
-    Ver la explicación completa en scripts/05_rag_query.py (mismo mecanismo).
-    """
-    q = query.lower()
-    if "año" not in q and "anio" not in q and "ano " not in q:
-        return None
-    for palabra, anio in ORDINAL_ANIO.items():
-        if palabra in q:
-            return anio
-    m = re.search(r"a[nñ]o\s*(?:n[uú]mero\s*)?(\d)\b", q)
-    if m:
-        return int(m.group(1))
-    return None
-
-
-def retrieve_chunks(query: str, model: SentenceTransformer, collection, n_results: int):
-    query_embedding = model.encode([query]).tolist()
-    results = collection.query(query_embeddings=query_embedding, n_results=n_results)
-
-    docs = results["documents"][0]
-    metas = results["metadatas"][0]
-    distances = results["distances"][0]
-    retrieved = list(zip(docs, metas, distances))
-
-    anio = detect_anio_query(query)
-    if anio is not None:
-        chunk_id = f"correlativa_anio_{anio:02d}"
-        try:
-            forced = collection.get(ids=[chunk_id])
-        except Exception:
-            forced = None
-        if forced and forced.get("ids"):
-            forced_doc = forced["documents"][0]
-            forced_meta = forced["metadatas"][0]
-            retrieved = [(forced_doc, forced_meta, None)] + [
-                r for r in retrieved if r[0] != forced_doc
-            ][: max(n_results - 1, 0)]
-
-    return retrieved
-
-
-def build_prompt(query: str, retrieved: list) -> str:
-    context_blocks = []
-    for i, (doc, meta, _dist) in enumerate(retrieved, start=1):
-        fuente = meta.get("source", "desconocido")
-        context_blocks.append(f"[Fragmento {i} - fuente: {fuente}]\n{doc}")
-    context = "\n\n".join(context_blocks)
-    return (
-        f"Los fragmentos están ordenados del más al menos relevante para la pregunta "
-        f"(el Fragmento 1 es el que mejor coincide).\n\n"
-        f"CONTEXTO:\n{context}\n\n"
-        f"PREGUNTA: {query}\n\n"
-        f"Respondé la pregunta basándote en el fragmento (o fragmentos) que "
-        f"realmente contengan la información, ignorando los que sean ruido "
-        f"o no vengan al caso."
-    )
-
-
-def call_lmstudio(prompt: str, base_url: str, model: str, temperature: float) -> str:
-    url = f"{base_url.rstrip('/')}/v1/chat/completions"
-    payload = {
-        "model": model,
-        "messages": [
-            {"role": "system", "content": SYSTEM_PROMPT},
-            {"role": "user", "content": prompt},
-        ],
-        "temperature": temperature,
-    }
-    try:
-        response = requests.post(url, json=payload, timeout=120)
-        response.raise_for_status()
-    except requests.exceptions.ConnectionError:
-        raise RuntimeError(
-            f"No se pudo conectar a LMStudio en {url}.\n\n"
-            f"Revisá que LMStudio esté abierto, con un modelo cargado, y el "
-            f"servidor local iniciado (pestaña 'Developer' o 'Local Server')."
-        )
-    except requests.exceptions.HTTPError as e:
-        raise RuntimeError(f"LMStudio devolvió un error: {e}\nRespuesta: {response.text[:500]}")
-
-    data = response.json()
-    return data["choices"][0]["message"]["content"]
-
-
 def fuente_label(meta: dict) -> str:
     fuente = meta.get("source", "?")
-    pagina = f" (página {meta['page']})" if "page" in meta else ""
+    pagina = f" (pagina {meta['page']})" if "page" in meta else ""
     return f"{fuente}{pagina}"
+
+
+def render_fragmentos(retrieved: list, use_hybrid: bool = False, use_reranker: bool = False,
+                      use_multi_query: bool = False, use_decompose: bool = False) -> None:
+    with st.expander("📎 Fragmentos recuperados (fuentes)"):
+        for i, (doc, meta, dist) in enumerate(retrieved, start=1):
+            if dist is None:
+                dist_txt = "forzado (palabra clave)"
+            elif use_reranker:
+                dist_txt = f"score: {dist:.4f} (reranker)"
+            elif use_multi_query or use_decompose:
+                dist_txt = f"score: {dist:.4f} (rrf multi-query)"
+            elif use_hybrid:
+                dist_txt = f"score: {dist:.4f} (rrf)"
+            else:
+                dist_txt = f"distancia: {dist:.4f}"
+            st.markdown(f"**[{i}] {fuente_label(meta)}** — {dist_txt}")
+            st.text(doc[:400] + ("..." if len(doc) > 400 else ""))
 
 
 # ---------------------------------------------------------------------------
 # UI
 # ---------------------------------------------------------------------------
 
-st.set_page_config(page_title="RAG Currículum UNLaR", page_icon="🎓", layout="wide")
+st.set_page_config(page_title="RAG Curriculum UNLaR", page_icon="🎓", layout="wide")
 
-st.title("🎓 Asistente del plan de estudios — Ing. en Sistemas de Información (UNLaR)")
+st.title("🎓 Asistente de Planes de Estudios (UNLaR)")
 st.caption(
-    "Preguntá sobre correlativas, régimen de cursado o cualquier dato del plan de estudios. "
-    "Las respuestas se generan con RAG: se recuperan fragmentos relevantes de ChromaDB y se "
-    "arma la respuesta con un LLM local corriendo en LMStudio."
+    "Pregunta sobre correlativas, regimen de cursado o cualquier dato de los planes de estudio "
+    "(Ing. en Sistemas, Lic. en Sistemas, Ing. Mecatronica). Las respuestas se generan con RAG: "
+    "un router decide en cada turno si hace falta volver a buscar en ChromaDB o si alcanza con lo ya conversado, "
+    "y un LLM local en LMStudio arma la respuesta final."
 )
 
 with st.sidebar:
-    st.header("⚙️ Configuración")
+    st.header("⚙️ Configuracion")
 
     st.subheader("Base vectorial")
     db_path = st.text_input("Carpeta de ChromaDB", value="./chroma_db")
-    collection_name = st.text_input("Colección", value="curriculum")
+    collection_name = st.text_input("Coleccion", value="curriculum")
     embedding_model_name = st.text_input(
         "Modelo de embeddings",
         value="paraphrase-multilingual-MiniLM-L12-v2",
         help="Tiene que ser el mismo modelo usado en 03_build_vectordb.py",
     )
-    n_results = st.slider("Fragmentos a recuperar", min_value=1, max_value=10, value=3)
+    n_results = st.slider("Fragmentos a recuperar", min_value=1, max_value=10, value=5)
 
+    st.subheader("Retrieval Avanzado")
+    use_hybrid = st.checkbox("🔀 Busqueda Hibrida (BM25 + Semantica + RRF)", value=True,
+                             help="Combina coincidencia exacta de palabras con busqueda semantica.")
+    use_reranker = st.checkbox("🏆 Activar Reranker Local", value=True,
+                               help="Reordena los fragmentos recuperados con un modelo Cross-Encoder.")
+    reranker_model = st.text_input("Modelo Reranker", value="BAAI/bge-reranker-v2-m3") if use_reranker else None
+
+    st.subheader("Query Enhancement")
+    use_agent = st.toggle(
+        "🤖 Modo Agente (Automático)", value=True,
+        help="El sistema analiza cada pregunta y decide automáticamente qué técnica de búsqueda usar."
+    )
+
+    if use_agent:
+        st.caption("El agente decide la mejor estrategia para cada pregunta.")
+        # En modo agente los checkboxes se ignoran
+        use_multi_query = False
+        use_hyde = False
+        use_decompose = False
+    else:
+        st.caption("Seleccioná manualmente las técnicas. Se pueden combinar.")
+        use_multi_query = st.checkbox(
+            "🔀 Multi-Query (5 variantes)", value=False,
+            help="Genera hasta 5 preguntas alternativas y fusiona los resultados con RRF."
+        )
+        use_hyde = st.checkbox(
+            "💡 HyDE (Hypothetical Document Embeddings)", value=False,
+            help="Genera un parrafo hipotetico de respuesta y lo embeddea en lugar de la pregunta."
+        )
+        use_decompose = st.checkbox(
+            "🔍 Query Decomposition", value=False,
+            help="Descompone preguntas complejas en sub-preguntas simples."
+        )
+    
     st.subheader("LMStudio")
     lmstudio_url = st.text_input("URL del servidor", value="http://localhost:1234")
-    lmstudio_model = st.text_input(
-        "Nombre del modelo cargado",
-        value="local-model",
-        help="LMStudio suele aceptar cualquier string acá si hay un solo modelo cargado.",
-    )
+    
+    # Intentar obtener modelos cargados
+    loaded_models = []
+    try:
+        import requests
+        resp = requests.get(f"{lmstudio_url.rstrip('/')}/v1/models", timeout=2)
+        if resp.status_code == 200:
+            data = resp.json()
+            if "data" in data:
+                loaded_models = [m["id"] for m in data["data"] if "embed" not in m["id"].lower()]
+    except Exception:
+        pass
+
+    if loaded_models:
+        lmstudio_model = st.selectbox(
+            "Modelo cargado",
+            options=loaded_models + ["local-model"],
+            index=0,
+            help="Selecciona automáticamente el modelo de la lista de los cargados en LMStudio.",
+        )
+    else:
+        lmstudio_model = st.text_input(
+            "Nombre del modelo cargado",
+            value="local-model",
+            help="Usa 'local-model' para apuntar al modelo activo, o escribí el ID explícito.",
+        )
     temperature = st.slider(
-        "Temperatura", min_value=0.0, max_value=1.0, value=0.35, step=0.05,
-        help="Con modelos más capaces (13B+) 0.3-0.4 da respuestas más naturales sin perder "
-             "precisión. Bajala a 0.1-0.2 si notás que empieza a divagar o inventar datos.",
+        "Temperatura", min_value=0.0, max_value=1.0, value=0.20, step=0.05,
+        help="Para llama-3.2-3b-instruct se recomienda 0.20.",
+    )
+    timeout = st.number_input(
+        "Timeout respuesta final (s)", min_value=10, max_value=600, value=90, step=10,
+    )
+    router_timeout = st.number_input(
+        "Timeout llamadas cortas (s)", min_value=5, max_value=300, value=30, step=5,
+        help="Timeout para llamadas cortas al LLM: router, multi-query, HyDE, decompose.",
     )
 
     st.subheader("Debug")
-    show_prompt = st.checkbox("Mostrar el prompt completo enviado al LLM", value=False)
+    show_prompt = st.checkbox("Mostrar prompt y decision del router", value=False)
 
     if st.button("🗑️ Borrar historial de chat"):
         st.session_state.messages = []
+        st.session_state.history = []
         st.rerun()
 
-# Carga de recursos (cacheados; solo se recalculan si cambian los parámetros)
+# Carga de recursos
 embedding_model = load_embedding_model(embedding_model_name)
 collection = load_collection(db_path, collection_name)
 
-st.caption(f"📚 {collection.count()} documentos indexados en la colección '{collection_name}'.")
+st.caption(f"📚 {collection.count()} documentos indexados en la coleccion '{collection_name}'.")
 
-# Historial de chat en la sesión
 if "messages" not in st.session_state:
     st.session_state.messages = []
+
+if "history" not in st.session_state:
+    st.session_state.history = []
 
 for msg in st.session_state.messages:
     with st.chat_message(msg["role"]):
         st.markdown(msg["content"])
-        if msg["role"] == "assistant" and msg.get("retrieved"):
-            with st.expander("📎 Fragmentos recuperados (fuentes)"):
-                for i, (doc, meta, dist) in enumerate(msg["retrieved"], start=1):
-                    dist_txt = f"{dist:.4f}" if dist is not None else "forzado (palabra clave de año)"
-                    st.markdown(f"**[{i}] {fuente_label(meta)}** — distancia: `{dist_txt}`")
-                    st.text(doc[:400] + ("..." if len(doc) > 400 else ""))
+        if msg["role"] == "assistant":
+            # Mostrar la decisión de enrutamiento
+            if show_prompt:
+                if msg.get("pregunta_busqueda") and msg.get("necesita_retrieval"):
+                    st.caption(f"🧭 router → RETRIEVAL: SI | pregunta reformulada: *{msg['pregunta_busqueda']}*")
+                elif msg.get("necesita_retrieval") is False:
+                    st.caption("🧭 router → RETRIEVAL: NO")
 
-query = st.chat_input("Escribí tu pregunta sobre el plan de estudios...")
+            # Mostrar la decisión del agente
+            if msg.get("strategy") and msg.get("necesita_retrieval"):
+                _strat_labels = {
+                    "direct": "🎯 Búsqueda directa",
+                    "decompose": "🔍 Query Decomposition",
+                    "multi_query": "🔀 Multi-Query",
+                    "hyde": "💡 HyDE",
+                }
+                st.caption(f"🤖 agente → {_strat_labels.get(msg['strategy'], msg['strategy'])} | {msg.get('reason', '')}")
 
-if query:
-    st.session_state.messages.append({"role": "user", "content": query})
+            # Mostrar mejoras de query de forma visible si existieron
+            if msg.get("sub_queries"):
+                with st.expander(f"🔍 Query Decomposition ({len(msg['sub_queries'])} sub-preguntas)", expanded=False):
+                    for j, q in enumerate(msg["sub_queries"], start=1):
+                        st.markdown(f"**{j}.** {q}")
+            if msg.get("variants"):
+                with st.expander(f"🔀 Multi-Query ({len(msg['variants'])} variantes)", expanded=False):
+                    for j, q in enumerate(msg["variants"], start=1):
+                        prefix = "**[original]**" if j == 1 else f"**{j}.**"
+                        st.markdown(f"{prefix} {q}")
+            if msg.get("hyde_doc"):
+                with st.expander("💡 HyDE: documento hipotetico generado", expanded=False):
+                    st.text(msg["hyde_doc"])
+
+            if show_prompt and msg.get("current_message"):
+                with st.expander("🔍 Prompt enviado al LLM", expanded=False):
+                    st.text(msg["current_message"])
+
+            if msg.get("retrieved"):
+                render_fragmentos(
+                    msg["retrieved"],
+                    msg.get("use_hybrid", False),
+                    msg.get("use_reranker", False),
+                    msg.get("use_multi_query", False),
+                    msg.get("use_decompose", False),
+                )
+
+question = st.chat_input("Escribi tu pregunta sobre el plan de estudios...")
+
+if question:
+    st.session_state.messages.append({"role": "user", "content": question})
     with st.chat_message("user"):
-        st.markdown(query)
+        st.markdown(question)
+
+    recent_history = st.session_state.history[-2 * N_HISTORY_TURNS:]
 
     with st.chat_message("assistant"):
-        with st.spinner("Recuperando fragmentos relevantes de ChromaDB..."):
-            retrieved = retrieve_chunks(query, embedding_model, collection, n_results)
+        retrieved = None
+        answer = ""
+        hyde_doc = None
+        sub_queries = None
+        variants = None
+        current_message = ""
+        try:
+            with st.spinner("Analizando pregunta y decidiendo estrategia..."):
+                necesita_retrieval, pregunta_busqueda, strategy, reason = rag_core.route_query(
+                    recent_history, question, lmstudio_url, lmstudio_model, router_timeout
+                )
 
-        prompt = build_prompt(query, retrieved)
+            # Si modo agente, aplicar la estrategia decidida por el router
+            if use_agent and necesita_retrieval:
+                use_decompose = (strategy == "decompose")
+                use_multi_query = (strategy == "multi_query")
+                use_hyde = (strategy == "hyde")
 
-        if show_prompt:
-            with st.expander("🔍 Prompt enviado al LLM", expanded=False):
-                st.text(prompt)
+            if show_prompt:
+                st.caption(
+                    f"🧭 router → RETRIEVAL: {'SI' if necesita_retrieval else 'NO'}"
+                    + (f" | pregunta reformulada: *{pregunta_busqueda}*" if necesita_retrieval else "")
+                )
+            if use_agent and necesita_retrieval:
+                strategy_labels = {
+                    "direct": "🎯 Búsqueda directa",
+                    "decompose": "🔍 Query Decomposition",
+                    "multi_query": "🔀 Multi-Query",
+                    "hyde": "💡 HyDE",
+                }
+                st.caption(f"🤖 agente → {strategy_labels.get(strategy, strategy)} | {reason}")
 
-        with st.spinner(f"Consultando LMStudio en {lmstudio_url}..."):
-            try:
-                answer = call_lmstudio(prompt, lmstudio_url, lmstudio_model, temperature)
-            except RuntimeError as e:
-                answer = f"⚠️ {e}"
+            if necesita_retrieval:
+                all_queries = [pregunta_busqueda]
+
+                if use_decompose:
+                    with st.spinner("Descomponiendo pregunta en sub-preguntas..."):
+                        try:
+                            sub_queries = rag_core.decompose_query(
+                                pregunta_busqueda, lmstudio_url, lmstudio_model, router_timeout
+                            )
+                        except rag_core.LMStudioError:
+                            sub_queries = []
+                    if sub_queries:
+                        all_queries.extend(sub_queries)
+                        with st.expander(f"🔍 Query Decomposition ({len(sub_queries)} sub-preguntas)", expanded=False):
+                            for j, q in enumerate(sub_queries, 1):
+                                st.markdown(f"**{j}.** {q}")
+
+                if use_multi_query:
+                    with st.spinner("Generando preguntas alternativas (Multi-Query)..."):
+                        try:
+                            variants_alt = rag_core.generate_multi_queries(
+                                pregunta_busqueda, lmstudio_url, lmstudio_model, router_timeout
+                            )
+                        except rag_core.LMStudioError:
+                            variants_alt = []
+                    if variants_alt:
+                        all_queries.extend(variants_alt)
+                        variants = [pregunta_busqueda] + variants_alt
+                        with st.expander(f"🔀 Multi-Query ({len(variants)} variantes)", expanded=False):
+                            for j, q in enumerate(variants, 1):
+                                prefix = "**[original]**" if j == 1 else f"**{j}.**"
+                                st.markdown(f"{prefix} {q}")
+
+                if use_hyde:
+                    with st.spinner("Generando documento hipotetico (HyDE)..."):
+                        try:
+                            hyde_doc = rag_core.generate_hyde_document(
+                                pregunta_busqueda, lmstudio_url, lmstudio_model, router_timeout
+                            )
+                            all_queries.append(hyde_doc)
+                        except rag_core.LMStudioError:
+                            hyde_doc = None
+                    if hyde_doc:
+                        with st.expander("💡 HyDE: documento hipotetico generado", expanded=False):
+                            st.text(hyde_doc)
+
+                with st.spinner(f"Recuperando fragmentos relevantes ({len(all_queries)} queries)..."):
+                    if len(all_queries) > 1:
+                        retrieved = rag_core.retrieve_with_multi_query(
+                            all_queries, db_path, collection_name, embedding_model_name, n_results,
+                            use_hybrid=use_hybrid, reranker_model=reranker_model
+                        )
+                    else:
+                        retrieved = rag_core.retrieve_chunks(
+                            pregunta_busqueda, db_path, collection_name, embedding_model_name, n_results,
+                            use_hybrid=use_hybrid, reranker_model=reranker_model
+                        )
+
+                current_message = rag_core.build_rag_user_message(pregunta_busqueda, retrieved)
+            else:
+                current_message = question
+
+            if show_prompt and necesita_retrieval:
+                with st.expander("🔍 Prompt enviado al LLM", expanded=False):
+                    st.text(current_message)
+
+            messages = [{"role": "system", "content": rag_core.SYSTEM_PROMPT}]
+            messages.extend(recent_history)
+            messages.append({"role": "user", "content": current_message})
+
+            with st.spinner(f"Consultando LMStudio en {lmstudio_url}..."):
+                answer = rag_core.call_lmstudio_chat(
+                    messages, lmstudio_url, lmstudio_model, temperature, timeout
+                )
+        except rag_core.LMStudioError as e:
+            st.error(str(e))
+            st.stop()
 
         st.markdown(answer)
+        if retrieved:
+            render_fragmentos(retrieved, use_hybrid, use_reranker, use_multi_query, use_decompose)
 
-        with st.expander("📎 Fragmentos recuperados (fuentes)"):
-            for i, (doc, meta, dist) in enumerate(retrieved, start=1):
-                dist_txt = f"{dist:.4f}" if dist is not None else "forzado (palabra clave de año)"
-                st.markdown(f"**[{i}] {fuente_label(meta)}** — distancia: `{dist_txt}`")
-                st.text(doc[:400] + ("..." if len(doc) > 400 else ""))
+    st.session_state.history.append({"role": "user", "content": question})
+    st.session_state.history.append({"role": "assistant", "content": answer})
 
     st.session_state.messages.append({
         "role": "assistant",
         "content": answer,
         "retrieved": retrieved,
+        "use_hybrid": use_hybrid,
+        "use_reranker": use_reranker,
+        "use_multi_query": use_multi_query,
+        "use_decompose": use_decompose,
+        "necesita_retrieval": necesita_retrieval,
+        "pregunta_busqueda": pregunta_busqueda,
+        "hyde_doc": hyde_doc,
+        "sub_queries": sub_queries,
+        "variants": variants,
+        "current_message": current_message if necesita_retrieval else None,
+        "strategy": strategy if necesita_retrieval else None,
+        "reason": reason if necesita_retrieval else None,
     })

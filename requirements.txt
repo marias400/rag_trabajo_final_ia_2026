@@ -9,6 +9,16 @@ pytesseract
 # Vector DB y embeddings (03, 04, 05_rag_query.py, app/streamlit_app.py)
 chromadb
 sentence-transformers
+# scikit-learn se instala automáticamente con sentence-transformers
+# (usado por semantic_chunker.py para similitud coseno)
+
+# Búsqueda léxica e híbrida (rag_core.py)
+rank-bm25
+
+# Chunking estructural con docling (01b_extract_docling.py)
+# ⚠️ Los modelos de layout de docling pesan ~600 MB y se descargan
+#   automáticamente la primera vez que se corre el script.
+docling
 
 # Llamadas a LMStudio (05_rag_query.py, app/streamlit_app.py)
 requests

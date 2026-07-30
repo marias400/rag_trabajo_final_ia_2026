@@ -1,0 +1,621 @@
+﻿================================================================================
+ORDENANZA 235 - LIC SISTEMAS - Plan de estudios / materias
+================================================================================
+
+--- page 1 | Ordenanza_CS_N_235_PLAN_2024_de_LIC_EN_SISTEMAS_DE_INFORMACIN-R_p1_c0 ---
+Ministerio de Educaci¾n
+UNIVERSIDAD NACIONAL DE LA RIOJA
+CONSEJO SUPERIOR
+
+ô1983 - 2023 40 AÐOS DE DEMOCRACIAö
+
+LA RIOJA, 02 noviembre de 2023.
+
+VISTO: El expediente Nö 00-9158/2022, del Registro de esta
+
+Universidad, caratulado: ôSantander, Claudia del C. (Ing.)- E/Adecuaci¾n
+curricular del plan de estudios de la carrera Lic. en Sistemas de Informaci¾nö y;
+
+CONSIDERANDO:
+
+
+--- page 1 | Ordenanza_CS_N_235_PLAN_2024_de_LIC_EN_SISTEMAS_DE_INFORMACIN-R_p1_c1 ---
+lado: ôSantander, Claudia del C. (Ing.)- E/Adecuaci¾n
+curricular del plan de estudios de la carrera Lic. en Sistemas de Informaci¾nö y;
+
+CONSIDERANDO:
+
+Que, mediante los obrados citados en el ôVistoö de este acto, y en
+virtud del artÝculo 91* inc. 12 y 13 de nuestro Estatuto Universitario, se eleva para
+consideraci¾n de este Cuerpo la Resoluci¾n N* 167/23 del Consejo Departamental
+del Departamento AcadÚmico de Ciencias Exactas, FÝsicas y Naturales, mediante la
+cual se propone aprobar el Proyecto del Nuevo Dise±o Curricular para la Carrera
+Licenciatura en Sistemas de Informaci¾n.
+
+
+--- page 3 | Ordenanza_CS_N_235_PLAN_2024_de_LIC_EN_SISTEMAS_DE_INFORMACIN-R_p3_c1 ---
+ERA
+
+3.- PERFIL PROFESIONAL
+
+3.1. TÝtulo que otorga
+
+3.2. Perfil del Licenciado y la Licenciada del DACEFyN para Sede Capital y Sede
+Regional Chamical
+
+3,3, Perfil Profesional
+
+4.- ALCANCES DEL T═TULO
+
+5.- COMPETENCIAS DE EGRESO
+
+5.1.- Competencias GenÚricas
+
+5.2 Competencias EspecÝficas
+
+6.- Estructura organizacional de la carrera
+
+6.1.- Por Bloques y Asignaturas
+
+6.2.- Formaci¾n Prßctica
+
+6.3 Matriz de Competencias Especificas
+
+7.- Plan de Estudios
+
+8.- Contenidos Curriculares MÝnimos - Intensidad y Relaci¾n TeorÝa Practica
+9.- Criterio de Admisi¾n
+
+Ab. JoaquÝn JosÚ Pistone Dr. Daniel'Alberto Quiroga
+Secretario Relator TÚcnico Presidente
+
+ôConsejo Superior Consejo Superior
+
+
+--- page 6 | Ordenanza_CS_N_235_PLAN_2024_de_LIC_EN_SISTEMAS_DE_INFORMACIN-R_p6_c3 ---
+el Departamento AcadÚmico de Ciencias Exactas, FÝsicas y Naturales, se
+considera la necesidad de trabajar a partir de las competencias que se deberÝan
+desarrollar en los graduados tomando como base el acuerdo realizado en BahÝa
+Blanca en octubre de 2006, a partir del documento ôCompetencias GenÚricas de
+Egreso del Ingeniero Argentinoö, y llevßndolo a la realidad de las competencias del
+graduado de Licenciatura en Sistemas de Informaci¾n.
+
+En funci¾n de estos acuerdos y documentos, se proponen los cambios que hoy se
+visualizan en las Resoluciones de nuevos estßndares para cada una de las carreras
+del artÝculo 43" de la LES.
+
+A partir de ello, la propuesta de nuevo Plan de Estudios se fundamenta en los
+siguientes objetivos:
+
+
+--- page 6 | Ordenanza_CS_N_235_PLAN_2024_de_LIC_EN_SISTEMAS_DE_INFORMACIN-R_p6_c4 ---
+a una de las carreras
+del artÝculo 43" de la LES.
+
+A partir de ello, la propuesta de nuevo Plan de Estudios se fundamenta en los
+siguientes objetivos:
+
++ Actualizar y consolidar el actual modelo de formaci¾n profesional.
+
++ Consolidar un modelo de aprendizaje centrado en el estudiante.
+
++ Definir un modelo comparable internacionalmente.
+
++ Definir un enfoque basado en competencias y descriptores de conocimiento.
+
++ Asegurar el cumplimiento de las actividades reservadas definidas para cada
+
+tÝtulo. ╗ sn
+7 E
+Ab. JoaquÝ 4] osÚ Pistone Dr. Daniel AlbÚrto Quiroga
+Secretari¾ Relator TÚcnico Presidente
+
+Co±sejo Superior Consejo Superior
+
+
+--- page 8 | Ordenanza_CS_N_235_PLAN_2024_de_LIC_EN_SISTEMAS_DE_INFORMACIN-R_p8_c2 ---
+¾n prßctica teorÝa, allÝ establecidos. Los trayectos de
+formaci¾n son,
+
++ Ciencias Bßsicas Generales y EspecÝficas (CBGyB).
+
++ Algoritmos y Lenguajes.
+
++ IngenierÝa de Software, Base de Datos y Sistemas de Informaci¾n (ISBDSD.
++ Arquitectura, Sistemas Operativos y Redes (ARSORE)
+
++ Aspectos Sociales y Profesionales (AsyP).
+
+El plan de estudios incluye entre sus asignaturas contenidos de ciencias sociales y
+humanÝsticas orientados a formar licenciados conscientes de sus responsabilidades
+sociales y del impacto de sus intervenciones.
+
+Asimismo, en el curso de los distintos bloques, y de manera transversal, se
+desarrollarß la formaci¾n relacionada con los siguientes ejes:
+
++ Identificaci¾n, formulaci¾n y resoluci¾n de problemas de informßtica.
+
+
+--- page 14 | Ordenanza_CS_N_235_PLAN_2024_de_LIC_EN_SISTEMAS_DE_INFORMACIN-R_p14_c1 ---
+sus carreras la asociaci¾n de las
+recomendaciones curriculares de conocimiento con las competencias que permitirßn
+la adecuada formaci¾n profesional.
+
+El dise±o asÝ establecido, integrando las competencias al Plan de Estudios, ayuda a
+vigorizar el saber hacer requerido a quienes egresan de UNLaR. La formaci¾n de
+grado se propone desarrollar aquellas competencias que deberÝan poseer al egreso y
+en el nivel de desarrollo adecuado al inicio de su trayecto profesional. En este
+sentido, y dado el avance permanente de los conocimientos y las tecnologÝas, se
+forman profesionales de manera que contin·en su formaci¾n a lo largo de toda su
+vida.
+
+5.1.- Competencias GenÚricas
+
+
+--- page 24 | Ordenanza_CS_N_235_PLAN_2024_de_LIC_EN_SISTEMAS_DE_INFORMACIN-R_p24_c0 ---
+Ministerio de Educaci¾n
+UNIVERSIDAD NACIONAL DE LA RIOJA
+CONSEJO SUPERIOR
+11983 - 2023 40 AÐOS DE DEMOCRACIAö
+LA RIOJA, 02 noviembre de 2023.
+ANEXO ┌NICO - ORDENANZA N? 235
+DISEÐO CURRICULAR DELA CARRERA DE
+LICENCIATURA EN SISTEMAS DE INFORMACION - PLAN 2024
+INDICE
+
+REDES DE DATOS Il
+
+' ECONOMIA Y EVALUACIËN
+DE PROYECTOS
+
+SISTEMAS OPERATIVOS
+AVANZADOS
+
+LEGISLACIËN y ╔TICA
+PROFESIONAL
+
+SERVICIOS WEB
+
+7.- Plan de Estudios
+
+HORAS
+
+Ni ESPACIOS ACAD╔MICOS o ASIGNATURAS R╔GIMEN | SEMANALES :
+
+AN┴LISIS MATEM┴TICO 1
+
+yyy Pe
+Dr. Daniel A] pÚrto Quiroga
+Pfesidente
+
+SecretapÝ íRelator TÚcnico
+Consejo Superior
+
+Consejo Superior
+
+
+--- page 26 | Ordenanza_CS_N_235_PLAN_2024_de_LIC_EN_SISTEMAS_DE_INFORMACIN-R_p26_c0 ---
+Ministerio de Educaci¾n
+UNIVERSIDAD NACIONAL DE LA RIOJA
+CONSEJO SUPERIOR
+
+111983 - 2023 40 AÐOS DE DEMOCRACIAö
+LA RIOJA, 02 noviembre de 2023.
+
+ANEXO ┌NICO - ORDENANZA N? 2 3 5
+DISEÐO CURRICULAR DE LA CARRERA DE
+LICENCIATURA EN SISTEMAS DE INFORMACION - PLAN 2024
+INDICE
+
+: ARQUITECTURA AVANZADA DE HARDWARE II 2C : 4 60 30
+
+INTELIGENCIA ARTIFICIAL
+SEGURIDAD INFORM┴TICA
+REDES DE DATOS II
+ECONOMIA Y EVALUACIËN DE PROYECTOS
+SISTEMAS OPERATIVOS AVANZADOS
+INGENIER═A DE SOFTWARE II
+LEGISLACIËN y ╔TICA PROFESIONAL
+
+SERVICIOS WEB
+
+ú7, eS
+
+SE , pe eS
+
+e 4 , io
+
+Ab. JoaquÝß] 'osÚ Pistone Dr. Daniel Alberto Quiroga
+Presidente
+
+Secretari¾ Relator TÚcnico
+
+Consejo Superior Consejo Superior
+
+
+--- page 34 | Ordenanza_CS_N_235_PLAN_2024_de_LIC_EN_SISTEMAS_DE_INFORMACIN-R_p34_c2 ---
+la Ley de Educaci¾n Superior N? 24.521, y toda otra normativa que
+produzca actualizaciones, modificaciones e incorporaciones a las antes
+mencionadas.
+
+Los estudiantes aspirantes deberßn cumplir con las actividades propuestas dentro
+del Proceso de Admisi¾n del Departamento AcadÚmico de Ciencias Exactas, FÝsicas
+y Naturales, previo al inicio de la carrera, que es establecido anualmente desde el
+Consejo Departamental.
+
+Ab. Joß dttin JosÚ Pistone Dr. Daniel AlbÚrto Quiroga
+Secrf tarid Relator TÚcnico PrÚsidente
+onsejo Superior Consejo Superior
+
+
+
+
+================================================================================
+ORDENANZA 233 - MECATRËNICA - Plan de estudios / materias
+================================================================================
+
+--- page 1 | Ordenanza_CS_N_233_-_PLAN_2024_ING_MECATRNICA-R_p1_c0 ---
+Ministerio de Educaci¾n
+UNIVERSIDAD NACIONAL DE LA RIOJA
+CONSEJO SUPERIOR
+ô1983 - 2023 40 AÐOS DE DEMOCRACIAö
+LA RIOJA, 02 noviembre de 2023.
+
+VISTO: el expediente N* 00-09148/2022 del registro de la
+Universidad Nacional de La Rioja, caratulado: ôSantander Claudia del C. (Ing.)-
+E/ adecuaci¾n curricular del plan de estudios de la Carrera Ing. Mecatr¾nicaö y,
+
+CONSIDERANDO:
+
+
+--- page 1 | Ordenanza_CS_N_233_-_PLAN_2024_ING_MECATRNICA-R_p1_c1 ---
+a Rioja, caratulado: ôSantander Claudia del C. (Ing.)-
+E/ adecuaci¾n curricular del plan de estudios de la Carrera Ing. Mecatr¾nicaö y,
+
+CONSIDERANDO:
+
+Que, mediante los obrados citados en el ôVistoö de este acto, y en
+virtud del artÝculo 91* inc. 12 y 13 de nuestro Estatuto Universitario, se eleva para
+consideraci¾n de este Cuerpo la Resoluci¾n N* 171/23 del Consejo Departamental
+del Departamento AcadÚmico de Ciencias Exactas, FÝsicas y Naturales, mediante la
+cual se propone un mediante la cual se propone aprobar el Proyecto del Nuevo
+Dise±o Curricular para la Carrera IngenierÝa en Mecatr¾nica.
+
+
+--- page 3 | Ordenanza_CS_N_233_-_PLAN_2024_ING_MECATRNICA-R_p3_c1 ---
+- PERFIL PROFESIONAL
+
+3.1. TÝtulo que otorga
+
+3.2. Perfil del Ingeniero del DACEFyN para Sede Capital
+3.3. Perfil Profesional
+
+4.- ALCANCES DEL T═TULO
+
+5.- COMPETENCIAS DE EGRESO
+
+5.1.- Competencias GenÚricas
+
+5.2 Competencias EspecÝficas
+
+6.- Estructura organizacional de la carrera
+
+6.1.- Por Bloques y Asignaturas
+
+6.2.- Formaci¾n Prßctica
+
+6.3 Matriz de Competencias EspecÝficas
+
+7.- Plan de Estudios
+
+8.- Contenidos Curriculares MÝnimos - Intensidad y Relaci¾n TeorÝa Prßctica
+9.- Criterios de Admisi¾n
+
+El
+╔
+A /
+Ab. Tag JosÚ Pistone Dr. Daniel AlBGrto Quiroga
+Secretario-Relator TÚcnico -Presidelhte
+
+Consejo Superior Consejo Superior
+
+
+--- page 7 | Ordenanza_CS_N_233_-_PLAN_2024_ING_MECATRNICA-R_p7_c1 ---
+tßndares de segunda generaci¾n para la acreditaci¾n de carreras de IngenierÝas en
+la Rep·blica Argentina, conformando el actual Libro Rojo de CONFEDL.
+
+En funci¾n de estos acuerdos, se proponen los cambios que hoy se visualizan en las
+Resoluciones de nuevos estßndares para cada una de las carreras del artÝculo 43? de
+la LES.
+
+Haciendo propios los objetivos planteados en las consideraciones generales, del
+Libro Rojo, la propuesta de nuevo Plan de Estudios se fundamenta en los siguientes
+objetivos:
+
++ Actualizar y consolidar el actual modelo de formaci¾n de ingenieros.
+
++ Consolidar un modelo de aprendizaje centrado en el estudiante.
+
++ Definir un modelo comparable internacionalmente.
+
++ Definir un enfoque basado en competencias y descriptores de conocimiento.
+
+
+--- page 9 | Ordenanza_CS_N_233_-_PLAN_2024_ING_MECATRNICA-R_p9_c1 ---
+era, con un cumplimiento de la carga horaria
+y la relaci¾n practica teorÝa, allÝ establecidos. Los bloques son,
+
++. Ciencias Bßsicas de la IngenierÝa.
+
++. TecnologÝas Bßsicas.
+
++. TecnologÝas Aplicadas.
+
+e. Ciencias y TecnologÝas Complementarias.
+
+El plan de estudios incluye entre sus asignaturas contenidos de ciencias sociales y
+humanÝsticas orientados a formar ingenieros conscientes de sus responsabilidades
+sociales y del impacto de sus intervenciones.
+
+
+--- page 16 | Ordenanza_CS_N_233_-_PLAN_2024_ING_MECATRNICA-R_p16_c0 ---
+Ministerio de Educaci¾n
+UNIVERSIDAD NACIONAL DE LA RIOJA
+CONSEJO SUPERIOR
+
+ô1983 - 2023 40 AÐOS DE DEMOCRACIAö
+LA RIOJA, 02 noviembre de 2023.
+
+ANEXO ┌NICO - ORDENANZA N? 2 3 3
+DISEÐO CURRICULAR DE LA CARRERA DE
+INGENIER═A MECATRËNICA - PLAN 2024
+
+El dise±o asÝ establecido, integrando las competencias al Plan de Estudios, ayuda a
+vigorizar el saber hacer requerido a quienes egresan de UNLaR. La formaci¾n de
+grado se propone desarrollar aquellas competencias que deberÝan poseer al egreso y
+en el nivel de desarrollo adecuado al inicio de su trayecto profesional. En este
+sentido, y dado el avance permanente de los conocimientos y las tecnologÝas, se
+forman profesionales de manera que contin·en su formaci¾n a lo largo de toda su
+vida.
+
+5.1.- Competencias GenÚricas
+
+
+--- page 19 | Ordenanza_CS_N_233_-_PLAN_2024_ING_MECATRNICA-R_p19_c1 ---
+Ýa, en funci¾n de los avances cientÝficos y
+tecnol¾gicos, a fin de asegurar una formaci¾n conceptual para el sustento de las
+
+disciplinas especÝficas.
+
+El Bloque de conocimiento conforme sus descriptores, se organiza en espacios
+acadÚmicos o asignaturas de la siguiente forma:
+
+CANTIDAD DE
+HORAS
+ANUALES
+
+BLOQUE DE : ESPACIOS ACAD╔MICOS o
+CONOCIMIENTO DESCRIPTORES ASIGNATURAS
+
+Anßlisis Matemßtico 1
+Fundamentos de Infor:
+
+Anßlisis Matemßtico II
+
+Introducci¾n a la Computaci¾n
+
+FÝsica II
+
+: Probabilidad y EstadÝstica
+
+)
+E) A
+A t ß y
+de dd
+Ab. Joaquiri JosÚ Pistone Dr. Daniel Alberto Quiroga
+
+Secretario Relator TÚcnico ôPresidente
+Consejo Superior Consejo Superior
+
+
+--- page 20 | Ordenanza_CS_N_233_-_PLAN_2024_ING_MECATRNICA-R_p20_c1 ---
+su manejo y eventual utilizaci¾n en
+sistemas o procesos, Sus principios fundamentales son aplicados luego en la
+resoluci¾n de problemas de ingenierÝa.
+
+El Bloque de conocimiento conforme sus descriptores, se organiza en espacios
+acadÚmicos o asignaturas de la siguiente forma:
+ôE CANTIDAD
+
+DE HORAS
+ANUALES
+
+ESPACIOS ACAD╔MICOS o
+ASIGNATURAS
+
+BLOQUE DE
+CONOCIMIENTO
+
+DESCRIPTORES
+
+Computaci¾n II
+
+Ciencia de los Materiales
+
+A X
+
+IES :
+
+A WD
+Ab. JoaquÝr JosÚ Pistone Dr. Daniel AlbÚrto Quiroga
+Secretario.Relator TÚcnico .PrÚsidente
+
+C¾nsejo Superior Consejo Superior
+
+
+--- page 22 | Ordenanza_CS_N_233_-_PLAN_2024_ING_MECATRNICA-R_p22_c0 ---
+Ministerio de Educaci¾n
+UNIVERSIDAD NACIONAL DE LA RIOJA
+CONSEJO SUPERIOR
+ô11983 - 2023 40 AÐOS DE DEMOCRACIAö
+LA RIOJA, 02 noviembre de 2023.
+
+ANEXO ┌NICO - ORDENANZA N? 233
+DISEÐO CURRICULAR DE LA CARRERA DE
+INGENIER═A MECATRËNICA - PLAN 2024
+
+Ciencias y TecnologÝas Complementarias: Incluye contenidos curriculares y los
+fundamentos necesarios para poner la prßctica de la IngenierÝa en el contexto
+profesional, social, hist¾rico, ambiental y econ¾mico en que Ústa se desenvuelve,
+asegurando el desarrollo de las competencias sociales, polÝticas y actitudinales del
+ingeniero para el desarrollo sostenible.
+
+El Bloque de conocimiento conforme sus descriptores, se organiza en espacios
+acadÚmicos o asignaturas de la siguiente forma:
+
+CANTIDAD DE
+HORAS :
+ANUALES
+
+
+--- page 22 | Ordenanza_CS_N_233_-_PLAN_2024_ING_MECATRNICA-R_p22_c1 ---
+Bloque de conocimiento conforme sus descriptores, se organiza en espacios
+acadÚmicos o asignaturas de la siguiente forma:
+
+CANTIDAD DE
+HORAS :
+ANUALES
+
+: ESPACIOS ACAD╔MICOS
+o ASIGNATURAS
+
+DESCRIPTORES
+
+BLOQUE DE CONOCIMIENTO
+
+y Producci¾n
+
+Ab. JoaquÝn JosÚ Pistone Dr. Daniel Albert Quiroga
+Secretafio' elator TÚcnico Presidente
+Consejo Superior Consejo Superior
+
+
+--- page 23 | Ordenanza_CS_N_233_-_PLAN_2024_ING_MECATRNICA-R_p23_c3 ---
+iero, gradualmente, las competencias
+necesarias para el cumplimiento de las Actividades Reservadas en el contexto
+descripto del ejercicio profesional.
+
+El plan de estudios incluye instancias supervisadas de formaci¾n prßctica a lo largo
+de toda la carrera, que se realiza en diversos espacios fÝsicos, como aulas,
+laboratorio, campo u otros, de propiedad de la universidad y en algunos casos
+espacios externos resultante de convenios para tales fines. AsÝ tambiÚn estas
+actividades de formaci¾n prßctica pueden realizarse con diferentes medios, como
+instrumental fÝsico, virtual, remoto o simulaci¾n. En toda actividad prßctica, se tiene
+en cuenta las cuestiones relativas a seguridad, el impacto social y la preservaci¾n
+del medio ambiente.
+
+
+--- page 27 | Ordenanza_CS_N_233_-_PLAN_2024_ING_MECATRNICA-R_p27_c0 ---
+Ministerio de Educaci¾n
+UNIVERSIDAD NACIONAL DE LA RIOJA
+CONSEJO SUPERIOR
+
+ô1083 -- 2023 40 AÐOS DE DEMOCRACIAö
+LA RIOJA, 02 noviembre de 2023.
+
+ANEXO ┌NICO - ORDENANZA N* 233
+DISEÐO CURRICULAR DE LA CARRERA DE
+INGENIER═A MECATRËNICA - PLAN 2024
+
+7.- Plan de Estudios
+
+. CANTIDADDE | Hs FORMACION
+
+ESPACIOS ACAD╔MICOS o o :
+RÚgimen ; HORAS PRACTICA
+
+ASIGNATURAS
+
+C¾digo de
+Materia
+
+Anßlisis Matemßtico I
+┐ Fundamentos de IngenierÝa Mecatr¾nica
+
+┴lgebra y GeometrÝa AnalÝtica IT
+
+┐ Anßlisis Matemßtico II
+
+: Computaci¾n 1
+
+Anßlisis Matemßtico IV
+
+Electrotecnia
+
+A
+
+Dr. Daniel'Alberto Quiroga
+Secretario Relator TÚcnico Presidente
+Consejo Superior Consejo Superior
+
+
+--- page 28 | Ordenanza_CS_N_233_-_PLAN_2024_ING_MECATRNICA-R_p28_c0 ---
+Ministerio de Educaci¾n
+UNIVERSIDAD NACIONAL DE LA RIOJA
+CONSEJO SUPERIOR
+
+1983 - 2023 40 AÐOS DE DEMOCRACIAö
+LA RIOJA, 02 noviembre de 2023.
+
+ANEXO ┌NICO - ORDENANZA N? 2 3 3
+DISEÐO CURRICULAR DE LA CARRERA DE
+INGENIER═A MECATRËNICA - PLAN 2024
+
+EIM21 Ciencia de los Materiales i 10 90 45
+
+: Liderazgo, Neguciaci¾n y Trabajo en Equipo
+
+Laboratorio de Mediciones ElÚctricas y
+Electr¾nicas
+
+: Fundamentos de Electr¾nica Digital
+
+: Fundamentos de Mecßnica de los S¾lidos y
+: Fluidos
+
+Automatizaci¾n Industrial
+
+ElM33 Sistemas de Tiempo Real 1c H 60 i 30
+
+; Seminario de Actualizaci¾n Tecnol¾gica
+
+: Rob¾tica Industrial 1
+
+Redes de Comunicaciones Industriales
+
+Dr. Daniel Alberto Quiroga
+SecretafÝo Relator TÚcnico Presidente
+½Consejo Superior . Consejo Superior
+
+
+--- page 39 | Ordenanza_CS_N_233_-_PLAN_2024_ING_MECATRNICA-R_p39_c3 ---
+la Ley de Educaci¾n Superior Nö 24.521, y toda otra normativa que
+produzca actualizaciones, modificaciones e incorporaciones a las antes
+mencionadas.
+
+Los estudiantes aspirantes deberßn cumplir con las actividades propuestas dentro
+del Proceso de Admisi¾n del Departamento AcadÚmico de Ciencias Exactas, FÝsicas
+y Naturales, previo al inicio de la carrera, que es establecido anualmente desde el
+Consejo Departamental.
+
+Ð
+1
+NN
+
+ute
+7
+
+Dr. DaniÚt Alberto Quiroga
+Secrcteri¾ R Relator TÚcnico 7 ôPresidente
+C¾nsej¾ Superior Consejo Superior
+

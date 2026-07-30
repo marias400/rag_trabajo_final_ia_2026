@@ -1,0 +1,392 @@
+{
+  "carrera": "Ingeniería Mecatrónica",
+  "plan": "Plan 2024",
+  "fuente": "Ordenanza CS N° 234/23 - Anexo I - Plan de Correlatividades - UNLaR",
+  "asignaturas": [
+    {
+      "n": 1,
+      "nombre": "Análisis Matemático I",
+      "regimen": "1C",
+      "regular_para_cursar": [],
+      "aprobada_para_rendir_final": [],
+      "anio": 1
+    },
+    {
+      "n": 2,
+      "nombre": "Fundamentos de Ingeniería Mecatrónica",
+      "regimen": "1C",
+      "regular_para_cursar": [],
+      "aprobada_para_rendir_final": [],
+      "anio": 1
+    },
+    {
+      "n": 3,
+      "nombre": "Álgebra y Geometría Analítica I",
+      "regimen": "1C",
+      "regular_para_cursar": [],
+      "aprobada_para_rendir_final": [],
+      "anio": 1
+    },
+    {
+      "n": 4,
+      "nombre": "Sistemas de Representación",
+      "regimen": "1C",
+      "regular_para_cursar": [],
+      "aprobada_para_rendir_final": [],
+      "anio": 1
+    },
+    {
+      "n": 5,
+      "nombre": "Fundamentos de Informática",
+      "regimen": "1C",
+      "regular_para_cursar": [],
+      "aprobada_para_rendir_final": [],
+      "anio": 1
+    },
+    {
+      "n": 6,
+      "nombre": "Álgebra y Geometría Analítica II",
+      "regimen": "2C",
+      "regular_para_cursar": [3],
+      "aprobada_para_rendir_final": [3],
+      "anio": 1
+    },
+    {
+      "n": 7,
+      "nombre": "Análisis Matemático II",
+      "regimen": "2C",
+      "regular_para_cursar": [1],
+      "aprobada_para_rendir_final": [1],
+      "anio": 1
+    },
+    {
+      "n": 8,
+      "nombre": "Física I",
+      "regimen": "2C",
+      "regular_para_cursar": [1, 3],
+      "aprobada_para_rendir_final": [1, 3],
+      "anio": 1
+    },
+    {
+      "n": 9,
+      "nombre": "Introducción a la Computación",
+      "regimen": "2C",
+      "regular_para_cursar": [5],
+      "aprobada_para_rendir_final": [5],
+      "anio": 1
+    },
+    {
+      "n": 10,
+      "nombre": "Química General",
+      "regimen": "2C",
+      "regular_para_cursar": [1],
+      "aprobada_para_rendir_final": [1],
+      "anio": 1
+    },
+    {
+      "n": 11,
+      "nombre": "Análisis Matemático III",
+      "regimen": "1C",
+      "regular_para_cursar": [6, 7],
+      "aprobada_para_rendir_final": [6, 7],
+      "anio": 2
+    },
+    {
+      "n": 12,
+      "nombre": "Física II",
+      "regimen": "1C",
+      "regular_para_cursar": [8],
+      "aprobada_para_rendir_final": [8],
+      "anio": 2
+    },
+    {
+      "n": 13,
+      "nombre": "Computación I",
+      "regimen": "1C",
+      "regular_para_cursar": [9],
+      "aprobada_para_rendir_final": [9],
+      "anio": 2
+    },
+    {
+      "n": 14,
+      "nombre": "Inglés I",
+      "regimen": "1C",
+      "regular_para_cursar": [],
+      "aprobada_para_rendir_final": [],
+      "anio": 2
+    },
+    {
+      "n": 15,
+      "nombre": "Probabilidad y Estadística",
+      "regimen": "1C",
+      "regular_para_cursar": [11],
+      "aprobada_para_rendir_final": [11],
+      "anio": 2
+    },
+    {
+      "n": 16,
+      "nombre": "Análisis Matemático IV",
+      "regimen": "2C",
+      "regular_para_cursar": [11],
+      "aprobada_para_rendir_final": [11],
+      "anio": 2
+    },
+    {
+      "n": 17,
+      "nombre": "Mecánica Racional",
+      "regimen": "2C",
+      "regular_para_cursar": [8, 6],
+      "aprobada_para_rendir_final": [8, 6],
+      "anio": 2
+    },
+    {
+      "n": 18,
+      "nombre": "Electrotecnia",
+      "regimen": "2C",
+      "regular_para_cursar": [13, 14],
+      "aprobada_para_rendir_final": [13, 14],
+      "anio": 2
+    },
+    {
+      "n": 19,
+      "nombre": "Computación II",
+      "regimen": "2C",
+      "regular_para_cursar": [13],
+      "aprobada_para_rendir_final": [13],
+      "anio": 2
+    },
+    {
+      "n": 20,
+      "nombre": "Cálculo Numérico",
+      "regimen": "1C",
+      "regular_para_cursar": [15, 19],
+      "aprobada_para_rendir_final": [15, 16],
+      "anio": 3
+    },
+    {
+      "n": 21,
+      "nombre": "Ciencia de los Materiales",
+      "regimen": "1C",
+      "regular_para_cursar": [10],
+      "aprobada_para_rendir_final": [10],
+      "anio": 3
+    },
+    {
+      "n": 22,
+      "nombre": "Mecanismos y Elementos de Máquinas",
+      "regimen": "1C",
+      "regular_para_cursar": [17],
+      "aprobada_para_rendir_final": [17],
+      "anio": 3
+    },
+    {
+      "n": 23,
+      "nombre": "Liderazgo, Negociación y Trabajo en Equipo",
+      "regimen": "1C",
+      "regular_para_cursar": [14],
+      "aprobada_para_rendir_final": [14],
+      "anio": 3
+    },
+    {
+      "n": 24,
+      "nombre": "Inteligencia Artificial",
+      "regimen": "1C",
+      "regular_para_cursar": [16, 15, 19],
+      "aprobada_para_rendir_final": [16, 15, 19],
+      "anio": 3
+    },
+    {
+      "n": 25,
+      "nombre": "Laboratorio de Mediciones Eléctricas y Electrónicas",
+      "regimen": "2C",
+      "regular_para_cursar": [18],
+      "aprobada_para_rendir_final": [18],
+      "anio": 3
+    },
+    {
+      "n": 26,
+      "nombre": "Máquinas Eléctricas Industriales",
+      "regimen": "2C",
+      "regular_para_cursar": [22],
+      "aprobada_para_rendir_final": [22],
+      "anio": 3
+    },
+    {
+      "n": 27,
+      "nombre": "Fundamentos de Electrónica Digital",
+      "regimen": "2C",
+      "regular_para_cursar": [18],
+      "aprobada_para_rendir_final": [18],
+      "anio": 3
+    },
+    {
+      "n": 28,
+      "nombre": "Fundamentos de Mecánica de los Sólidos y Fluidos",
+      "regimen": "2C",
+      "regular_para_cursar": [17, 21],
+      "aprobada_para_rendir_final": [17, 21],
+      "anio": 3
+    },
+    {
+      "n": 29,
+      "nombre": "Investigación Operativa",
+      "regimen": "2C",
+      "regular_para_cursar": [24],
+      "aprobada_para_rendir_final": [24],
+      "anio": 3
+    },
+    {
+      "n": 30,
+      "nombre": "Automatización Industrial",
+      "regimen": "1C",
+      "regular_para_cursar": [25, 26],
+      "aprobada_para_rendir_final": [25, 26],
+      "anio": 4
+    },
+    {
+      "n": 31,
+      "nombre": "Robótica Industrial",
+      "regimen": "1C",
+      "regular_para_cursar": [22, 27],
+      "aprobada_para_rendir_final": [22, 27],
+      "anio": 4
+    },
+    {
+      "n": 32,
+      "nombre": "Sistemas Digitales",
+      "regimen": "1C",
+      "regular_para_cursar": [27, 28],
+      "aprobada_para_rendir_final": [27, 28],
+      "anio": 4
+    },
+    {
+      "n": 33,
+      "nombre": "Sistemas de Tiempo Real",
+      "regimen": "1C",
+      "regular_para_cursar": [24, 27],
+      "aprobada_para_rendir_final": [24, 27],
+      "anio": 4
+    },
+    {
+      "n": 34,
+      "nombre": "Seminario de Actualización Tecnológica",
+      "regimen": "1C",
+      "regular_para_cursar": [29],
+      "aprobada_para_rendir_final": [29],
+      "anio": 4
+    },
+    {
+      "n": 35,
+      "nombre": "Redes de Comunicaciones Industriales",
+      "regimen": "2C",
+      "regular_para_cursar": [30],
+      "aprobada_para_rendir_final": [30],
+      "anio": 4
+    },
+    {
+      "n": 36,
+      "nombre": "Tecnología Mecánica",
+      "regimen": "2C",
+      "regular_para_cursar": [26],
+      "aprobada_para_rendir_final": [26],
+      "anio": 4
+    },
+    {
+      "n": 37,
+      "nombre": "Organización Industrial",
+      "regimen": "2C",
+      "regular_para_cursar": [23, 29],
+      "aprobada_para_rendir_final": [23, 29],
+      "anio": 4
+    },
+    {
+      "n": 38,
+      "nombre": "Diseño de Sistemas Mecatrónicos",
+      "regimen": "2C",
+      "regular_para_cursar": [31],
+      "aprobada_para_rendir_final": [31],
+      "anio": 4
+    },
+    {
+      "n": 39,
+      "nombre": "Automatización y Datos en Tiempo Real",
+      "regimen": "2C",
+      "regular_para_cursar": [33],
+      "aprobada_para_rendir_final": [33],
+      "anio": 4
+    },
+    {
+      "n": 40,
+      "nombre": "Tecnología Industrial",
+      "regimen": "1C",
+      "regular_para_cursar": [36, 37],
+      "aprobada_para_rendir_final": [36, 37],
+      "anio": 5
+    },
+    {
+      "n": 41,
+      "nombre": "Control de Accionamientos Mecatrónicos",
+      "regimen": "1C",
+      "regular_para_cursar": [38],
+      "aprobada_para_rendir_final": [38],
+      "anio": 5
+    },
+    {
+      "n": 42,
+      "nombre": "Robótica Industrial II",
+      "regimen": "1C",
+      "regular_para_cursar": [31, 38],
+      "aprobada_para_rendir_final": [31, 38],
+      "anio": 5
+    },
+    {
+      "n": 43,
+      "nombre": "Economía y Evaluación de Proyectos",
+      "regimen": "1C",
+      "regular_para_cursar": [37],
+      "aprobada_para_rendir_final": [37],
+      "anio": 5
+    },
+    {
+      "n": 44,
+      "nombre": "Tecnología Aplicada al Control de Sistemas Mecatrónicos",
+      "regimen": "2C",
+      "regular_para_cursar": [39, 41],
+      "aprobada_para_rendir_final": [39, 41],
+      "anio": 5
+    },
+    {
+      "n": 45,
+      "nombre": "Higiene y Seguridad Industrial",
+      "regimen": "2C",
+      "regular_para_cursar": [40],
+      "aprobada_para_rendir_final": [40],
+      "anio": 5
+    },
+    {
+      "n": 46,
+      "nombre": "Legislación y Ética Profesional",
+      "regimen": "2C",
+      "regular_para_cursar": [43],
+      "aprobada_para_rendir_final": [43],
+      "anio": 5
+    },
+    {
+      "n": 47,
+      "nombre": "Proyecto Final",
+      "regimen": "2C",
+      "regular_para_cursar": [40, 41, 42, 43],
+      "aprobada_para_rendir_final": [44, 45, 46],
+      "anio": 5
+    },
+    {
+      "n": 48,
+      "nombre": "Práctica Profesional Supervisada",
+      "regimen": "Anual",
+      "regular_para_cursar": [36, 37, 38, 39, 40, 41],
+      "aprobada_para_rendir_final": [46, 47, 48, 49],
+      "anio": 5
+    }
+  ],
+  "fuente_anio": "Ordenanza CS N° 234/23 - Anexo I - Plan de Correlatividades (Camino Crítico)"
+}

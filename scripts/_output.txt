@@ -1,0 +1,2042 @@
+﻿================================================================================
+PLAN DE IMPLEMENTACIËN - MECATRËNICA (Ordenanza 234)
+================================================================================
+Total chunks: 29
+
+--- page 1 | Ordenanza_CS_N_234_PLAN_DE_IMPLEMENTACIN_DEL_PLAN_2024_ING_MECATRNICA-R_p1_c0 ---
+Ministerio de Educaci¾n
+UNIVERSIDAD NACIONAL DE LA RIOJA
+CONSEJO SUPERIOR
+ô1983 - 2023 40 AÐOS DE DEMOCRACIAö
+LA RIOJA, 02 noviembre de 2023.
+
+VISTO: el expediente N* 00-09148/2022 del registro de la
+Universidad Nacional de La Rioja, caratulado: ôSantander Claudia del C. (ing.)-
+E/ adecuaci¾n curricular del plan de estudios de la Carrera Ing. Mecatr¾nicaö y,
+
+CONSIDERANDO:
+
+
+--- page 1 | Ordenanza_CS_N_234_PLAN_DE_IMPLEMENTACIN_DEL_PLAN_2024_ING_MECATRNICA-R_p1_c1 ---
+a Rioja, caratulado: ôSantander Claudia del C. (ing.)-
+E/ adecuaci¾n curricular del plan de estudios de la Carrera Ing. Mecatr¾nicaö y,
+
+CONSIDERANDO:
+
+Que, mediante los obrados citados en el ôVistoö de este acto, y en
+virtud del artÝculo 91? inc. 12 y 13 de nuestro Estatuto Universitario, se eleva para
+consideraci¾n de este Cuerpo la Resoluci¾n N* 172/23 del Consejo Departamental
+del Departamento AcadÚmico de Ciencias Exactas, FÝsicas y Naturales, mediante la
+cual se propone un Plan de Implementaci¾n del Nuevo Dise±o Curricular de la
+Carrera de IngenierÝa Mecatr¾nica.
+
+
+--- page 1 | Ordenanza_CS_N_234_PLAN_DE_IMPLEMENTACIN_DEL_PLAN_2024_ING_MECATRNICA-R_p1_c2 ---
+actas, FÝsicas y Naturales, mediante la
+cual se propone un Plan de Implementaci¾n del Nuevo Dise±o Curricular de la
+Carrera de IngenierÝa Mecatr¾nica.
+
+Que, desde la SecretarÝa de Planificaci¾n y Autoevaluaci¾n de
+Rectorado en forma conjunta con la SecretarÝa de Planificaci¾n y Autoevaluaci¾n del
+DACEYN, se sugiri¾ la formulaci¾n de actos administrativos separados, por un
+lado, el Dise±o Curricular y por otro lado el Plan de Implementaci¾n y Transici¾n.
+
+Que, el Plan de Implementaci¾n del Nuevo Dise±o Curricular
+comprende: El Plan de Correlatividades, la Estructura Matricial, el anßlisis de
+Recursos FÝsicos y Recursos Humanos que garantizan la implementaci¾n y El Plan
+de Transici¾n
+
+
+--- page 1 | Ordenanza_CS_N_234_PLAN_DE_IMPLEMENTACIN_DEL_PLAN_2024_ING_MECATRNICA-R_p1_c3 ---
+Correlatividades, la Estructura Matricial, el anßlisis de
+Recursos FÝsicos y Recursos Humanos que garantizan la implementaci¾n y El Plan
+de Transici¾n
+
+Que, a travÚs del Plan de Transici¾n, se asegura la continuidad de
+las trayectorias de los estudiantes que cursan el Plan de Estudios Ordenanza CS N*
+07/2013 - TO. Ordenanza CS Nö 064/2016, estableciendo la fecha de caducidad de
+este.
+
+Que, atento a ello, obra dictamen de la SecretarÝa Legal y TÚcnica N*
+495/23 mediante el cual no se observan impedimentos para la prosecuci¾n del
+trßmite.
+
+Que, tomando intervenci¾n la SecretarÝa de Asuntos AcadÚmicos de
+Rectorado eleva respectivo informe de competencia en el.que se se±ala que la
+
+propuesta se considera de viable aplicaci¾n.
+ORDENANZA ╔s. N*: ,
+/ ANZA Ç 234
+
+. y $ ┐
+
+
+--- page 1 | Ordenanza_CS_N_234_PLAN_DE_IMPLEMENTACIN_DEL_PLAN_2024_ING_MECATRNICA-R_p1_c4 ---
+a respectivo informe de competencia en el.que se se±ala que la
+
+propuesta se considera de viable aplicaci¾n.
+ORDENANZA ╔s. N*: ,
+/ ANZA Ç 234
+
+. y $ ┐
+
+╔ LE A A
+Ab. JoayihJ¾se Pistone Dr. DaniÚl Alberto Quiroga
+Secretario Relator TÚcnico Presidente
+
+Consejo Superior Consejo Superior
+
+
+--- page 2 | Ordenanza_CS_N_234_PLAN_DE_IMPLEMENTACIN_DEL_PLAN_2024_ING_MECATRNICA-R_p2_c0 ---
+Ministerio de Educaci¾n
+UNTVERSIDAD NACIONAL DE LA RIOJA
+CONSEJO SUPERIOR
+
+ô1983 - 2023 40 AÐOS DE DEMOCRACIAö
+LA RIOJA, 02 noviembre de 2023.
+
+Que, este Consejo Superior, reunido en Sesi¾n Ordinaria de fecha 02
+de noviembre, analiz¾ el asunto sobre tablas y resolvi¾ aprobar la solicitud
+planteada mediante Resoluci¾n C.D.D.A.C.E.FyN. N* 172/23.
+
+Por todo ello, en el ejercicio de sus atribuciones estatutarias y previo tratamiento en
+Particular de lo antes ôVisto y Consideradoö,
+
+EL CONSEJO SUPERIOR
+DE LA UNIVERSIDAD NACIONAL DE LA RIOJA
+ORDENA:
+
+
+--- page 2 | Ordenanza_CS_N_234_PLAN_DE_IMPLEMENTACIN_DEL_PLAN_2024_ING_MECATRNICA-R_p2_c1 ---
+estatutarias y previo tratamiento en
+Particular de lo antes ôVisto y Consideradoö,
+
+EL CONSEJO SUPERIOR
+DE LA UNIVERSIDAD NACIONAL DE LA RIOJA
+ORDENA:
+
+ARTICULO 1%: APROBAR EL PLAN DE IMPLEMENTACIËN DEL NUEVO
+DISEÐO CURRICULAR de la Carrera IngenierÝa Mecatr¾nica aprobado por
+Ordenanza C.S. N* 233/23, cuyo detalle obra en los Anexos l: Correlatividades,
+Anexo Il: Estructura Matricial, Anexo III: Recursos FÝsicos y Humanos.
+
+ARTICULO 2ö: APROBAR EL PLAN DE TRANSICIËN entre el Nuevo Dise±o
+Curricular de la Carrera IngenierÝa Mecatr¾nica, aprobado por Ordenanza CS. NP?
+233/23, y el Plan Ordenanza CS N* 07/2013 - TO. Ordenanza CS N? 064, /2016, cuyo
+detalle obra en el Anexo IV. :
+
+
+--- page 2 | Ordenanza_CS_N_234_PLAN_DE_IMPLEMENTACIN_DEL_PLAN_2024_ING_MECATRNICA-R_p2_c2 ---
+r¾nica, aprobado por Ordenanza CS. NP?
+233/23, y el Plan Ordenanza CS N* 07/2013 - TO. Ordenanza CS N? 064, /2016, cuyo
+detalle obra en el Anexo IV. :
+
+ART═CULO 3": ESTABLECER que el nuevo Plan de estudios se implementarß en
+forma gradual y progresiva a partir del ciclo lectivo 2024, conforme se indica en el
+Anexo IV.
+
+ART═CULO 4: ESTABLECER que el Plan de Estudios Ordenanza CS N* 07/2013 -
+TO. Ordenanza CS N* 064/2016, se mantendrß vigente hasta el a±o 2027, que se
+implementa el ·ltimo a±o de dicho plan, conforme al cronograma especificado en el
+Anexo IV, considerado habilitadas las fechas de caducidad de la oferta de
+asignaturas y mesas de examen finales, conforme el Reglamento de Alumnos
+vigente en UNLaR.
+
+a ORDENANZA CS. N:234
+
+
+--- page 2 | Ordenanza_CS_N_234_PLAN_DE_IMPLEMENTACIN_DEL_PLAN_2024_ING_MECATRNICA-R_p2_c3 ---
+fechas de caducidad de la oferta de
+asignaturas y mesas de examen finales, conforme el Reglamento de Alumnos
+vigente en UNLaR.
+
+a ORDENANZA CS. N:234
+
+y y
+1
+L Ð 7 nr a
+Ab. Joaq·: f JosÚ Pistone Dr. DaniglAlberto Quiroga
+Secretario Relator TÚcnico Presidente
+
+ö Consejo Superior Consejo Superior
+
+
+--- page 3 | Ordenanza_CS_N_234_PLAN_DE_IMPLEMENTACIN_DEL_PLAN_2024_ING_MECATRNICA-R_p3_c0 ---
+Ministerio de Educaci¾n
+UNIVERSIDAD NACIONAL DE LA RIOJA
+CONSEJO SUPERIOR
+11983 - 2023 40 AÐOS DE DEMOCRACIAö
+LA RIOJA, 02 noviembre de 2023.
+
+ART═CULO 5%: ESTABLECER que, finalizado el periodo de vigencia del Plan de
+estudios actual, los estudiantes que no se hubieren graduado, pasarßn
+automßticamente al Plan 2024.
+
+ART═CULO 6": ESTABLECER que los estudiantes que hayan ingresado antes del
+ciclo lectivo 2024, podrßn cambiarse al Plan de ESTUDIOS 2024, teniendo en cuenta
+el cronograma de implementaci¾n previsto para la transici¾n, el rÚgimen de
+correlatividades y equivalencias y que no se afecte su trayectoria acadÚmica.
+
+ART═CULO 7ö: ProtocolÝcese, notifÝquese y archÝvese.
+
+> ORDENANZA.CS.N% 234
+
+┐
+
+
+--- page 3 | Ordenanza_CS_N_234_PLAN_DE_IMPLEMENTACIN_DEL_PLAN_2024_ING_MECATRNICA-R_p3_c1 ---
+tividades y equivalencias y que no se afecte su trayectoria acadÚmica.
+
+ART═CULO 7ö: ProtocolÝcese, notifÝquese y archÝvese.
+
+> ORDENANZA.CS.N% 234
+
+┐
+
+ANS A
+Ab. JoaquÝn JosÚ Pistone Dr. Daniel. Albert¾ Quiroga
+SecretafÝo Relator TÚcnico Presidente
+
+- Consejo Superior Consejo Superior
+
+
+--- page 4 | Ordenanza_CS_N_234_PLAN_DE_IMPLEMENTACIN_DEL_PLAN_2024_ING_MECATRNICA-R_p4_c0 ---
+Ministerio de Educaci¾n
+UNIVERSIDAD NACIONAL DE LA RIOJA
+CONSEJO SUPERIOR
+1983 - 2023 40 AÐOS DE DEMOCRACIAö
+LA RIOJA, 02 noviembre de 2023.
+
+ANEXO 1- ORDENANZA N22 3 6
+PLAN DE CORRELATIVIDADES
+
+PLAN DE CORRELATIVIDADES:
+
+La carrera de IngenierÝa Mecatr¾nica, Plan 2024, establece la organizaci¾n de los
+espacios acadÚmicos en la estructura curricular, que el estudiante debe tener en
+cuenta a los fines de su cursado, ya que, a travÚs de la relaci¾n horizontal y vertical
+entre los mismos, se garantiza la adquisici¾n de las competencias de egreso.
+
+Los mismos se reflejan en la organizaci¾n de las correlatividades para cursar y las
+
+mismas para rendir examen final.
+
+ANEXO 1: PLAN DE CORRELATIVIDADES
+Correlativa para | Correlativa
+Cursar para Rendir
+
+C¾digo |
+de : Materia . RÚgimen |
+Materia
+
+
+--- page 4 | Ordenanza_CS_N_234_PLAN_DE_IMPLEMENTACIN_DEL_PLAN_2024_ING_MECATRNICA-R_p4_c1 ---
+a rendir examen final.
+
+ANEXO 1: PLAN DE CORRELATIVIDADES
+Correlativa para | Correlativa
+Cursar para Rendir
+
+C¾digo |
+de : Materia . RÚgimen |
+Materia
+
+y
+: Anßlisis Matemßtico I
+
+: Fundamentos de IngenierÝa
+Mecatr¾nica
+
+: ┴lgebra y GeometrÝa AnalÝtica II
+
+Anßlisis Matemßtico TIT
+
+Computaci¾n 1
+
+Ab. Jo4quin═ Dr. DanierAlberto Quiroga
+Secretario Relator TÚcnico Presidente
+Consejo Superior Consejo Superior
+
+
+--- page 5 | Ordenanza_CS_N_234_PLAN_DE_IMPLEMENTACIN_DEL_PLAN_2024_ING_MECATRNICA-R_p5_c0 ---
+Ministerio de Educaci¾n
+UNIVERSIDAD NACIONAL DE LA RIOJA
+CONSEJO SUPERIOR
+
+1983 - 2023 40 AÐOS DE DEMOCRACIAö
+LA NUI 02 noviembre de 2023.
+
+ANEXO 1- ORDENANZA N*Ú 3 6
+PLAN DE CORRELATIVIDADES
+
+ElIM14 - Ingles l : 10 : 4 : 4
+
+Anßlisis Matemßtico IV
+
+EIM18 | Electrotecnia 20 13, 14 : 13,14
+
+Cßlculo NumÚrico
+
+| Mecanismos y Elementos de 1C 17 17
+Mßquinas .
+
+ElM22
+
+nteligencia Artificial 16,15, 19 - 16,15,19
+
+ElM26 : Mßquinas ElÚctricas Industriales 20 22 : 22
+
+nvestigaci¾n Operativa
+
+ElIM32 | Sistemas Digitales 10 27, 28 27, 28
+
+Organizaci¾n Industrial
+
+Ab. Joaqiid═ose Pistone Dr. Daniel "Acto Quiroga
+Secretafio Relator TÚcnico PresidentÚ,
+
+_ Consejo Superior Consejo Superior
+
+
+--- page 6 | Ordenanza_CS_N_234_PLAN_DE_IMPLEMENTACIN_DEL_PLAN_2024_ING_MECATRNICA-R_p6_c0 ---
+Ministerio de Educaci¾n
+UNIVERSIDAD NACIONAL DE LA RIOJA
+CONSEJO SUPERIOR
+
+1983 - 2023 40 AÐOS DE DEMOCRACIAö
+LA RIOJA, 02 noviembre de 2023.
+
+ANEXO I- ORDENANZAN* 2 3 4
+
+PLAN DE CORRELATIVIDADES
+
+EIM36 ┐TecnologÝa Mecßnica
+
+ElM38 | Dise±o de Sistemas Mecatr¾nicos
+
+: TecnologÝa Industrial
+
+Control de Accionamientos
+
+ElM42 Mecatr¾nicos
+
+ecnologÝa Aplicada al Control de
+
+ElM44 Sistemas Mecatr¾nicos
+
+Higiene y Seguridad Industrial
+
+' Legislaci¾n y ╔tica Profesional
+
+Prßctica Profesional Supervisada
+
+Ab. esa Pistone
+
+Secretßrio Rel ator TÚcnico
+Consejo Superior
+
+20 : 26 26
+
+ua 31 31
+
+1Ç : 38
+
+36,37,38,3940,41 46, 47, 48, 49
+
+Dr. Dri ±roho Quiroga
+Presidente
+Consejo Superior
+
+
+--- page 7 | Ordenanza_CS_N_234_PLAN_DE_IMPLEMENTACIN_DEL_PLAN_2024_ING_MECATRNICA-R_p7_c0 ---
+Ministerio de Educaci¾n
+UNIVERSIDAD NACIONAL DE LA RIOJA
+CONSEJO SUPERIOR
+
+11983 - 2023 40 AÐOS DE DEMOCRACIAö
+LA RIOJA, 02 noviembre de 2023.
+
+ANEXO L- ORDENANZA N? 234
+PLAN DE CORRELATIVIDADES
+
+CAMINO CRITICO: Carrera IngenierÝa Mecatr¾nica, en funci¾n de las correlatividades
+
+para cursar
+
+1er a±o
+
+Dr. Daniel. Alberto Quiroga
+Presidente
+Consejo Superior
+
+eS
+
+IO o
+Secretari¾ Relator TÚcnico
+½Consejo Superior
+
+Ab. JogquÝr JosÚ Pistone
+
+
+--- page 8 | Ordenanza_CS_N_234_PLAN_DE_IMPLEMENTACIN_DEL_PLAN_2024_ING_MECATRNICA-R_p8_c0 ---
+Ministerio de Educaci¾n
+UNIVERSIDAD NACIONAL DE LA RIOJA
+CONSEJO SUPERIOR
+
+ô1983 ù 2023 40 AÐOS DE DEMOCRACIAö
+
+LA RIOJA, 02 noviembre de 2023.
+ANEXO II - ORDENANZA N? e 3 ß
+ESTRUCTURA MATRICIAL
+
+Tomando en consideraci¾n, la Ordenanza CS NP? 193/2020, las ßreas de
+conocimiento inherentes a la carrera y las ßreas-de conocimiento cientÝfico
+tecnol¾gica que definen y caracterizan las carreras del DACEFyN, se propone la
+siguiente dependencia matricial de los espacios acadÚmicos o asignaturas que
+integran el Plan de Estudios 2024 de la carrera IngenierÝa Mecatr¾nica, y que se
+presentan en el siguiente cuadro.
+
+ORDEN NOMBRE ESTRUCTURA MATRICIAL
+
+┴lgebra y GeometrÝa AnalÝtica l
+
+: Sistemas de Representaci¾n
+' Fundamentos de Informßtica
+| Anßlisis Matemßtico II
+
+Introducci¾n a la Computaci¾n
+
+
+--- page 8 | Ordenanza_CS_N_234_PLAN_DE_IMPLEMENTACIN_DEL_PLAN_2024_ING_MECATRNICA-R_p8_c1 ---
+AL
+
+┴lgebra y GeometrÝa AnalÝtica l
+
+: Sistemas de Representaci¾n
+' Fundamentos de Informßtica
+| Anßlisis Matemßtico II
+
+Introducci¾n a la Computaci¾n
+
+Dr. Daniel. Albefto Quiroga
+Presidente!
+Consejo Superior Consejo Superior
+
+
+--- page 9 | Ordenanza_CS_N_234_PLAN_DE_IMPLEMENTACIN_DEL_PLAN_2024_ING_MECATRNICA-R_p9_c0 ---
+Ministerio de Educaci¾n
+UNIVERSIDAD NACIONAL DE LA RIOJA
+CONSEJO SUPERIOR
+
+ô1983 - 2023 40 AÐOS DE DEMOCRACIAö
+LA RIOJA, 02 noviembre de 2023.
+ANEXO II - ORDENANZAN*2 3 4
+ESTRUCTURA MATRICIAL
+
+FIM16 ù Anßlisis Matemßtico IV x
+
+EIM1s y Electrotecnia
+
+ElM20 -: Cßlculo NumÚrico
+
+' Mecanismos y Elementos de
+
+ErM22 Mßquinas
+
+ElIM24 | Inteligencia Artificial
+
+EIM26 Mßquinas ElÚctricas Industriales
+
+ElM28 | Investigaci¾n Operativa
+
+EIM32 | Sistemas Digitales Xx
+
+Organizaci¾n Industrial
+
+EIM36 TecnologÝa Mecßnica
+
+Ab. JoaquÝn; Jose Pistone Dr. DaniÚL Alb to Quiroga
+Secretario/RÚlßtor TÚcnico Presidente
+
+Consejo Superior Consejo Superior
+
+
+--- page 10 | Ordenanza_CS_N_234_PLAN_DE_IMPLEMENTACIN_DEL_PLAN_2024_ING_MECATRNICA-R_p10_c0 ---
+Ministerio de Educaci¾n
+UNIVERSIDAD NACIONAL DE LA RIOJA
+CONSEJO SUPERIOR
+
+ô1983 - 2023 40 AÐOS DE DEMOCRACIAö
+LA RIOJA, 02 noviembre de 2023.
+
+ANEXO II - ORDENANZA N? 2 3 4
+ESTRUCTURA MATRICIAL
+
+y
+
+: Dise±o de Sistemas Mecatr¾nicos
+
+TecnologÝa Industrial
+
+: Control de Accionamientos
+: Mecatr¾nicos
+
+gÝa Aplicada al Control de
+
+Higiene y Seguridad Industrial
+
+Legislaci¾n y Etica Profesional
+
+Prßctica Profesiona) Supervisada
+
+: 7 j
+Ab. Joaqidh JosÚ Pistone Dr. Daniel, Do
+Secretario Relator TÚcnico Pfesidente
+
+Z Consejo Superior Consejo Superior
+
+
+--- page 11 | Ordenanza_CS_N_234_PLAN_DE_IMPLEMENTACIN_DEL_PLAN_2024_ING_MECATRNICA-R_p11_c0 ---
+Ministerio de Educaci¾n
+UNIVERSIDAD NACIONAL DE LA RIOJA
+CONSEJO SUPERIOR
+
+41983 - 2023 40 AÐOS DE DEMOCRACIAö
+LA RIOJA, 02 noviembre de 2023.
+ANEXO HI ORDENANZA N? 2 3 4
+RECURSOS FISICOS Y HUMANOS
+Recursos FÝsicos:
+
+La actual carrera de IngenierÝa Mecatr¾nica cuenta la infraestructura fÝsica de aulas,
+anfiteatro, laboratorios, etc., para el desarrollo de la actividad acadÚmica, que se
+ponen a disposici¾n para el nuevo Plan 2024.
+
+Recursos Humanos:
+
+Los Recursos Humanos que garantizan la implementaci¾n del Nuevo Plan de
+Estudios, lo constituyen:
+
+
+--- page 11 | Ordenanza_CS_N_234_PLAN_DE_IMPLEMENTACIN_DEL_PLAN_2024_ING_MECATRNICA-R_p11_c1 ---
+osici¾n para el nuevo Plan 2024.
+
+Recursos Humanos:
+
+Los Recursos Humanos que garantizan la implementaci¾n del Nuevo Plan de
+Estudios, lo constituyen:
+
++ Los Profesores en todas sus jerarquÝas y dedicaciones que constituyen
+actualmente el Plan Actual, Ordenanza CS NP? 046/2016. Estas nuevas
+funciones serßn encomendadas a partir del informe de pertinencia que
+elaboren el consejo consultivo de carrera, en cumplimiento con el Articulo
+del Convenio Colectivo de Trabajo.
+
++ Los Profesores que se incorporen en las vacantes que hoy en dÝa se
+encuentran en la carrera.
+
+
+--- page 11 | Ordenanza_CS_N_234_PLAN_DE_IMPLEMENTACIN_DEL_PLAN_2024_ING_MECATRNICA-R_p11_c2 ---
+nto con el Articulo
+del Convenio Colectivo de Trabajo.
+
++ Los Profesores que se incorporen en las vacantes que hoy en dÝa se
+encuentran en la carrera.
+
+e Los profesores, que pudieren incorporarse de cargos nuevos se creen en
+funci¾n de la disponibilidad presupuestaria que se otorgue a la carrera,
+producto de planes de mejoras de nivel nacional o institucionales a futuro, en
+funci¾n de las necesidades que oportunamente se eval·an.
+
+
+--- page 11 | Ordenanza_CS_N_234_PLAN_DE_IMPLEMENTACIN_DEL_PLAN_2024_ING_MECATRNICA-R_p11_c3 ---
+a la carrera,
+producto de planes de mejoras de nivel nacional o institucionales a futuro, en
+funci¾n de las necesidades que oportunamente se eval·an.
+
+El Consejo Consultivo de la Carrera IngenierÝa Mecatr¾nica, analizarß la nueva
+distribuci¾n de asignaturas al plantel de docentes actuales, y propondrß la
+asignaci¾n de funciones al Nuevo Plan 2024, al Consejo Departamental, quienes
+tendrßn que emitir el acto administrativo correspondiente, verificando cada
+situaci¾n particular, teniendo en cuenta la normativa vigente, Ordenanza CS N* 171
+/2019, Convenio Colectivo de Trabajo, y el cargo y dedicaci¾n de cada profesor.
+
+Ab. Joag·Ý íJosÚ Pistone Dr. Danieb Alberto Quiroga
+Secrefßrio Relator TÚcnico Presidente
+-. Co±sejo Superior Consejo Superior
+
+
+--- page 12 | Ordenanza_CS_N_234_PLAN_DE_IMPLEMENTACIN_DEL_PLAN_2024_ING_MECATRNICA-R_p12_c0 ---
+Ministerio de Educaci¾n
+UNIVERSIDAD NACIONAL DE LA RIOJA
+CONSEJO SUPERIOR
+
+11983 - 2023 40 AÐOS DE DEMOCRACIAö
+LA RIOJA, 02 noviembre de 2023.
+ANEXO IV- ORDENANZA N?
+PLAN DE TRANSICION
+
+A travÚs del Plan de Transici¾n, se asegura la continuidad de las trayectorias de los
+estudiantes que cursan el Plan de Estudios Ordenanza CS N* 046/2016,
+estableciendo la fecha gradual de caducidad de este, tanto en la oferta de
+asignaturas para cursar, como en la habilitaci¾n de mesas de examen final conforme
+lo establece el Reglamento de Alumnos vigente en UNLaR.
+
+A±o 2024:
+
+Dar inicio al 1er a±o del Plan Nuevo.
+
+No se dictan las asignaturas del ler A±o del Plan Ordenanza CS Nö 046/2016.
+Se dicta de 2do a 5to a±o del Plan Ordenanza CS N* 046 /2016.
+
+A±o 2025:
+
+Se contin·a con ler a±o del Plan Nuevo
+
+
+--- page 12 | Ordenanza_CS_N_234_PLAN_DE_IMPLEMENTACIN_DEL_PLAN_2024_ING_MECATRNICA-R_p12_c1 ---
+±o del Plan Ordenanza CS Nö 046/2016.
+Se dicta de 2do a 5to a±o del Plan Ordenanza CS N* 046 /2016.
+
+A±o 2025:
+
+Se contin·a con ler a±o del Plan Nuevo
+
+Se da inicio al 2do a±o del Plan Nuevo
+
+No se dictan las asignaturas del 2do A±o del Plan Ordenanza CS N* 046/2016.
+Se dicta de 3ro a 5to a±o del Plan Ordenanza CS N* 046/2016.
+
+A±o 2026:
+
+Se contin·a con ler y 2do a±o del Plan Nuevo
+
+Se da inicio al 3do a±o del Plan Nuevo
+
+No se dictan las asignaturas del 3er A±o del Plan Ordenanza CS Nö 046/2016.
+Se dicta de 4to a 5to a±o del Plan Ordenanza CS N? 046 /2016.
+
+A±o 2027:
+
+Se contin·a con ler, 2do y 3er a±o del Plan Nuevo
+
+Se da inicio al 4to a±o del Plan Nuevo
+
+No se dictan las asignaturas del 4to A±o del Plan Ordenanza CS N* 046/2016.
+
+e
+
+
+--- page 12 | Ordenanza_CS_N_234_PLAN_DE_IMPLEMENTACIN_DEL_PLAN_2024_ING_MECATRNICA-R_p12_c2 ---
+, 2do y 3er a±o del Plan Nuevo
+
+Se da inicio al 4to a±o del Plan Nuevo
+
+No se dictan las asignaturas del 4to A±o del Plan Ordenanza CS N* 046/2016.
+
+e
+
+Se dicta el5to a±o del Plan Ordenanza CS N? 046/ 2016. A :
+
+╔ OS ┐ A, he
+
+E A Mo
+
+Ab. Joaquipi JosÚ Pistone Dr. Daniel AlbÚrto Quiroga
+Secretari¾ Relator TÚcnico Presidente
+
+Consejo Superior Consejo Superior
+
+
+--- page 13 | Ordenanza_CS_N_234_PLAN_DE_IMPLEMENTACIN_DEL_PLAN_2024_ING_MECATRNICA-R_p13_c0 ---
+Ministerio de Educaci¾n
+UNIVERSIDAD NACIONAL DE LA RIOJA
+CONSEJO SUPERIOR
+
+ô1983 - 2023 40 AÐOS DE DEMOCRACIAö
+LA RIOJA, 02 noviembre de 2023.
+
+ANEXO IV - ORDENANZA N? 2 3 4
+PLAN DE TRANSICION
+
+A±o 2028:
+Se contin·a con 1er, 2do, 3er y 4to a±o del Plan Nuevo
+Se da inicio al 5to a±o del Plan Nuevo
+
+No se dictan las asignaturas del Plan Ordenanza CS N* 046/2016.
+
+A±o TPa±o 2ö a±o 3% a±o as a±o ┐Ba±o
+
+: Plan Nuevo : Plan Nuevo
+
+Plan Nuevo i ┐CS NO D46
+/2016
+
+Plan de Transici¾n, desagregado por tiempo de ultima cursada y validez de
+regularidad:
+
+ASIGNATURAS DE TIEMPOS DE ULTIMA CURSADA REGULARIDAD PARA RENDIR
+
+2 Cuatrimestre y Anuales de Turno Febrero - Marzo de 2026
+
+Turno Febrero - Marzo de 2027
+
+3ö AÐO : 2* Cuatrimestre y Anuales de 2025 Turno Febrero - Marzo de 2028
+
+
+--- page 13 | Ordenanza_CS_N_234_PLAN_DE_IMPLEMENTACIN_DEL_PLAN_2024_ING_MECATRNICA-R_p13_c1 ---
+re y Anuales de Turno Febrero - Marzo de 2026
+
+Turno Febrero - Marzo de 2027
+
+3ö AÐO : 2* Cuatrimestre y Anuales de 2025 Turno Febrero - Marzo de 2028
+
+47 AÐO : 2" Cuatrimestre y Anuales de 2026 Turno Febrero - Marzo de 2029
+
+2ö Cuatrimestre y Anuales de 2027
+
+A 7 )
+Ab. Joa: dÝÝn J¾se Pistone Dr. Danish berto Quiroga
+Secretario Relator TÚcnico ö Presidente
+
+Conesio Superior Consejo Superior
+
+
+
+
+================================================================================
+PLAN DE IMPLEMENTACIËN - ING SISTEMAS (OCS 232)
+================================================================================
+Total chunks: 29
+
+--- page 1 | Ing_en_Sistemas_de_Informacin_-_2023_11_02_UNLaR_OCS_232-23_-_Aprueba_el_Plan_de_Implementacin_y_el_Plan_de_Transicin_p1_c0 ---
+Ministerio de Educaci¾n
+UNIVERSIDAD NACIONAL DE LA RIOJA
+CONSEJO SUPERIOR
+ô1983 - 2023 40 AÐOS DE DEMOCRACIAö
+LA RIOJA, 02 noviembre de 2023,
+VISTO: El expediente Nö 00-05475/2022, del Registro de esta
+Universidad, y;
+
+CONSIDERANDO:
+
+Que, mediante los obrados citados en el ôVistoö de este acto, y en
+virtud del artÝculo 91? inc. 12 y 13 de nuestro Estatuto Universitario, se eleva para
+consideraci¾n de este Cuerpo la Resoluci¾n N* 170/23 del Consejo Departamental
+del Departamento AcadÚmico de Ciencias Exactas, FÝsicas y Naturales, mediante la
+cual se propone un Plan de Implementaci¾n del Nuevo Dise±o Curricular de la
+Carrera de IngenierÝa en Sistemas de la Informaci¾n.
+
+
+--- page 1 | Ing_en_Sistemas_de_Informacin_-_2023_11_02_UNLaR_OCS_232-23_-_Aprueba_el_Plan_de_Implementacin_y_el_Plan_de_Transicin_p1_c1 ---
+aturales, mediante la
+cual se propone un Plan de Implementaci¾n del Nuevo Dise±o Curricular de la
+Carrera de IngenierÝa en Sistemas de la Informaci¾n.
+
+Que, en ese sentido, el referido Plan de Implementaci¾n
+comprende: El Plan de Correlatividades, la Estructura Matricial, el anßlisis de
+Recursos FÝsicos y Recursos Humanos que garantizan la implementaci¾n y el Plan
+de Transici¾n de aquella Carrera.
+
+Que, atento a ello, obra dictamen de la SecretarÝa Legal y TÚcnica N*
+493/23 mediante el cual no se observan impedimentos para la prosecuci¾n del
+trßmite.
+
+
+--- page 1 | Ing_en_Sistemas_de_Informacin_-_2023_11_02_UNLaR_OCS_232-23_-_Aprueba_el_Plan_de_Implementacin_y_el_Plan_de_Transicin_p1_c2 ---
+atento a ello, obra dictamen de la SecretarÝa Legal y TÚcnica N*
+493/23 mediante el cual no se observan impedimentos para la prosecuci¾n del
+trßmite.
+
+Que, tomando intervenci¾n la SecretarÝa de Planificaci¾n y
+Autoevaluaci¾n y SecretarÝa de Asuntos AcadÚmicos de Rectorado elevan
+respectivos informes de competencia en los que se se±ala que la propuesta cumple
+con los requisitos acadÚmicos necesarios para su aprobaci¾n, y de viable aplicaci¾n.
+
+Que, este Consejo Superior, reunido en Sesi¾n Ordinaria de fecha 02
+de noviembre, analiz¾ el asunto sobre tablas y resolvi¾ aprobar la solicitud
+planteada mediante Resoluci¾n C,D.D.A.C.E.FyN. N* 170/23.
+
+Por todo ello, en el ejercicio de sus atribuciones estatutarias y previo tratamiento en
+Particular de lo antes ôVisto y Consideradoö,
+
+
+--- page 1 | Ing_en_Sistemas_de_Informacin_-_2023_11_02_UNLaR_OCS_232-23_-_Aprueba_el_Plan_de_Implementacin_y_el_Plan_de_Transicin_p1_c3 ---
+FyN. N* 170/23.
+
+Por todo ello, en el ejercicio de sus atribuciones estatutarias y previo tratamiento en
+Particular de lo antes ôVisto y Consideradoö,
+
+╗ oIDOANLA CEN 23
+
+5)
+vl
+4 go A eö
+! Ð pe
+JosÚ Pistone Dr. Danilo Quiroga
+Secretari¾ Relator TÚcnico Presidente
+
+Consejo Superior Consejo Superior
+
+
+--- page 2 | Ing_en_Sistemas_de_Informacin_-_2023_11_02_UNLaR_OCS_232-23_-_Aprueba_el_Plan_de_Implementacin_y_el_Plan_de_Transicin_p2_c0 ---
+Ministerio de Educaci¾n
+UNIVERSIDAD NACIONAL DE LA RIOJA
+CONSEJO SUPERIOR
+
+ô1983 - 2023 40 AÐOS DE DEMOCRACIAö
+LA RIOJA, 02 noviembre de 2023,
+
+EL CONSEJO SUPERIOR
+DE LA UNIVERSIDAD NACIONAL DE LA RIOJA
+ORDENA:
+
+ART═CULO 1% APROBAR EL PLAN DE IMPLEMENTACIËN del Nuevo Dise±o
+Curricular de la Carrera IngenierÝa en Sistemas de Informaci¾n aprobado por
+Ordenanza CS, N* 231/23, cuyo detalle obra en los Anexos 1: Correlatividades,
+Amexo II: Estructura Matricial, ┴nexo IL Recursos FÝsicos y Humanos, de la
+presente ordenanza.
+
+ART═CULO 2ö: APROBAR EL PLAN DE TRANSICIËN entre el Nuevo Dise±o
+Curricular de la Carrera IngenierÝa en Sistemas de Informaci¾n, aprobado por
+Ordenanza C.S, N* 231/23, y el Plan Ordenanza CS N* 448/2011, cuyo detalle obra
+en el Anexo IV.
+
+
+--- page 2 | Ing_en_Sistemas_de_Informacin_-_2023_11_02_UNLaR_OCS_232-23_-_Aprueba_el_Plan_de_Implementacin_y_el_Plan_de_Transicin_p2_c1 ---
+ra IngenierÝa en Sistemas de Informaci¾n, aprobado por
+Ordenanza C.S, N* 231/23, y el Plan Ordenanza CS N* 448/2011, cuyo detalle obra
+en el Anexo IV.
+
+ART═CULO 3ö: ESTABLECER que el nuevo Plan de estudios se implementarß en
+forma gradual y progresiva a partir del ciclo lectivo 2024, conforme se indica en el
+Anexo 1V.
+
+ART═CULO 4ö: ESTABLECER que el Plan de Estudios Ordenanza CS N* 448/2011,
+se mantendrß vigente hasta el a±o 2027, que se implementa el ·ltimo a±o de dicho
+plan, conforme al cronograma especificado en el Anexo IV, considerado habilitadas
+las fechas de caducidad de la oferta de asignaturas y mesas de examen finales,
+conforme el Reglamento de Alumnos vigente en UNLaR.
+
+
+--- page 2 | Ing_en_Sistemas_de_Informacin_-_2023_11_02_UNLaR_OCS_232-23_-_Aprueba_el_Plan_de_Implementacin_y_el_Plan_de_Transicin_p2_c2 ---
+iderado habilitadas
+las fechas de caducidad de la oferta de asignaturas y mesas de examen finales,
+conforme el Reglamento de Alumnos vigente en UNLaR.
+
+ART═CULO 5": ESTABLECER que, finalizado el periodo de vigencia del Plan de
+estudios actual, los estudiantes que no se hubieren graduado, pasarßn
+automßticamente al Plan 2024.
+
+ART═CULO 6ö: ESTABLECER que los estudiantes que hayan ingresado antes del
+ciclo lectivo 2024, podrßn cambiarse al Plan de ESTUDIOS 2024, teniendo en cuenta
+el cronograma de implementaci¾n previsto para la transici¾n, el rÚgimen de
+correlatividades y equivalencias y que no se afecte su trayectoria acadÚmica.
+
+ART═CULO 7ö: RegÝstrese, comunÝquese y archÝvese.
+
+!
+
+ORDENANZA 65. Ni 230
+
+
+--- page 2 | Ing_en_Sistemas_de_Informacin_-_2023_11_02_UNLaR_OCS_232-23_-_Aprueba_el_Plan_de_Implementacin_y_el_Plan_de_Transicin_p2_c3 ---
+relatividades y equivalencias y que no se afecte su trayectoria acadÚmica.
+
+ART═CULO 7ö: RegÝstrese, comunÝquese y archÝvese.
+
+!
+
+ORDENANZA 65. Ni 230
+
+╔ H 4 pl boa rn
+ES : A AA
+Ab. JoaquÝn JosÚ Pistone Dr. Danjel┴lberto Quiroga
+Secretafo-RÚlator TÚcnico Presidente
+
+Consejo Superior Consejo Superior
+
+
+--- page 3 | Ing_en_Sistemas_de_Informacin_-_2023_11_02_UNLaR_OCS_232-23_-_Aprueba_el_Plan_de_Implementacin_y_el_Plan_de_Transicin_p3_c0 ---
+Ministerio de Educaci¾n
+UNIVERSIDAD NACIONAL DE LA RIOJA
+CONSEJO SUPERIOR
+
+ô1983 - 2023 40 AÐOS DE DEMOCRACIAö
+LA RIOJA, 02 noviembre de 2023,
+
+ANEXO T- ORDENANZA C.S. N? 2 3 2
+PLAN DE CORRELATIVIDADES :
+
+PLAN DE CORRELATIVIDADES:
+
+La carrera de IngenierÝa en Sistemas de Informaci¾n, Plan 2024, establece la
+organizaci¾n de los espacios acadÚmicos en la estructura curricular, que el
+estudiante debe tener en cuenta a los fines de su cursado, ya que, a travÚs de la
+relaci¾n horizontal y vertical entre los mismos, se garantiza la adquisici¾n de las
+competencias de egreso.
+
+Los mismos se reflejan en la organizaci¾n de las correlatividades para cursar y las
+mismas para rendir examen final.
+
+: íAPROBADA |
+, | REGULAR ù PARA
+No EOS R╔GIMEN PARA RENDIR
+i : CURSAR EXAMEN
+
+
+--- page 3 | Ing_en_Sistemas_de_Informacin_-_2023_11_02_UNLaR_OCS_232-23_-_Aprueba_el_Plan_de_Implementacin_y_el_Plan_de_Transicin_p3_c1 ---
+las correlatividades para cursar y las
+mismas para rendir examen final.
+
+: íAPROBADA |
+, | REGULAR ù PARA
+No EOS R╔GIMEN PARA RENDIR
+i : CURSAR EXAMEN
+
+2 AN┴LISIS MATEM┴TICO 1 1C NC NC
+
+INFORM┴TICA I
+
+AN┴LISIS MATEM┴TICO Il
+
+PROGRAMACIËN I
+
+/
+
+xi es, 7 A 5
+Ab. Joaquin se Pistone Dr. Daniel. Alberto Quiroga
+Secretario ═ Relator TÚcnico Presidente
+
+Co±nsejo Superior Consejo Superior
+
+
+--- page 4 | Ing_en_Sistemas_de_Informacin_-_2023_11_02_UNLaR_OCS_232-23_-_Aprueba_el_Plan_de_Implementacin_y_el_Plan_de_Transicin_p4_c0 ---
+Ministerio de Educaci¾n
+UNIVERSIDAD NACIONAL DE LA RIOJA
+CONSEJO SUPERIOR
+
+ô1983 - 2023 40 AÐOS DE DEMOCRACIAö
+LA RIOJA, 02 noviembre de 2023,
+
+ANEXO I- ORDENANZA C.S.N* 23.2
+PLAN DE CORRELATIVIDADES :
+
+F═SICA II 10 8 8
+
+PROGRAMACIËN H
+
+PROBABILIDAD Y ESTAD═STICA.
+
+INGL╔S Il
+
+21 COMPUTACIËN U : 20 14 14
+
+LIDERAZGO, NEGOCIACIËN Y
+TRABAJO EN EQUIPO
+
+BASE DE DATOS 1
+
+CALCULO NUM╔RICO
+
+PROGRAMACION
+
+. cd
+
+Ab. Joaqt de ia Pistone Dr. Daniel ┴lberto Quiroga
+
+Secrotßrio Relator TÚcnico Presidente
+Consejo Superior Consejo Superior
+
+
+--- page 5 | Ing_en_Sistemas_de_Informacin_-_2023_11_02_UNLaR_OCS_232-23_-_Aprueba_el_Plan_de_Implementacin_y_el_Plan_de_Transicin_p5_c0 ---
+Ministerio de Educaci¾n
+UNIVERSIDAD NACIONAL DE LA RIOJA
+CONSEJO SUPERIOR
+
+ô1983 - 2023 40 AÐOS DE DEMOCRACIAö
+LA RIOJA, 02 noviembre de 2023,
+ANEXO I- ORDENANZA C.S.N*2 3 2
+PLAN DE CORRELATIVIDADES
+
+ôPROYECTOS DESISTEMAS Y
+
+GERENCIAMIENTO 2e : 23,26 23, 26
+
+ARQUITECTURA AVANZADA DE
+
+,
+32 HARDWARE Il 2 24 A
+
+PROGRAMACION V
+
+SEMINARIO DE ACTUALIZACIËN
+TECNOLËGICA
+
+INGENIER═A DE SOFTWARE I
+
+POGRAMACIËN VI
+
+SEMINARIO DE INNOVACION Y
+PROTOTIPADO
+
+Ab. Joag·Ýn JosÚ Pistone Dr. Daniel Alberto Quiroga
+Secretafio-Relator TÚcnico Presidente
+
+Consejo Superior Consejo Superior
+
+
+--- page 6 | Ing_en_Sistemas_de_Informacin_-_2023_11_02_UNLaR_OCS_232-23_-_Aprueba_el_Plan_de_Implementacin_y_el_Plan_de_Transicin_p6_c0 ---
+Ministerio de Educaci¾n
+UNIVERSIDAD NACIONAL DE LA RIOJA
+CONSEJO SUPERIOR
+
+"1983 - 2023 40 AÐOS DE DEMOCRACIAö
+LA RIOJA, 02 noviembre de 2023.
+
+ANEXO I- ORDENANZA C.S.N*2 3 2
+PLAN DE CORRELATIVIDADES
+
+SISTEMAS | 1 45 5
+
+47
+
+LEGISLACIËN y ╔TICA PROFESIONAL 10
+
+REINGENIER═A DE PROCESOS
+
+: : : 47,48
+: PRACTICA PROFESIONAL 42,43, : o
+93 SUPERVISADA ANUAL . 44,45, p, 5,
+! A 51, 52
+
+Ab. JoaquÝii] osÚ Pistone Dr. Daniel Alberto Quiroga
+Secrefario Relator TÚcnico Presidente
+
+Consejo Superior Consejo Superior
+
+
+--- page 7 | Ing_en_Sistemas_de_Informacin_-_2023_11_02_UNLaR_OCS_232-23_-_Aprueba_el_Plan_de_Implementacin_y_el_Plan_de_Transicin_p7_c0 ---
+Ministerio de Educaci¾n
+UNTVERSIDAD NACIONAL DE LA RIOJA
+CONSEJO SUPERIOR
+ô1983 - 2023 40 AÐOS DE DEMOCRACIAö
+LA RIOJA, 02 noviembre de 2023.
+
+ANEXO H- ORDENANZA C.S.N* 2 39
+ESTRUCTURA MATRICIAL
+
+Tomando en consideraci¾n, la Ordenanza CS Nö 193/2020, las ßreas de
+conocimiento inherentes a la carrera y las ßreas de conocimiento cientÝfico
+tecnol¾gica que definen y caracterizan las carreras del DACEFYyN, se propone la
+siguiente dependencia matricial de los espacios acadÚmicos o asignaturas que
+integran el Plan de Estudios 2024 de la carrera IngenierÝa en Sistemas de
+Informaci¾n, y que se presentan en el siguiente cuadro.
+
+NOMBRE i ESTRUCTURA MATRICIAL
+
+┴LGEBRA Y GEOMETR═A Xx
+ANAL═TICA I
+
+ALGORITMO Y
+ESTRUCTURA DE DATOS I
+
+┴LGEBRA Y GEOMETR═A
+ANAL═TICA H
+
+ALGORITMO Y
+ESTRUCTURA DE DATOS I
+
+
+--- page 7 | Ing_en_Sistemas_de_Informacin_-_2023_11_02_UNLaR_OCS_232-23_-_Aprueba_el_Plan_de_Implementacin_y_el_Plan_de_Transicin_p7_c1 ---
+A MATRICIAL
+
+┴LGEBRA Y GEOMETR═A Xx
+ANAL═TICA I
+
+ALGORITMO Y
+ESTRUCTURA DE DATOS I
+
+┴LGEBRA Y GEOMETR═A
+ANAL═TICA H
+
+ALGORITMO Y
+ESTRUCTURA DE DATOS I
+
+INFORM┴TICA II
+
+AN┴LISIS MATEM┴TICO III
+
+Ni
+
+( eS A Nil
+y NS
+Ab. Joaquiri JosÚ Pistone Dr. Daniel AlbÚrto Quiroga
+
+Secretafio Relator TÚcnico _Presidente
+½Consejo Superior C¾nsejo Superior
+
+
+--- page 8 | Ing_en_Sistemas_de_Informacin_-_2023_11_02_UNLaR_OCS_232-23_-_Aprueba_el_Plan_de_Implementacin_y_el_Plan_de_Transicin_p8_c0 ---
+Ministerio de Educaci¾n
+UNIVERSIDAD NACIONAL DE LA RIOJA
+CONSEJO SUPERIOR
+
+1983 - 2023 40 AÐOS DE DEMOCRACIAö
+LA RIOJA, 02 noviembre de 2023.
+ANEXO TI- ORDENANZA C.S.N* 2 3 9
+ESTRUCTURA MATRICIAL :
+13 SISTEMAS DE
+
+INGLES I
+
+PROBABILIDAD Y
+ESTAD═STICA
+
+PROGRAMACIËN HI
+
+24 AVANZADA DE l Xx
+HARDWARE I |
+
+N┴LI
+DE TEXTOS PARA LA
+COMUNICACIËN
+
+26
+
+ORGANIZACION,
+
+_P | GESTIËN EMPRESARIAL x
+Y
+Sl
+oa E "
+/ y es A, Y $ el
+Ab. JoagquÝtl losÚ Pistone Dr, Daniel Albegto Quiroga
+Secretafi¾ Relator TÚcnico Presidente
+
+C¾nsejo Superior Consejo Superior
+
+
+--- page 9 | Ing_en_Sistemas_de_Informacin_-_2023_11_02_UNLaR_OCS_232-23_-_Aprueba_el_Plan_de_Implementacin_y_el_Plan_de_Transicin_p9_c0 ---
+Ministerio de Educaci¾n
+UNIVERSIDAD NACIONAL DE LA RIOJA
+CONSEJO SUPERIOR
+
+ô10983 - 2023 40 AÐOS DE DEMOCRACIAö
+
+LA RIOJA, 02 noviembre de 2023.
+ANEXO II- ORDENANZA C.S.N* 2 3
+ESTRUCTURA MATRICIAL
+
+29 PROGRAMACIËN IV Xx
+
+BASE DE DATOS II
+
+REDES DE DATOS 1
+
+SEGURIDAD
+INFORM┴TICA
+
+37
+
+REDES DE DATOS II
+
+ECONOMIA Y
+EVALUACIËN DE
+PROYECTOS
+
+o b¾rto Quiroga
+Secretari¾ R Fedor TÚcnico Presidente
+Co±sejo Superior Consejo SupÚri or
+
+
+--- page 10 | Ing_en_Sistemas_de_Informacin_-_2023_11_02_UNLaR_OCS_232-23_-_Aprueba_el_Plan_de_Implementacin_y_el_Plan_de_Transicin_p10_c0 ---
+Ministerio de Educaci¾n
+UNIVERSIDAD NACIONAL DE LA RIOJA
+CONSEJO SUPERIOR
+
+ô1983 - 2023 40 AÐOS DE DEMOCRACIAö
+LA RIOJA, 02 noviembre de 2023.
+
+ANEXO Il- ORDENANZA C.S.N* 2 3 2
+ESTRUCTURA MATRICIAL
+
+"PROYECTOS Y ù
+DESARROLLOS EX
+TELEM┴TICOS
+
+MODELOS Y SIMULACION
+DE SISTEMAS
+
+LEGISLACION y ETICA
+PROFESIONAL
+
+REINGENIER═A DE
+PROCESOS
+
+PR┴CTICA PROFESIONAL
+SUPERVISADA
+
+Ab. Joaquif ) e Pistone Dr. Daniel Alber o Quiroga
+Secretario Relator TÚcnico Presidente
+
+Consejo Superior Consejo Superior
+
+
+--- page 11 | Ing_en_Sistemas_de_Informacin_-_2023_11_02_UNLaR_OCS_232-23_-_Aprueba_el_Plan_de_Implementacin_y_el_Plan_de_Transicin_p11_c0 ---
+Ministerio de Educaci¾n
+UNIVERSIDAD NACIONAL DE LA RIOJA
+CONSEJO SUPERIOR
+ô1983 - 2023 40 AÐOS DE DEMOCRACIAö
+
+LA RIOJA, 02 noviembre de 2023.
+
+ANEXO Il- ORDENANZA C.S. N? 2 3 el
+ESTRUCTURA MATRICIAL
+Camino crÝtico, de correlatividades para el cursado
+
+ter a±o ┐ 2d0a±o
+
+Ab. Joga·Ý osÚ Pistone Dr. DanieF Alberto Quiroga
+Secretßri¾ Relator TÚcnico Presidente
+
+Consejo Superior Consejo Superior
+
+
+--- page 12 | Ing_en_Sistemas_de_Informacin_-_2023_11_02_UNLaR_OCS_232-23_-_Aprueba_el_Plan_de_Implementacin_y_el_Plan_de_Transicin_p12_c0 ---
+Ministerio de Educaci¾n
+UNIVERSIDAD NACIONAL DE LA RIOJA
+CONSEJO SUPERIOR
+
+ô1983 - 2023 40 AÐOS DE DEMOCRACIAö
+LA RIOJA, 02 noviembre de 2023,
+
+ANEXO II - ORDENANZA C.S.N* 2 3 2
+RECURSOS FISICOS Y HUMANOS
+
+Recursos FÝsicos:
+
+La actual carrera de IngenierÝa en Sistemas de Informaci¾n cuenta la infraestructura
+fÝsica de aulas, anfiteatro, laboratorios, etc, para el desarrollo de la actividad
+acadÚmica, que se ponen a disposici¾n para el nuevo Plan 2024.
+
+Recursos Humanos:
+
+Los Recursos Humanos que garantizan la implementaci¾n del Nuevo Plan de
+Estudios, lo constituyen:
+
+
+--- page 12 | Ing_en_Sistemas_de_Informacin_-_2023_11_02_UNLaR_OCS_232-23_-_Aprueba_el_Plan_de_Implementacin_y_el_Plan_de_Transicin_p12_c1 ---
+osici¾n para el nuevo Plan 2024.
+
+Recursos Humanos:
+
+Los Recursos Humanos que garantizan la implementaci¾n del Nuevo Plan de
+Estudios, lo constituyen:
+
+e Los Profesores en todas sus jerarquÝas y dedicaciones que constituyen
+actualmente el Plan Actual, Ordenanza CS Nö 448/2011. Estas nuevas
+funciones serßn encomendadas a partir del informe de pertinencia que
+elaboren el consejo consultivo de carrera, en cumplimiento con el Articulo N*
+del Convenio Colectivo de Trabajo.
+
++ Los Profesores que se incorporen en las vacantes que hoy en dÝa se
+encuentran en la carrera.
+
+
+--- page 12 | Ing_en_Sistemas_de_Informacin_-_2023_11_02_UNLaR_OCS_232-23_-_Aprueba_el_Plan_de_Implementacin_y_el_Plan_de_Transicin_p12_c2 ---
+con el Articulo N*
+del Convenio Colectivo de Trabajo.
+
++ Los Profesores que se incorporen en las vacantes que hoy en dÝa se
+encuentran en la carrera.
+
++ Los profesores, que pudieren incorporarse de cargos nuevos se creen en
+funci¾n de la disponibilidad presupuestaria que se otorgue a la carrera,
+producto de planes de mejoras de nivel nacional o institucionales a futuro, en
+funci¾n de las necesidades que oportunamente se eval·an.
+
+
+--- page 12 | Ing_en_Sistemas_de_Informacin_-_2023_11_02_UNLaR_OCS_232-23_-_Aprueba_el_Plan_de_Implementacin_y_el_Plan_de_Transicin_p12_c3 ---
+a la carrera,
+producto de planes de mejoras de nivel nacional o institucionales a futuro, en
+funci¾n de las necesidades que oportunamente se eval·an.
+
+El Consejo Consultivo de la Carrera IngenierÝa en Sistemas de Informaci¾n,
+analizarß la nueva distribuci¾n de asignaturas al plantel de docentes actuales, y
+propondrß la asignaci¾n de funciones al Nuevo Plan 2024, al Consejo
+Departamental, quienes tendrßn que emitir el acto administrativo correspondiente,
+verificando cada situaci¾n particular, teniendo en cuenta la normativa vigente,
+Ordenanza CS N* 171 /2019, Convenio Colectivo de Trabajo, y ehcargo y dedicaci¾n
+de cada profesor. OO
+
+Ab. Joaquitk JosÚ Pistone Dr. Daniel Alberto Quiroga
+Secretario Relator TÚcnico Presidente
+
+7 Consejo Superior Consejo Superior
+
+
+--- page 13 | Ing_en_Sistemas_de_Informacin_-_2023_11_02_UNLaR_OCS_232-23_-_Aprueba_el_Plan_de_Implementacin_y_el_Plan_de_Transicin_p13_c0 ---
+Ministerio de Educaci¾n
+UNIVERSIDAD NACIONAL DE LA RIOJA
+CONSEJO SUPERIOR
+
+1983 - 2023 40 AÐOS DE DEMOCRACIAö
+LA RIOJA, 02 noviembre de 2023.
+
+ANEXO IV- ORDENANZA C.S.N* 2 3 2
+PLAN DE TRANSICIËN
+
+A travÚs del Plan de Transici¾n, se asegura la continuidad de las trayectorias de los
+estudiantes que cursan el Plan de Estudios Ordenanza (5 N* 448/2011,
+estableciendo la fecha gradual de caducidad del mismo, tanto en la oferta de
+asignaturas para cursar, como en la habilitaci¾n de mesas de examen final conforme
+lo establece el Reglamento de Alumnos vigente en UNLaR.
+
+A±o 2024:
+
+Dar inicio al 1er a±o del Plan Nuevo.
+
+No se dictan las asignaturas del ler A±o del Plan Ordenanza CS N* 448/2011,
+
+Se dicta de 2do a 5 a±o del Plan Ordenanza CS N* 448/2011.
+
+A±o 2025:
+
+
+--- page 13 | Ing_en_Sistemas_de_Informacin_-_2023_11_02_UNLaR_OCS_232-23_-_Aprueba_el_Plan_de_Implementacin_y_el_Plan_de_Transicin_p13_c1 ---
+o.
+
+No se dictan las asignaturas del ler A±o del Plan Ordenanza CS N* 448/2011,
+
+Se dicta de 2do a 5 a±o del Plan Ordenanza CS N* 448/2011.
+
+A±o 2025:
+
+Se contin·a con ler a±o del Plan Nuevo
+
+Se da inicio al 2do a±o del Plan Nuevo
+
+No se dictan las asignaturas del 2do A±o del Plan Ordenanza CS N* 448/2011.
+
+Se dicta de 3ro a 5to a±o del Plan Ordenanza CS N* 448/2011.
+
+A±o 2026:
+Se contin·a con ler y 2do a±o del Plan Nuevo
+
+Se da inicio al 3do a±o del Plan Nuevo
+
+No se dictan las asignaturas del 3er A±o del Plan Ordenanza CS N* 448 /2011.
+Se dicta de 4to a 5to a±o del Plan Ordenanza CS N* 448/2011.
+
+A±o 2027:
+Se contin·a con 1er, 2do y 3er a±o del Plan Nuevo
+
+Se da inicio al 4to a±o del Plan Nuevo
+
+
+--- page 13 | Ing_en_Sistemas_de_Informacin_-_2023_11_02_UNLaR_OCS_232-23_-_Aprueba_el_Plan_de_Implementacin_y_el_Plan_de_Transicin_p13_c2 ---
+4to a 5to a±o del Plan Ordenanza CS N* 448/2011.
+
+A±o 2027:
+Se contin·a con 1er, 2do y 3er a±o del Plan Nuevo
+
+Se da inicio al 4to a±o del Plan Nuevo
+
+No se dictan las asignaturas del 4to A±o del Plan Ordenanza CS N? 448 /2011.
+Se dicta el 5to a±o del Plan Ordenanza CS Nö 448/2011.
+
+A±o 2028:
+
+Se contin·a con ler, 2do, 3er y 4to a±o del Plan Nuevo
+
+Se da inicio al 5to a±o del Plan Nuevo
+
+No se dictan las asignaturas del Plan Ordenanza CS N* 448/2011.
+
+Y
+
+J Dr. Daniel'┴lberto Quiroga
+SegrÚtari¾ Relator TÚcnico Presidente
+) Consejo Superior Consejo Superior
+
+
+--- page 14 | Ing_en_Sistemas_de_Informacin_-_2023_11_02_UNLaR_OCS_232-23_-_Aprueba_el_Plan_de_Implementacin_y_el_Plan_de_Transicin_p14_c0 ---
+Ministerio de Educaci¾n
+UNIVERSIDAD NACIONAL DE LA RIOJA
+CONSEJO SUPERIOR
+
+ô1983 - 2023 40 AÐOS DE DEMOCRACIAö
+LA RIOJA, 02 noviembre de 2023.
+
+ANEXO HI- ORDENANZA C.S. N? 23 2
+
+PLAN DE TRANSICIËN
+A±o íIöa±o 2 "a±o 3% a±o 5ö a±o
+NO 20 48/2011 448/2011
+: CS N* 448 CSN? CS N? :
+a íCSN?
+2027 Plan Nuevo Plan Nuevo Plan Nuevo Plan Nuevo
+2028 Plan Nuevo Plan Nuevo Plan Nuevo | Plan Nuevo - Plan Nuevo
+
+Plan de Transici¾n, desagregado por tiempo de ·ltima cursada y validez de
+regularidad:
+
+CONFORME LOS TIEMPO DE REGULARIDAD VIGENTE EN UNLaR, AL AÐO
+
+2023.
+ASIGNATURAS. TIEMPOS DE ULTIMA Me DAD PARA :
+DE | CURSADA
+
+RENDIR EXAMEN FINAL
+
+Turno Febrero - Marzo de 2026 '
+
+: Turno Febrero - Mar.
+
+| Tupmo Febrero - Marzo de 2028
+
+
+--- page 14 | Ing_en_Sistemas_de_Informacin_-_2023_11_02_UNLaR_OCS_232-23_-_Aprueba_el_Plan_de_Implementacin_y_el_Plan_de_Transicin_p14_c1 ---
+OS DE ULTIMA Me DAD PARA :
+DE | CURSADA
+
+RENDIR EXAMEN FINAL
+
+Turno Febrero - Marzo de 2026 '
+
+: Turno Febrero - Mar.
+
+| Tupmo Febrero - Marzo de 2028
+
+Ab. mita Pistone Dr. Danict┴l ┴lbÚrto Quiroga
+Secretafidö ┐Relator TÚcnico Presidente
+
+Cofisejo Superior Consejo Superior
+
+
+--- page 15 | Ing_en_Sistemas_de_Informacin_-_2023_11_02_UNLaR_OCS_232-23_-_Aprueba_el_Plan_de_Implementacin_y_el_Plan_de_Transicin_p15_c0 ---
+Ministerio de Educaci¾n
+UNIVERSIDAD NACIONAL DE LA RIOJA
+CONSEJO SUPERIOR
+1983 - 2023 40 AÐOS DE DEMOCRACIAö
+
+LA RIOJA, 02 noviembre de 2023.
+
+ANEXO IIl- ORDENANZA C.S.N* 2 3 92
+PLAN DE TRANSICIËN
+
+4 AÐO * Cuatrimestre de 2026
+
+Turno Septiembre de 2028
+
+1ö Cuatrimestre de 2027 Turno Septiembre de 2029
+
+Ab. JoaquÝn Jobs Pistone Dr. Daniel Alberto Quiroga
+Secretafio RÚlator TÚcnico ½Presidente
+
+Consejo Superior Consejo Superior
+
+
+
+
+================================================================================
+PLAN DE IMPLEMENTACIËN - LIC SISTEMAS (OCS 236)
+================================================================================
+Total chunks: 27
+
+--- page 1 | Lic_en_Sistemas_de_Informacin_-_2023_11_02_UNLaR_OCS_236-23_-_Aprueba_el_Plan_de_Implementacin_y_el_Plan_de_Transicin_p1_c0 ---
+Ministerio de Educaci¾n
+UNIVERSIDAD NACIONAL DE LA R═OJA
+CONSEJO SUPERIOR
+11983 - 2023 40 AÐOS DE DEMOCRACIAö
+LA RIOJA, 02 noviembre de 2023,
+
+VISTO: El expediente Nö 00-9158/2022, del Registro de esta
+Universidad, caratulado: ôSantander, Claudia del C. (Ing.)- E/Adecuaci¾n
+curricular del plan de estudios de la carrera Lic. en Sistemas de Informaci¾nö y;
+
+CONSIDERANDO:
+
+
+--- page 1 | Lic_en_Sistemas_de_Informacin_-_2023_11_02_UNLaR_OCS_236-23_-_Aprueba_el_Plan_de_Implementacin_y_el_Plan_de_Transicin_p1_c1 ---
+lado: ôSantander, Claudia del C. (Ing.)- E/Adecuaci¾n
+curricular del plan de estudios de la carrera Lic. en Sistemas de Informaci¾nö y;
+
+CONSIDERANDO:
+
+Que, mediante los obrados citados en el ôVistoö de este acto, y en
+virtud del artÝculo 91ö inc. 12 y 13 de nuestro Estatuto Universitario, se eleva para
+consideraci¾n de este Cuerpo la Resoluci¾n Nö 168/23 del Consejo Departamental
+del Departamento AcadÚmico de Ciencias Exactas, FÝsicas y Naturales, mediante la
+cual se propone un Plan de Implementaci¾n del Nuevo Dise±o Curricular de la
+Carrera de Licenciatura en Sistemas de Informaci¾n.
+
+
+--- page 1 | Lic_en_Sistemas_de_Informacin_-_2023_11_02_UNLaR_OCS_236-23_-_Aprueba_el_Plan_de_Implementacin_y_el_Plan_de_Transicin_p1_c2 ---
+Naturales, mediante la
+cual se propone un Plan de Implementaci¾n del Nuevo Dise±o Curricular de la
+Carrera de Licenciatura en Sistemas de Informaci¾n.
+
+Que, desde la SecretarÝa de Planificaci¾n y Autoevaluaci¾n de
+Rectorado en forma conjunta con la SecretarÝa de Planificaci¾n y Autoevaluaci¾n del
+DACEYyN, se sugiri¾ la formulaci¾n de actos administrativos separados, por un lado
+el Dise±o Curricular y por otro lado el Plan de Implementaci¾n y Transici¾n.
+
+Que, el Plan de Implementaci¾n del Nuevo Dise±o Curricular
+comprende: El Plan de Correlatividades, la Estructura Matricial, el anßlisis de
+Recursos FÝsicos y Recursos Humanos que garantizan la implementaci¾n y El Plan
+de Transici¾n
+
+
+--- page 1 | Lic_en_Sistemas_de_Informacin_-_2023_11_02_UNLaR_OCS_236-23_-_Aprueba_el_Plan_de_Implementacin_y_el_Plan_de_Transicin_p1_c3 ---
+Correlatividades, la Estructura Matricial, el anßlisis de
+Recursos FÝsicos y Recursos Humanos que garantizan la implementaci¾n y El Plan
+de Transici¾n
+
+Que, a travÚs del Plan de Transici¾n, se asegura la continuidad de
+las trayectorias de los estudiantes que cursan el Plan de Estudios Ordenanza CS N*
+449/2011, estableciendo la fecha de caducidad de este.
+
+Que, atento a ello, obra dictamen de la SecretarÝa Legal y TÚcnica N*
+494/23 mediante el cual no se observan impedimentos para la prosecuci¾n del
+trßmite.
+
+Que, tomando intervenci¾n la SecretarÝa de Asuntos AcadÚmicos de
+Rectorado eleva respectivo informe de competencia en el que se se±ala que la
+propuesta se considera de viable aplicaci¾n,
+
+
+--- page 1 | Lic_en_Sistemas_de_Informacin_-_2023_11_02_UNLaR_OCS_236-23_-_Aprueba_el_Plan_de_Implementacin_y_el_Plan_de_Transicin_p1_c4 ---
+rÝa de Asuntos AcadÚmicos de
+Rectorado eleva respectivo informe de competencia en el que se se±ala que la
+propuesta se considera de viable aplicaci¾n,
+
+) ORDENANZA C.S.N* ┐38
+AS
+Ab.]J íaquÝ JosÚ Pistone Dr. Daniel. berto Quiroga
+Secretario Relator TÚcnico Presidente
+
+Consejo Superior Consejo Superior:
+
+
+--- page 2 | Lic_en_Sistemas_de_Informacin_-_2023_11_02_UNLaR_OCS_236-23_-_Aprueba_el_Plan_de_Implementacin_y_el_Plan_de_Transicin_p2_c0 ---
+Ministerio de Educaci¾n
+UNIVERSIDAD NACIONAL DE LA RIOJA
+CONSEJO SUPERIOR
+
+1983 - 2023 40 AÐOS DE DEMOCRACIAö
+LA RIOJA, 02 noviembre de 2023.
+
+Que, este Consejo Superior, reunido en Sesi¾n Ordinaria de fecha 02
+de noviembre, analiz¾ el asunto sobre tablas y resolvi¾ aprobar la solicitud
+planteada mediante Resoluci¾n C.D.D.A.C.E.FyN. N* 168/23.
+
+Por todo ello, en el ejercicio de sus atribuciones estatutarias y previo tratamiento en
+Particular de lo antes ôVisto y Consideradoö,
+
+EL CONSEJO SUPERIOR
+DE LA UNIVERSIDAD NACIONAL DE LA RIOJA
+ORDENA:
+
+
+--- page 2 | Lic_en_Sistemas_de_Informacin_-_2023_11_02_UNLaR_OCS_236-23_-_Aprueba_el_Plan_de_Implementacin_y_el_Plan_de_Transicin_p2_c1 ---
+estatutarias y previo tratamiento en
+Particular de lo antes ôVisto y Consideradoö,
+
+EL CONSEJO SUPERIOR
+DE LA UNIVERSIDAD NACIONAL DE LA RIOJA
+ORDENA:
+
+ART═CULO 1% APROBAR EL PLAN DE IMPLEMENTACIËN DEL NUEVO
+DISEÐO CURRICULAR de la Carrera Licenciatura en Sistemas de Informaci¾n
+aprobado por Ordenanza CS, N? 235/23, conforme los ôConsiderandosö del
+presente acto administrativo y cuyo detalle obra en los Anexos Ll, II y IH de esta
+Ordenanza.
+
+ART═CULO 2ö APROBAR EL PLAN DE TRANSICIËN ENTRE EL NUEVO
+DISEÐO CURRICULAR de la Carrera Licenciatura en Sistemas de Informaci¾n,
+aprobado por Ordenanza CS. N* 235/23, y el Plan Ordenanza CS N* 449/2011,
+cuyo detalle obra en el Anexo IV.
+
+
+--- page 2 | Lic_en_Sistemas_de_Informacin_-_2023_11_02_UNLaR_OCS_236-23_-_Aprueba_el_Plan_de_Implementacin_y_el_Plan_de_Transicin_p2_c2 ---
+a Licenciatura en Sistemas de Informaci¾n,
+aprobado por Ordenanza CS. N* 235/23, y el Plan Ordenanza CS N* 449/2011,
+cuyo detalle obra en el Anexo IV.
+
+ART═CULO 3": ESTABLECER que el nuevo Plan de estudios se implementarß en
+forma gradual y progresiva a partir del ciclo lectivo 2024, conforme se indica en el
+Anexo IV.
+
+ART═CULO 4ö: ESTABLECER que el Plan de Estudios Ordenanza CS N* 449/2011,
+se mantendrß vigente hßsta el a±o 2027, que se implementa el ·ltimo a±o de dicho
+plan, conforme al cronograma especificado en el Anexo IV, considerado habilitadas
+las fechas de caducidad de la oferta de asignaturas y mesas de examen finales,
+conforme el Reglamento de Alumnos vigente en UNLaR.
+
+
+--- page 2 | Lic_en_Sistemas_de_Informacin_-_2023_11_02_UNLaR_OCS_236-23_-_Aprueba_el_Plan_de_Implementacin_y_el_Plan_de_Transicin_p2_c3 ---
+iderado habilitadas
+las fechas de caducidad de la oferta de asignaturas y mesas de examen finales,
+conforme el Reglamento de Alumnos vigente en UNLaR.
+
+ART═CULO 5": ESTABLECER que, finalizado el periodo de vigencia del Plan de
+estudios actual, los estudiantes que no se hubieren graduado, pasarßn
+automßticamente al Plan 2024.
+
+e y ORDENANZA CS.Nö 236
+╔ e dl a ┐ 1 ö
+Ab. JoaquÝn JosÚ Pistone Dr. Daniel AlBÚrto Quiroga
+Secretario elator TÚcnico Presidente
+
+Consejo Superior Consejo Superior
+
+
+--- page 3 | Lic_en_Sistemas_de_Informacin_-_2023_11_02_UNLaR_OCS_236-23_-_Aprueba_el_Plan_de_Implementacin_y_el_Plan_de_Transicin_p3_c0 ---
+Ministerio de Educaci¾n
+UNIVERSIDAD NACIONAL DE LA RIOJA
+CONSEJO SUPERIOR
+
+1983 - 2023 40 AÐOS DE DEMOCRACIAö
+LA RIOJA, 02 noviembre de 2023,
+
+ART═CULO 6: Los estudiantes que hayan ingresado antes del ciclo lectivo 2024,
+podrßn cambiarse al Plan de ESTUDIOS 2024, teniendo en cuenta el cronograma de
+implementaci¾n previsto para la transici¾n, el rÚgimen de correlatividades y
+equivalencias y que no se afecte su trayectoria acadÚmica.
+
+ART═CULO 7ö: ProtocolÝcese, notifÝquese y archÝvese.
+
+) ORDENANZAC.S.N% 2 38
+
+ö
+
+Dr. Daniel Alberto Quiroga
+E
+PresidÚnte
+Consejo SupÚrior
+
+Ab. Joaquinö [osÚ Pistone
+Secretafio Relator TÚcnico
+Consejo Superior
+
+
+--- page 4 | Lic_en_Sistemas_de_Informacin_-_2023_11_02_UNLaR_OCS_236-23_-_Aprueba_el_Plan_de_Implementacin_y_el_Plan_de_Transicin_p4_c0 ---
+Ministerio de Educaci¾n
+UNIVERSIDAD NACIONAL DE LA RIOJA
+CONSEJO SUPERIOR
+
+ô1983 - 2023 40 AÐOS DE DEMOCRACIAö
+LA RIOJA, 02 noviembre de 2023.
+
+ANEXO 1 - ORDENANZANö 4 3 6
+PLAN DE CORRELATIVIDADES
+
+PLAN DE CORRELATIVIDADES:
+
+La carrera de Licenciatura en Sistemas de Informaci¾n, Plan 2024, establece la
+organizaci¾n de los espacios acadÚmicos en la estructura curricular, que el
+estudiante debe tener en cuenta a los fines de su cursado, ya que, a travÚs de la
+relaci¾n horizontal y vertical entre los mismos, se garantiza la adquisici¾n de las
+competencias de egreso.
+
+Los mismos se reflejan en la organizaci¾n de las correlatividades para cursar y las
+mismas para rendir examen final.
+
+APROBADA
+: REGULAR PARA
+Ne : ESPACIOS ACAD╔MICOS o ASIGNATURAS | R╔GIMEN : PARA RENDIR
+: : ┐CURSAR í EXAMEN
+
+
+--- page 4 | Lic_en_Sistemas_de_Informacin_-_2023_11_02_UNLaR_OCS_236-23_-_Aprueba_el_Plan_de_Implementacin_y_el_Plan_de_Transicin_p4_c1 ---
+ar y las
+mismas para rendir examen final.
+
+APROBADA
+: REGULAR PARA
+Ne : ESPACIOS ACAD╔MICOS o ASIGNATURAS | R╔GIMEN : PARA RENDIR
+: : ┐CURSAR í EXAMEN
+
+AN┴LISIS Y PRODUCCIËN DE TEXTOS PARA
+- LA COMUNICACIËN
+
+y
+
+Ab. Joa los Pistone Dr. Daniel AlbÚrto Quiroga
+Secretßri¾ Relator TÚcnico Presidente
+
+Coneain Eunoriar Doneeia Sunarior
+
+
+--- page 5 | Lic_en_Sistemas_de_Informacin_-_2023_11_02_UNLaR_OCS_236-23_-_Aprueba_el_Plan_de_Implementacin_y_el_Plan_de_Transicin_p5_c0 ---
+Ministerio de Educaci¾n
+UNIVERSIDAD NACIONAL DE LA RIOJA
+CONSEJO SUPERIOR
+
+1983 - 2023 40 AÐOS DE DEMOCRACIAö
+LA RIOJA, 02 noviembre de 2023.
+ANEXO 1 - ORDENANZA N?
+PLAN DE CORRELATIVIDADES
+
+TI
+GERENCIAMIENTO : 2 2,23 : 2,23
+
+INTELIGENCIA ARTIFICIAL
+
+SEGURIDAD INFORM┴TICA
+
+REDES DE DATOS U
+
+ECONOMIA Y EVALUACIËN DE PROYECTOS
+
+INGENIER═A DE SOFTWARE Il
+
+43 : LEGISLACIËN y ╔TICA PROFESIONAL 10 37, 38 37, 38
+
+Secretafiq RÚlator TÚcnico
+C¾nsejo Superior Consejo Superior
+
+
+--- page 6 | Lic_en_Sistemas_de_Informacin_-_2023_11_02_UNLaR_OCS_236-23_-_Aprueba_el_Plan_de_Implementacin_y_el_Plan_de_Transicin_p6_c0 ---
+Ministerio de Educaci¾n
+UNIVERSIDAD NACIONAL DE LA RIOJA
+CONSEJO SUPERIOR
+
+ô1983 - 2023 40 AÐOS DE DEMOCRACIAö
+LA RIOJA, 02 noviembre de 2023.
+ANEXO I - ORDENANZA N? 2 36
+PLAN DE CORRELATIVIDADE
+
+CANINO CRITICO: de LSI, en funci¾n de las correlatividades para cursar
+
+tora±o ' 2¾0 fo : Jera±o i to a±o | Stoa±o
+
+: : 7
+A
+Ab. JoaquÝn JosÚ Pistone Dr. Daniel Albeito Quiroga
+Secretafio' elator TÚcnico Presidente
+
+C¾nsejo Superior Consejo Superior
+
+
+--- page 7 | Lic_en_Sistemas_de_Informacin_-_2023_11_02_UNLaR_OCS_236-23_-_Aprueba_el_Plan_de_Implementacin_y_el_Plan_de_Transicin_p7_c0 ---
+Ministerio de Educaci¾n
+UNIVERSIDAD NACIONAL DE LA RIOJA
+CONSEJO SUPERIOR
+
+1983 - 2023 40 AÐOS DE DEMOCRACIAö
+
+LA RIOJA, 02 noviembre de 2023.
+ANEXO HI - ORDENANZA N* 2 36
+ESTRUCTURA MATRICIAL
+
+Tomando en consideraci¾n, la Ordenanza CS Nö 193/2020, las ßreas de
+conocimiento imherentes a la carrera y las ßreas de conocimiento cientÝfico
+tecnol¾gica que definen y caracterizan las carreras del DACEFyN, se propone la
+siguiente dependencia matricial de los espacios acadÚmicos o asignaturas que
+integran el Plan de Estudios 2024 de la carrera Licenciatura en Sistemas de
+Informaci¾n, y que se presentan en el siguiente cuadro.
+
+ORDEN : NOMBRE : ESTRUCTURA MATRICIAL
+
+
+--- page 7 | Lic_en_Sistemas_de_Informacin_-_2023_11_02_UNLaR_OCS_236-23_-_Aprueba_el_Plan_de_Implementacin_y_el_Plan_de_Transicin_p7_c1 ---
+Estudios 2024 de la carrera Licenciatura en Sistemas de
+Informaci¾n, y que se presentan en el siguiente cuadro.
+
+ORDEN : NOMBRE : ESTRUCTURA MATRICIAL
+
+┴LGEBRA Y GEOMETR═A ANAL═TICA 1
+ALGORITMO Y ESTRUCTURA DE DATOS I
+┴LGEBRA Y GEOMETR═A ANAL═TICA IE
+ALGORITMO Y ESTRUCTURA DE DATOS H
+PROGRAMACIËN I
+SISTEMAS DE INFORMACIËN I
+
+INGLES 1
+
+Ab. JoaquÝh JosÚ Pistone Dr, Daniel AlbÚrto Quiroga
+Secretafio Relator TÚcnico Pfesidente
+
+Consejo Superior Consejo Superior
+
+
+--- page 8 | Lic_en_Sistemas_de_Informacin_-_2023_11_02_UNLaR_OCS_236-23_-_Aprueba_el_Plan_de_Implementacin_y_el_Plan_de_Transicin_p8_c0 ---
+Ministerio de Educaci¾n
+UNIVERSIDAD NACIONAL DE LA RIOJA
+CONSEJO SUPERIOR
+
+1983 ù 2023 40 AÐOS DE DEMOCRACIAö
+
+LA RIOJA, 02 noviembre de 2023.
+ANEXO II - ORDENANZA N? 2 36
+
+15 : PROBABILIDAD Y ESTAD═STICA x
+
+COMPUTACIËN
+
+PROGRAMACIËN IM
+
+m2: BASE DEDATOSI XX
+
+ORGANIZACIËN, GESTIËN EMPRESARIAL
+
+PROGRAMACIËN
+
+ARQUITECTURA AVANZADA DE HARDWARE UH :
+
+REDES DEDATOSI
+
+INTELIGENCIA ARTIFICIAL
+
+SEGURIDAD INFORM┴TICA
+
+REDES DE DATOS U
+
+E, 1
+Ab. Joaqui± JË sÚ Pistone Dr. Daniel AlbÚrto Quiroga
+SecretarioRelßtor TÚcnico Presidente
+
+Consejo Superior Consejo Superior
+
+┐
+
+
+--- page 9 | Lic_en_Sistemas_de_Informacin_-_2023_11_02_UNLaR_OCS_236-23_-_Aprueba_el_Plan_de_Implementacin_y_el_Plan_de_Transicin_p9_c0 ---
+Ministerio de Educaci¾n
+UNIVERSIDAD NACIONAL DE LA RIOJA
+CONSEJO SUPERIOR
+
+ô1983 - 2023 40 AÐOS DE DEMOCRACIAö
+LA RIOJA, 02 noviembre de 2023.
+ANEXO II - ORDENANZA N? Y 3 6
+ESTRUCTURA MATRICIAL
+
+POGRAMACIËN VI
+: SEMINARIO DE INNOVACIËN Y PROTOTIPADO
+INVESTIGACIËN OPERATIVA
+
+CALIDAD DE SOFTWARE
+
+AUDITOR═A y PERITAJE DE SISTEMAS
+INFORM┴TICOS
+
+e A > ; : | 7
+Ab. Joaq·Ýn; asÚ Pistone Dr. Daniel AlbÚft¾ Quiroga
+Secretario Relator TÚcnico Presidente
+
+) ôConsejo Superior Consejo Superior
+
+
+--- page 10 | Lic_en_Sistemas_de_Informacin_-_2023_11_02_UNLaR_OCS_236-23_-_Aprueba_el_Plan_de_Implementacin_y_el_Plan_de_Transicin_p10_c0 ---
+Ministerio de Educaci¾n
+UNIVERSIDAD NACIONAL DE LA RIOJA
+CONSEJO SUPERIOR
+
+ô1983 - 2023 40 AÐOS DE DEMOCRACIAö
+
+LA RIOJA, 02 noviembre de 2023,
+ANEXO IIT- ORDENANZA N? 2 36
+RECURSOS F═SICOS Y HUMANOS
+
+Recursos FÝsicos:
+
+La actual carrera de Licenciatura en Sistemas de Informaci¾n cuenta la
+infraestructura fÝsica de aulas, anfiteatro, laboratorios, etc, para el desarrollo de la
+actividad acadÚmica, que se ponen a disposici¾n para el nuevo Plan 2024.
+
+Recursos Humanos:
+
+Los Recursos Humanos que garantizan la implementaci¾n del Nuevo Plan de
+Estudios, lo constituyen:
+
+
+--- page 10 | Lic_en_Sistemas_de_Informacin_-_2023_11_02_UNLaR_OCS_236-23_-_Aprueba_el_Plan_de_Implementacin_y_el_Plan_de_Transicin_p10_c1 ---
+osici¾n para el nuevo Plan 2024.
+
+Recursos Humanos:
+
+Los Recursos Humanos que garantizan la implementaci¾n del Nuevo Plan de
+Estudios, lo constituyen:
+
++ Los Profesores en todas sus jerarquÝas y dedicaciones que constituyen
+actualmente el Plan Actual, Ordenanza CS Nö 449/2011. Estas nuevas
+funciones serßn encomendadas a partir del informe de pertinencia que
+elaboren el consejo consultivo de carrera, en cumplimiento con el ArtÝculo N*
+del Convenio Colectivo de Trabajo.
+
++ Los Profesores que se incorporen en las vacantes que hoy en dÝa se
+encuentran en la carrera.
+
+
+--- page 10 | Lic_en_Sistemas_de_Informacin_-_2023_11_02_UNLaR_OCS_236-23_-_Aprueba_el_Plan_de_Implementacin_y_el_Plan_de_Transicin_p10_c2 ---
+con el ArtÝculo N*
+del Convenio Colectivo de Trabajo.
+
++ Los Profesores que se incorporen en las vacantes que hoy en dÝa se
+encuentran en la carrera.
+
+½e Los profesores, que pudieren incorporarse de cargos nuevos se creen en
+funci¾n de la disponibilidad presupuestaria que se otorgue a la carrera,
+producto de planes de mejoras de nivel nacional o institucional a futuro, en
+funci¾n de las necesidades que oportunamente se eval·an.
+
+
+--- page 10 | Lic_en_Sistemas_de_Informacin_-_2023_11_02_UNLaR_OCS_236-23_-_Aprueba_el_Plan_de_Implementacin_y_el_Plan_de_Transicin_p10_c3 ---
+ue a la carrera,
+producto de planes de mejoras de nivel nacional o institucional a futuro, en
+funci¾n de las necesidades que oportunamente se eval·an.
+
+El Consejo Consultivo de la Carrera Licenciatura en Sistemas de Informaci¾n,
+analizarß la nueva distribuci¾n de asignaturas al plantel de docentes actuales, y
+propondrß la asignaci¾n de funciones al Nuevo Plan 2024, al Consejo
+Departamental, quienes tendrßn que emitir el acto administrativo correspondiente,
+verificando cada situaci¾n particular, teniendo en cuenta la normativa vigente,
+Ordenanza CS N* 171 /2019, Convenio Colectivo de Trabajo, y el cargo y dedicaci¾n
+
+de cada profesOlcm O═
+eS e pan
+|
+O Y ú
+Ab. JoaquÚ Jo sÚ Pistone berto Quiroga
+
+Secretari¾ RÚlßtor TÚcnico Presidente
+Consejo Superior Consejo Superior
+
+
+--- page 11 | Lic_en_Sistemas_de_Informacin_-_2023_11_02_UNLaR_OCS_236-23_-_Aprueba_el_Plan_de_Implementacin_y_el_Plan_de_Transicin_p11_c0 ---
+Ministerio de Educaci¾n
+UNIVERSIDAD NACIONAL DE LA RIOJA
+CONSEJO SUPERIOR
+
+ô1983 - 2023 40 AÐOS DE DEMOCRACIAö
+
+LA RIOJA, 02 noviembre de 2023.
+ANEXO IV- ORDENANZA N? 9 3 E
+PLAN DE TRANSICIËN
+
+A travÚs del Plan de Transici¾n, se asegura la continuidad de las trayectorias de los
+estudiantes que cursan el Plan de Estudios Ordenanza CS N* 449/2011,
+estableciendo la fecha gradual de caducidad del mismo, tanto en la oferta de
+asignaturas para cursar, como en la habilitaci¾n de mesas de examen final conforme
+lo establece el Reglamento de Alumnos vigente en UNLaR.
+
+A±o 2024:
+
+Dar inicio al 1er a±o del Plan Nuevo.
+
+No se dictan las asignaturas del ler A±o del Plan Ordenanza CS N? 449/2011.
+Se dicta de 2do a 5to a±o del Plan Ordenanza CS N* 449/2011.
+
+A±o 2025:
+
+
+--- page 11 | Lic_en_Sistemas_de_Informacin_-_2023_11_02_UNLaR_OCS_236-23_-_Aprueba_el_Plan_de_Implementacin_y_el_Plan_de_Transicin_p11_c1 ---
+.
+
+No se dictan las asignaturas del ler A±o del Plan Ordenanza CS N? 449/2011.
+Se dicta de 2do a 5to a±o del Plan Ordenanza CS N* 449/2011.
+
+A±o 2025:
+
+Se contin·a con ler a±o del Plan Nuevo
+
+Se da inicio al 2do a±o del Plan Nuevo
+
+No se dictan las asignaturas del 2do A±o del Plan Ordenanza CS N? 449/2011.
+Se dicta de 3ro a 5to a±o del Plan Ordenanza CS N* 449/2011.
+
+A±o 2026:
+
+Se contin·a con ler y 2do a±o del Plan Nuevo
+
+Se da inicio al 3do a±o del Plan Nuevo
+
+No se dictan las asignaturas del 3er A±o del Plan Ordenanza CS N* 449/2011.
+Se dicta de 4to a 5to a±o del Plan Ordenanza CS N* 449/2011.
+
+A±o 2027:
+
+Se contin·a con ler, 2do y 3er a±o del Plan Nuevo
+
+Se da inicio al 4to a±o del Plan Nuevo
+
+
+--- page 11 | Lic_en_Sistemas_de_Informacin_-_2023_11_02_UNLaR_OCS_236-23_-_Aprueba_el_Plan_de_Implementacin_y_el_Plan_de_Transicin_p11_c2 ---
+4to a 5to a±o del Plan Ordenanza CS N* 449/2011.
+
+A±o 2027:
+
+Se contin·a con ler, 2do y 3er a±o del Plan Nuevo
+
+Se da inicio al 4to a±o del Plan Nuevo
+
+/ |
+Ab. JoaquÝn JosÚ Pistone Dr. Daniel Alberto Quiroga
+Secretario Relator TÚcnico Presidente
+
+C¾nsejo Superior Consejo Superior
+
+
+--- page 12 | Lic_en_Sistemas_de_Informacin_-_2023_11_02_UNLaR_OCS_236-23_-_Aprueba_el_Plan_de_Implementacin_y_el_Plan_de_Transicin_p12_c0 ---
+Ministerio de Educaci¾n
+UNIVERSIDAD NACIONAL DE LA RIOJA
+CONSEJO SUPERIOR
+
+ô1983 - 2023 40 AÐOS DE DEMOCRACIAö
+
+LA RIOJA, 02 noviembre de 2023.
+ANEXO IV- ORDENANZA N" 9 3 $
+PLAN DE TRANSICIËN
+
+No se dictan las asignaturas del 4to A±o del Plan Ordenanza CS N? 449/2011.
+Se dicta el 5to a±o del Plan Ordenanza CS N* 449/2011,
+
+A±o 2028:
+
+Se contin·a con ler, 2do, 3er y 4to a±o del Plan Nuevo
+
+Se da inicio al 5to a±o del Plan Nuevo
+
+No se dictan las ss asignaturas d del Plan Ordenanza CS N* 449 pz 2011.
+
+2025 Plan Nuevo : Plan Nuevo CS N? 449/2011 í CS NN? 449/2011 | CSN? 449/2011
+
+Plan Nuevo Plan Nuevo Plan Nueve Plan Nuevo
+
+Plan de Transici¾n, desagregado por tiempo de ·ltima cursada y validez de
+
+regularidad:
+PLAN DE ESTUDIOS LICEN═
+
+'MACION - ORDENANZA CS N? 449/2011
+
+
+--- page 12 | Lic_en_Sistemas_de_Informacin_-_2023_11_02_UNLaR_OCS_236-23_-_Aprueba_el_Plan_de_Implementacin_y_el_Plan_de_Transicin_p12_c1 ---
+o
+
+Plan de Transici¾n, desagregado por tiempo de ·ltima cursada y validez de
+
+regularidad:
+PLAN DE ESTUDIOS LICEN═
+
+'MACION - ORDENANZA CS N? 449/2011
+
+ASIGNATURAS DE H TIEMPOS DE ULTIMA CURSADA REGULARIDAD PARA RENDIR
+
+2ö Cuatrimestre y Anuales de 2023 Turno Febrero - Marzo de 2026
+
+Turno Febrero - Marzo de 2027
+
+2 Cuatrimestre y Anuales de 2024
+
+2 Cuatrimestre y Anuales de 2025 Turno Febrero - Marzo de 2028
+
+2 Cuatrimestre y Anuales de 2026
+
+e.
+Ab. JoaquÝ sÚ Pistone Dr. Daniel Alberto Quiroga
+Secretafio-Relator TÚcnico Presidente
+Consejo Superior Consejo Superior
+

@@ -6,8 +6,14 @@ Paso 1 y 2 del pipeline RAG: extrae texto de PDFs y lo divide en chunks.
 Detecta automáticamente si un PDF es escaneado (sin capa de texto) y en ese
 caso usa OCR (tesseract) en vez de extracción directa.
 
-Uso:
+Uso básico:
     python scripts/01_extract_pdfs.py --input_dir ./data/raw --output_json ./data/processed/chunks_pdfs.json
+
+Uso con semantic chunking (opcional):
+    python scripts/01_extract_pdfs.py \\
+        --input_dir ./data/raw \\
+        --output_json ./data/processed/chunks_pdfs.json \\
+        --semantic --threshold 0.75 --max_words 400
 
 Requisitos:
     pip install pdfplumber pytesseract --break-system-packages
@@ -91,26 +97,41 @@ def clean_text(text: str) -> str:
 
 def chunk_text(text: str, chunk_size: int = 800, overlap: int = 150) -> list[str]:
     """
-    Chunking por caracteres con solapamiento, cortando en el espacio más cercano
-    para no partir palabras. chunk_size/overlap en caracteres, no tokens.
+    Chunking mejorado: prioriza cortar en saltos de párrafo o puntos,
+    para evitar partir ideas u oraciones por la mitad.
     """
     text = clean_text(text)
+    if not text:
+        return []
     if len(text) <= chunk_size:
-        return [text] if text else []
+        return [text]
 
     chunks = []
     start = 0
     while start < len(text):
         end = start + chunk_size
-        if end < len(text):
-            # buscar el último espacio antes del corte para no partir palabras
-            last_space = text.rfind(" ", start, end)
-            if last_space > start:
-                end = last_space
-        chunk = text[start:end].strip()
+        if end >= len(text):
+            chunks.append(text[start:end].strip())
+            break
+            
+        # Intentar cortar en el último \n\n, \n, punto o espacio dentro del límite
+        best_cut = -1
+        for sep in ["\n\n", "\n", ". ", " "]:
+            cut_pos = text.rfind(sep, start, end)
+            if cut_pos != -1 and cut_pos > start:
+                best_cut = cut_pos + len(sep) if sep == ". " else cut_pos
+                break
+        
+        if best_cut == -1:
+            best_cut = end
+            
+        chunk = text[start:best_cut].strip()
         if chunk:
             chunks.append(chunk)
-        start = end - overlap if end - overlap > start else end
+            
+        # Calcular próximo inicio con solapamiento
+        start = best_cut - overlap if best_cut - overlap > start else best_cut
+        
     return chunks
 
 
@@ -139,6 +160,17 @@ def main():
     parser.add_argument("--ocr_lang", default="spa", help="Idioma para OCR (spa=español, eng=inglés)")
     parser.add_argument("--tesseract_path", default=None,
                          help=r"Ruta al ejecutable tesseract.exe en Windows, ej: C:\Program Files\Tesseract-OCR\tesseract.exe")
+    # Semantic chunking (opcional)
+    parser.add_argument("--semantic", action="store_true",
+                        help="Aplica semantic chunking tras la extracción (fusiona/divide según similitud semántica)")
+    parser.add_argument("--threshold", type=float, default=0.75,
+                        help="Umbral de similitud coseno para semantic chunking (default: 0.75)")
+    parser.add_argument("--max_words", type=int, default=400,
+                        help="Máximo de palabras por chunk en semantic chunking (default: 400)")
+    parser.add_argument("--min_words", type=int, default=30,
+                        help="Mínimo de palabras por chunk en semantic chunking (default: 30)")
+    parser.add_argument("--model", default="paraphrase-multilingual-MiniLM-L12-v2",
+                        help="Modelo de sentence-transformers para semantic chunking")
     args = parser.parse_args()
 
     configure_tesseract(args.tesseract_path)
@@ -164,6 +196,24 @@ def main():
         avg_len = sum(len(r["text"]) for r in records) // len(records) if records else 0
         stats.append((pdf_path.name, n_pages, len(records), avg_len))
 
+    # Semantic chunking (opcional)
+    if args.semantic:
+        import importlib.util
+        script_dir = Path(__file__).parent
+        spec = importlib.util.spec_from_file_location(
+            "semantic_chunker", script_dir / "semantic_chunker.py"
+        )
+        sem_mod = importlib.util.module_from_spec(spec)
+        spec.loader.exec_module(sem_mod)
+        print("\nAplicando semantic chunking...")
+        all_chunks = sem_mod.semantic_merge(
+            all_chunks,
+            model_name=args.model,
+            threshold=args.threshold,
+            max_words=args.max_words,
+            min_words=args.min_words,
+        )
+
     with open(output_path, "w", encoding="utf-8") as f:
         json.dump(all_chunks, f, ensure_ascii=False, indent=2)
 
@@ -174,6 +224,7 @@ def main():
         print(f"{name:<55} {n_pages:>8} {n_chunks:>8} {avg_len:>12}")
     print("-" * 87)
     print(f"Total chunks generados: {len(all_chunks)}")
+    print(f"Modo semantic chunking: {'SÍ (threshold={:.2f})'.format(args.threshold) if args.semantic else 'NO'}")
     print(f"Guardado en: {output_path}\n")
 
 

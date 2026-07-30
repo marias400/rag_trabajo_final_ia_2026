@@ -1,137 +1,253 @@
 # RAG Currículum UNLaR
 
-Asistente conversacional que responde preguntas sobre el plan de estudios de
-Ingeniería en Sistemas de Información (UNLaR, Plan 2024) usando RAG
-(Retrieval-Augmented Generation) sobre un LLM local corriendo en LMStudio.
+Asistente conversacional que responde preguntas sobre los planes de estudios de
+**Ingeniería en Sistemas**, **Licenciatura en Sistemas** e **Ingeniería Mecatrónica**
+(UNLaR, Plan 2024), usando RAG (Retrieval-Augmented Generation) sobre un LLM local
+corriendo en LMStudio.
+
+---
 
 ## Cómo funciona el sistema RAG
 
-### Vectorización (se hace una sola vez, o cada vez que cambian los datos fuente)
+El sistema se divide en dos grandes fases: **Ingesta** (procesar los documentos una
+sola vez) y **Consulta** (responder preguntas en tiempo real). Toda la lógica de
+consulta está encapsulada en `scripts/rag_core.py` y es compartida por la consola
+(`05_rag_query.py`) y la interfaz web (`app/streamlit_app.py`).
 
-El sistema combina **dos fuentes de datos distintas**, procesadas por caminos
-separados y unificadas recién al final en la misma base vectorial:
+### Fase 1 — Ingesta (offline, una sola vez)
 
-1. **PDFs escaneados** (ordenanzas de la UNLaR) → extracción de texto con OCR
-   (tesseract) cuando no tienen capa de texto → división en chunks.
-2. **Tabla de correlatividades**, transcripta a mano en un JSON estructurado
-   (`data/structured/correlatividades_ing_sistemas_2024.json`, incluye el año
-   de cada asignatura) → conversión a chunks de texto natural por asignatura +
-   chunks-resumen por año (uno por cada uno de los 5 años de la carrera).
+El sistema combina **dos fuentes de datos** procesadas por caminos separados y
+unificadas al final en la misma base vectorial (ChromaDB):
 
-   *Por qué separado del OCR:* la tabla de correlatividades es lo más
-   consultado del sistema y el OCR rompe tablas (mezcla columnas, pierde
-   números). Transcribirla a mano garantiza un dato 100% preciso para lo más
-   crítico, en vez de depender de la extracción automática.
+| Fuente | Script | Qué hace |
+|---|---|---|
+| PDFs de ordenanzas (`data/raw/`) | `01b_extract_docling.py` | Extrae texto respetando estructura (títulos, secciones, tablas) con Docling. Opcionalmente aplica Semantic Chunking para cortar por coherencia temática en vez de por tamaño fijo. |
+| Tablas de correlatividades (`data/structured/*.json`) | `02_correlativities_to_chunks.py` | Convierte los JSON estructurados en chunks de texto natural (uno por asignatura + un resumen por año). Se procesan aparte del OCR porque las tablas escaneadas pierden columnas y números. |
 
-3. Ambos conjuntos de chunks se unifican, se generan sus **embeddings** con
-   `sentence-transformers` (modelo `paraphrase-multilingual-MiniLM-L12-v2`) y
-   se guardan en **ChromaDB** (persistente en `chroma_db/`).
+Todos los chunks resultantes se vectorizan con `paraphrase-multilingual-MiniLM-L12-v2`
+y se guardan en ChromaDB (`03_build_vectordb.py`).
 
-### Consulta
+### Fase 2 — Consulta (en tiempo real)
 
-Este flujo es el mismo tanto si se usa el script de consola
-(`05_rag_query.py`, útil para debug rápido) como la interfaz web
-(`app/streamlit_app.py`, la versión final para el usuario):
+Cuando el usuario hace una pregunta, el sistema ejecuta los siguientes pasos en orden:
 
-4. El usuario hace una pregunta (ej. "¿Qué correlativas tiene Cálculo
-   Numérico?" o "¿Cuántas materias tiene el segundo año?").
-5. La pregunta se convierte en un vector con el mismo modelo de embeddings.
-6. ChromaDB busca los chunks más parecidos semánticamente.
-   - Si la pregunta menciona explícitamente un año de la carrera (por
-     ejemplo "primer año", "2do año", "año 3"), el sistema fuerza además la
-     inclusión del chunk-resumen de ese año, porque la búsqueda semántica por
-     sí sola no siempre lo prioriza bien en preguntas de tipo "agregado"
-     (¿cuántas materias tiene...?).
-7. Los chunks recuperados se arman en un prompt y se le envían a LMStudio
-   (servidor local, API compatible con OpenAI) como contexto.
-8. LMStudio genera la respuesta usando ese contexto.
-9. Se muestra la respuesta final junto con los fragmentos/fuentes usados,
-   para que se pueda verificar de dónde salió cada dato.
+#### 2.1 Routing y Query Rewriting (siempre activo)
 
-## Pasos para armar el sistema desde cero
+Una llamada corta al LLM que cumple dos funciones simultáneas:
 
-**1. Activar el entorno virtual**
+- **Routing:** Decide si la pregunta necesita buscar en la base o se puede responder
+  con el historial (saludos, aclaraciones, resúmenes).
+- **Rewriting:** Si necesita buscar, reescribe la pregunta para optimizar la búsqueda:
+  resuelve pronombres ("esa materia" → nombre real), expande siglas ("BD" → "Bases de
+  Datos"), agrega sinónimos del dominio, infiere la carrera del contexto y elimina
+  muletillas.
+
+Además, `detect_career_stems()` identifica la carrera mencionada y prioriza
+automáticamente los chunks de esa carrera.
+
+#### 2.2 Query Enhancement (opcional, acumulativo)
+
+Tres técnicas que enriquecen la búsqueda antes de ir a ChromaDB. Se pueden activar
+individualmente o **todas al mismo tiempo** — el sistema acumula las consultas de
+cada técnica en una sola lista y las busca juntas:
+
+| Técnica | Qué hace | Cuándo conviene |
+|---|---|---|
+| **Multi-Query** | Genera hasta 5 reformulaciones de la pregunta con distintas palabras clave. | La información puede estar expresada con terminología diferente en los documentos. |
+| **HyDE** (Hypothetical Document Embeddings) | El LLM genera un párrafo hipotético de respuesta y se busca con el embedding de ese texto en vez del de la pregunta. | Preguntas técnicas sobre ordenanzas y documentos formales. |
+| **Query Decomposition** | Descompone preguntas complejas en sub-preguntas simples e independientes. | Preguntas que mezclan múltiples aspectos (año + carrera + tipo de correlativa). |
+
+Cada técnica agrega ~3–10 segundos de latencia (una llamada al LLM local).
+
+#### 2.3 Recuperación (Retrieval)
+
+La pregunta reformulada (o la lista acumulada de queries del paso anterior) se busca
+en ChromaDB:
+
+- **Búsqueda semántica** (siempre): convierte la query en vector y busca por similitud coseno.
+- **Búsqueda híbrida** (opcional, `--hybrid`): combina la semántica con búsqueda
+  léxica exacta BM25 y fusiona ambos rankings con **Reciprocal Rank Fusion (RRF)**.
+  Evita perder nombres propios o siglas que la semántica sola podría ignorar.
+- Si hay múltiples queries (por Multi-Query, HyDE o Decomposition), cada una recupera
+  sus propios chunks y todos se fusionan con RRF ponderado.
+- Si la pregunta menciona un año ("primer año", "2do año"), se fuerza la inclusión del
+  chunk-resumen de ese año.
+
+#### 2.4 Reranking (opcional)
+
+Los fragmentos recuperados se pasan por un modelo **Cross-Encoder**
+(`BAAI/bge-reranker-v2-m3`) que evalúa cada par (pregunta, fragmento) conjuntamente.
+A diferencia del embedding bi-encoder (rápido pero aproximado), el Cross-Encoder lee
+ambos textos al mismo tiempo y asigna un puntaje de relevancia mucho más preciso,
+reordenando los fragmentos de mayor a menor utilidad real.
+
+#### 2.5 Generación
+
+Los mejores fragmentos + el historial conversacional se inyectan en el prompt final y
+se envían a LMStudio. El LLM genera la respuesta y el sistema la muestra junto con las
+fuentes utilizadas para que el usuario pueda verificar de dónde salió cada dato.
+
+---
+
+## Armar el sistema desde cero
+
+### 1. Entorno virtual y dependencias
 
 ```powershell
-(Set-ExecutionPolicy -Scope Process -ExecutionPolicy RemoteSigned) ; (& "z:\Documentos\UNLaR\4to\Inteligencia Artificial\trabajo_final\.venv\Scripts\Activate.ps1")
-```
-
-**2. Instalar las dependencias**
-
-```powershell
+(Set-ExecutionPolicy -Scope Process -ExecutionPolicy RemoteSigned) ; (& ".\.venv\Scripts\Activate.ps1")
 pip install -r requirements.txt
 ```
 
-> El OCR (`pytesseract`) necesita además el binario de **tesseract**
-> instalado aparte en el sistema — no es un paquete de pip. Ver el detalle
-> en `requirements.txt` o en el docstring de `01_extract_pdfs.py`.
+> El OCR (`pytesseract`) necesita el binario de **tesseract** instalado aparte en
+> Windows — no es un paquete de pip.
 
-**3. Extraer texto de los PDFs (con OCR si hace falta) y dividirlo en chunks**
+### 2. Extraer texto de los PDFs
 
+Hay 4 opciones de chunking. La **D** es la recomendada:
+
+**A) Chunking clásico** — corta por fronteras naturales de texto (párrafos, oraciones, espacios) con máximo 800 caracteres y 150 de solapamiento:
 ```powershell
-python ./scripts/01_extract_pdfs.py --input_dir ./data/raw --output_json ./data/processed/chunks_pdfs.json --tesseract_path "C:\Program Files\Tesseract-OCR\tesseract.exe"
+python ./scripts/01_extract_pdfs.py `
+    --input_dir ./data/raw `
+    --output_json ./data/processed/chunks_pdfs.json `
+    --tesseract_path "C:\Program Files\Tesseract-OCR\tesseract.exe"
 ```
 
-**4. Generar los chunks de correlatividades a partir del JSON estructurado**
-
+**B) Chunking semántico** — agrupa oraciones por similitud coseno (≥ 0.75), cortando en saltos de tema:
 ```powershell
-python ./scripts/02_correlativities_to_chunks.py --input_json ./data/structured/correlatividades_ing_sistemas_2024.json --output_json ./data/processed/chunks_correlatividades.json
+python ./scripts/01_extract_pdfs.py `
+    --input_dir ./data/raw `
+    --output_json ./data/processed/chunks_pdfs.json `
+    --semantic --threshold 0.75 --max_words 400
 ```
 
-> Este paso también genera los 5 chunks-resumen por año (uno por cada año de
-> la carrera). El JSON de entrada ya tiene el campo `anio` en cada
-> asignatura, verificado contra el diagrama "Camino crítico de
-> correlatividades" del Anexo II de la Ordenanza 232/23.
-
-**5. Descargar el modelo de embeddings y cargar todos los chunks en ChromaDB**
-
+**C) Chunking estructural (Docling)** — respeta títulos, secciones y tablas del PDF:
 ```powershell
-python ./scripts/03_build_vectordb.py --input_json ./data/processed/chunks_pdfs.json ./data/processed/chunks_correlatividades.json --db_path ./chroma_db --collection curriculum --reset
+python ./scripts/01b_extract_docling.py `
+    --input_dir ./data/raw `
+    --output_json ./data/processed/chunks_pdfs.json
 ```
 
-> Usá `--reset` siempre que hayas regenerado alguno de los JSON de chunks
-> (pasos 3 o 4), para que ChromaDB no se quede con versiones viejas mezcladas
-> con las nuevas.
+**D) Híbrido: Estructural + Semántico (recomendado)** — Docling para la estructura + Semantic Chunking para las fronteras:
+```powershell
+python ./scripts/01b_extract_docling.py `
+    --input_dir ./data/raw `
+    --output_json ./data/processed/chunks_pdfs.json `
+    --semantic --threshold 0.75 --max_words 400
+```
 
-**6. (Opcional) Probar que la recuperación semántica funciona, sin pasar por el LLM todavía**
+### 3. Generar chunks de correlatividades
+
+```powershell
+python ./scripts/02_correlativities_to_chunks.py `
+    --input_json ./data/structured/correlatividades_ing_sistemas_2024.json `
+                 ./data/structured/correlatividades_lic_sistemas_2024.json `
+                 ./data/structured/correlatividades_ing_mecatronica_2024.json `
+    --output_dir ./data/processed
+```
+
+Genera un JSON de chunks por carrera en `data/processed/`. Para agregar una carrera
+nueva: crear su JSON en `data/structured/` y agregarlo a `--input_json` de este paso
+y del siguiente.
+
+### 4. Construir la base vectorial (ChromaDB)
+
+```powershell
+python ./scripts/03_build_vectordb.py `
+    --input_json ./data/processed/chunks_pdfs.json `
+                 ./data/processed/chunks_correlatividades_ing_sistemas_2024.json `
+                 ./data/processed/chunks_correlatividades_lic_sistemas_2024.json `
+                 ./data/processed/chunks_correlatividades_ing_mecatronica_2024.json `
+    --db_path ./chroma_db --collection curriculum --reset
+```
+
+> Usá `--reset` siempre que hayas regenerado algún JSON de chunks para evitar
+> mezclar versiones viejas con nuevas.
+
+### 5. (Opcional) Probar el retrieval sin LLM
 
 ```powershell
 python ./scripts/04_query_test.py --query "¿Qué correlativas tiene Cálculo Numérico?"
 ```
 
-**7. Levantar LMStudio**
+### 6. Levantar LMStudio
 
-Necesitás LMStudio instalado, con un modelo cargado y el servidor local
-corriendo en el puerto 1234 (por defecto).
+Necesitás LMStudio con un modelo cargado y el servidor local corriendo en el puerto
+1234 (default).
 
-Modelos probados:
-- **Llama 3.2 3B** — funciona, respuestas más simples/rápidas.
-- **Qwen3 14B** — mejor calidad y mejor español, pero notablemente más lento
-  (puede necesitar timeouts de 300-400s si no hay suficiente VRAM).
-- **Qwen3 8B** — punto intermedio recomendado: misma familia que el 14B (buen
-  seguimiento de instrucciones en español) pero bastante más rápido al tener
-  menos parámetros.
+- **Modelo recomendado:** Llama 3.2 3B Instruct (rápido, preciso, optimizado para este proyecto).
+- Alternativas: Qwen3 8B, Mistral 7B.
 
-**8. Probar el pipeline completo por consola**
+### 7. Probar el pipeline completo por consola
 
 ```powershell
 python ./scripts/05_rag_query.py --query "¿Qué correlativas tiene Cálculo Numérico?" --show_prompt
 ```
 
-Este comando recupera los chunks relevantes, arma el prompt, lo manda a
-LMStudio y muestra la respuesta junto con los fragmentos usados como fuente.
+Flags opcionales de retrieval avanzado:
 
-**9. Lanzar la interfaz web**
+| Flag | Efecto |
+|---|---|
+| `--hybrid` | Activa búsqueda híbrida (semántica + BM25 + RRF). |
+| `--reranker BAAI/bge-reranker-v2-m3` | Activa reranking con Cross-Encoder. Primera vez descarga ~1GB. |
+| `--multi_query` | Genera 5 variantes de la pregunta, fusiona con RRF. |
+| `--hyde` | Genera documento hipotético, busca con su embedding. |
+| `--decompose` | Descompone en sub-preguntas, fusiona con RRF. |
+| `--show_prompt` | Muestra el prompt enviado al LLM y detalles de debug. |
+
+Todos los flags son combinables entre sí. Ejemplo con todo activado:
+```powershell
+python ./scripts/05_rag_query.py `
+    --query "¿Cuántas materias de 3er año de Sistemas tienen correlativas de 2do año?" `
+    --hybrid --reranker BAAI/bge-reranker-v2-m3 `
+    --multi_query --hyde --decompose --show_prompt
+```
+
+### 8. Lanzar la interfaz web
 
 ```powershell
 streamlit run app/streamlit_app.py
 ```
 
-## Notas / troubleshooting
+La interfaz web incluye todas las opciones anteriores como checkboxes en la barra
+lateral. Detecta automáticamente la carrera mencionada en cada consulta.
 
-- El warning `Warning: You are sending unauthenticated requests to the HF Hub`
-  al cargar el modelo de embeddings es inofensivo — solo avisa que no hay un
-  `HF_TOKEN` configurado, no afecta el funcionamiento.
-- Si `05_rag_query.py` tira `ReadTimeoutError`, subí el timeout con
-  `--timeout` (ej. `--timeout 300`) antes de asumir que LMStudio está
-  colgado; con modelos grandes y poca VRAM, es simplemente lento.
+---
+
+## Referencia técnica
+
+### Datos estructurados (`data/structured/`)
+
+| Archivo | Carrera | Fuente |
+|---|---|---|
+| `correlatividades_ing_sistemas_2024.json` | Ingeniería en Sistemas | Ord. CS N° 232/23 |
+| `correlatividades_lic_sistemas_2024.json` | Licenciatura en Sistemas | Ord. CS N° 236/23 |
+| `correlatividades_ing_mecatronica_2024.json` | Ingeniería Mecatrónica | Ord. CS N° 234/23 |
+
+### Semantic Chunking — Algoritmo
+
+Implementado en `scripts/semantic_chunker.py`:
+
+1. **Segmentación en oraciones** con regex optimizada para español (protege abreviaturas: *Art.*, *Ord.*, *Ing.*, *Lic.*, *N°*, etc.).
+2. **Embedding por oración** con `paraphrase-multilingual-MiniLM-L12-v2`.
+3. **Detección de fronteras** por similitud coseno entre oraciones consecutivas. Si cae debajo del `--threshold` (default 0.75), se corta.
+4. **Post-procesamiento**: chunks < `--min_words` (30) se fusionan con el siguiente; chunks > `--max_words` (400) se dividen en la frontera de oración más cercana al medio.
+
+### Chunking Estructural (Docling) — Algoritmo
+
+Implementado en `scripts/01b_extract_docling.py`:
+
+1. Docling (IBM) analiza el maquetado del PDF reconociendo la jerarquía (Capítulos, Artículos, Secciones, Tablas).
+2. `HierarchicalChunker` genera chunks que nunca cruzan límites de sección.
+3. Las tablas se convierten a Markdown con delimitadores `|`.
+4. Cada chunk incluye metadatos: `heading` (jerarquía completa), `heading_level`, `is_table`.
+5. Fallback automático a `pdfplumber` si un PDF no se puede parsear con Docling.
+
+> Los modelos de layout de Docling (~600 MB) se descargan automáticamente la primera vez.
+
+---
+
+## Troubleshooting
+
+- `Warning: You are sending unauthenticated requests to the HF Hub` → Inofensivo, no afecta el funcionamiento.
+- `ReadTimeoutError` en `05_rag_query.py` → Subir el timeout con `--timeout 300` antes de asumir que LMStudio está colgado.
