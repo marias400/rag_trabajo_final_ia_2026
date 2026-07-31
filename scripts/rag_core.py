@@ -65,9 +65,10 @@ SYSTEM_PROMPT = (
     "Instrucciones estrictas:\n"
     "1. Basate ÚNICAMENTE en la información de los fragmentos provistos para responder datos del plan de estudios.\n"
     "2. Si la respuesta está en los fragmentos, brindá la información completa y precisa (requisitos de cursado, examen final, año, etc.).\n"
-    "3. Indicá la fuente de la información citando el fragmento correspondiente (ej. 'Según el Fragmento 1...').\n"
-    "4. Si ningún fragmento contiene la respuesta, indicá claramente que no dispones de esa información en los documentos.\n"
-    "5. Respondé siempre en español, con un tono claro, directo y profesional."
+    "3. Indicá la fuente de la información citando ÚNICAMENTE los fragmentos que aporten datos útiles (ej. 'Según el Fragmento 1...').\n"
+    "4. NO menciones fragmentos que no contengan información relevante para la pregunta (ej. NO digas 'El Fragmento X no menciona esto' ni hagas un listado de fragmentos inútiles). Ignorá los fragmentos no relevantes en completo silencio.\n"
+    "5. Si absolutamente ningún fragmento provisto contiene datos útiles para responder la pregunta, indicá brevemente que no disponés de esa información en los documentos del contexto.\n"
+    "6. Respondé siempre en español, con un tono claro, directo y profesional."
 )
 
 
@@ -75,19 +76,31 @@ ROUTER_SYSTEM_PROMPT = (
     "Sos el enrutador de un sistema RAG sobre los planes de estudios de las carreras de la UNLaR.\n"
     "Analizá el historial de conversación y la PREGUNTA NUEVA del usuario.\n\n"
     "Reglas de decisión:\n"
-    "- RETRIEVAL: SI → Si la pregunta solicita información sobre asignaturas, correlativas, régimen, años, requisitos, o datos del plan de estudios.\n"
-    "- RETRIEVAL: NO → Si es un saludo, agradecimiento, despedida, o pide aclarar/resumir algo dicho previamente en la conversación.\n\n"
-    "Si RETRIEVAL es SI, reformulá la pregunta como una consulta AUTOCONTENIDA y OPTIMIZADA para búsqueda semántica en una base de datos vectorial:\n"
+    "- RETRIEVAL: SI → Si la pregunta solicita información sobre asignaturas, correlativas, régimen, años, requisitos, perfil de egreso, incumbencias o cualquier dato del plan de estudios de la UNLaR.\n"
+    "- RETRIEVAL: NO → Si es un saludo, agradecimiento, despedida, pide aclarar/resumir algo dicho previamente, o si es una PREGUNTA TOTALMENTE AJENA AL DOMINIO (ej. preguntas de cultura general, ocio, seguridad, instrucciones ilegales, o cosas que no pertenezcan al plan de estudios de la universidad).\n\n"
+    "Si RETRIEVAL es SI, reformulá la pregunta como una consulta AUTOCONTENIDA y OPTIMIZADA para búsqueda semántica:\n"
     "1. Resolvé pronombres y referencias ambiguas usando el historial (ej. 'esa materia' → nombre real de la asignatura).\n"
-    "2. Expandí siglas y abreviaturas del dominio (ej. 'BD' → 'Bases de Datos', 'SO' → 'Sistemas Operativos', 'POO' → 'Programación Orientada a Objetos').\n"
-    "3. Incorporá sinónimos relevantes del dominio académico cuando aporten precisión (ej. 'cursar' → 'régimen de cursado').\n"
-    "4. Si el contexto del historial permite inferir la carrera, mencionala explícitamente (ej. 'Ingeniería en Sistemas', 'Ingeniería Mecatrónica', 'Licenciatura en Sistemas').\n"
-    "5. Eliminá muletillas y frases vacías que contaminen el embedding (ej. '¿Podés decirme...?' → pregunta directa).\n\n"
-    "Además, elegí la ESTRATEGIA de búsqueda más adecuada:\n"
-    "- direct → Pregunta simple y clara sobre una sola materia o un solo dato. No necesita técnicas extra.\n"
-    "- decompose → La pregunta menciona VARIAS materias o pide varios datos distintos a la vez. Se va a separar en sub-preguntas.\n"
-    "- multi_query → La pregunta es corta, ambigua o usa jerga informal que podría no matchear con los documentos. Se generarán variantes.\n"
-    "- hyde → La pregunta es conceptual o sobre normativa/reglamento (perfil de egreso, incumbencias, régimen general). Se generará un documento hipotético.\n\n"
+    "2. Expandí siglas y abreviaturas del dominio (ej. 'BD' → 'Bases de Datos', 'SO' → 'Sistemas Operativos', 'POO' → 'Programación Orientada a Objetos', 'AM' → 'Análisis Matemático', 'FQ' → 'Física y Química').\n"
+    "3. Si el contexto del historial permite inferir la carrera, mencionala explícitamente (ej. 'Ingeniería en Sistemas', 'Ingeniería Mecatrónica', 'Licenciatura en Sistemas').\n"
+    "4. Eliminá muletillas y frases vacías que contaminen el embedding (ej. '¿Podés decirme...?' → pregunta directa).\n\n"
+    "Elegí la ESTRATEGIA de búsqueda según estas reglas PRECISAS (en orden de prioridad):\n\n"
+    "1. ESTRATEGIA: decompose\n"
+    "   CUÁNDO: La pregunta menciona DOS O MÁS materias distintas, o pide datos de DISTINTOS tipos a la vez (ej. correlativas + régimen + año en una sola pregunta).\n"
+    "   SEÑALES: conjunciones entre nombres de materias ('y', 'también', 'además'), listados, preguntas con múltiples signos de interrogación.\n"
+    "   NO usar si la pregunta solo menciona una materia aunque sea larga.\n\n"
+    "2. ESTRATEGIA: hyde\n"
+    "   CUÁNDO: La pregunta es CONCEPTUAL, COMPARATIVA o NARRATIVA — no pregunta por datos puntuales sino por descripciones, objetivos, diferencias o características generales de carreras o del sistema educativo.\n"
+    "   SEÑALES: palabras como 'perfil', 'egresado', 'incumbencias', 'enfoque', 'objetivo', 'diferencia entre', 'qué hace', 'qué estudia', 'cómo es', 'por qué', 'cuál es el propósito'.\n"
+    "   TAMBIÉN usar si la pregunta habla de normativas generales, reglamentos o estructura curricular sin nombrar una materia específica.\n\n"
+    "3. ESTRATEGIA: multi_query\n"
+    "   CUÁNDO (cualquiera de estas condiciones):\n"
+    "   a) La pregunta tiene MENOS DE 6 PALABRAS SIGNIFICATIVAS (sin artículos ni preposiciones).\n"
+    "   b) Usa jerga informal, abreviaturas no estándar o términos ambiguos que pueden referirse a varias cosas (ej. 'proba', 'redes', 'sistemas', 'calculo', 'fisica').\n"
+    "   c) La pregunta no nombra una materia exacta sino una TEMÁTICA AMPLIA (ej. 'materias de programación', 'asignaturas relacionadas con matemática', 'todo lo de segundo año').\n"
+    "   d) La pregunta podría matchear con varios documentos distintos por ser genérica.\n\n"
+    "4. ESTRATEGIA: direct\n"
+    "   CUÁNDO: La pregunta nombra UNA materia específica con su nombre completo o casi completo Y pregunta por UN solo dato concreto (correlativas, año, régimen, código). SOLO si no aplica ninguna de las estrategias anteriores.\n\n"
+    "REGLA DE DESEMPATE: ante la duda entre direct y multi_query, elegí multi_query. Es mejor generar variantes de más que de menos.\n\n"
     "Formato de respuesta OBLIGATORIO (no agregues introducciones ni explicaciones):\n"
     "RETRIEVAL: SI\n"
     "PREGUNTA: <pregunta reformulada>\n"
@@ -99,27 +112,58 @@ ROUTER_SYSTEM_PROMPT = (
     "ESTRATEGIA: direct\n"
     "RAZON: no necesita buscar\n\n"
     "EJEMPLOS:\n\n"
+    "PREGUNTA NUEVA: ¿Cómo robar un banco?\n"
+    "RETRIEVAL: NO\n"
+    "PREGUNTA: (no aplica)\n"
+    "ESTRATEGIA: direct\n"
+    "RAZON: pregunta totalmente ajena al dominio y planes de estudios de la universidad\n\n"
     "PREGUNTA NUEVA: ¿Qué correlativas tiene Cálculo Numérico?\n"
     "RETRIEVAL: SI\n"
-    "PREGUNTA: correlativas de Cálculo Numérico Ingeniería en Sistemas\n"
+    "PREGUNTA: correlativas de Cálculo Numérico Ingeniería en Sistemas UNLaR\n"
     "ESTRATEGIA: direct\n"
-    "RAZON: pregunta simple sobre una sola materia\n\n"
-    "PREGUNTA NUEVA: ¿Qué correlativas tienen Análisis Matemático II y Cálculo Numérico de Sistemas?\n"
+    "RAZON: pregunta sobre una sola materia y un solo dato concreto\n\n"
+    "PREGUNTA NUEVA: bd\n"
     "RETRIEVAL: SI\n"
-    "PREGUNTA: correlativas de Análisis Matemático II y Cálculo Numérico de Ingeniería en Sistemas\n"
+    "PREGUNTA: Bases de Datos correlativas régimen año plan de estudios\n"
+    "ESTRATEGIA: multi_query\n"
+    "RAZON: consulta de una sola palabra ambigua, menos de 6 palabras significativas\n\n"
+    "PREGUNTA NUEVA: materias de programación sistemas\n"
+    "RETRIEVAL: SI\n"
+    "PREGUNTA: asignaturas de programación en Ingeniería en Sistemas UNLaR\n"
+    "ESTRATEGIA: multi_query\n"
+    "RAZON: temática amplia sin materia específica, podría matchear con muchos documentos\n\n"
+    "PREGUNTA NUEVA: proba\n"
+    "RETRIEVAL: SI\n"
+    "PREGUNTA: Probabilidad y Estadística correlativas régimen cursado plan estudios\n"
+    "ESTRATEGIA: multi_query\n"
+    "RAZON: jerga informal extremadamente corta, alta ambigüedad\n\n"
+    "PREGUNTA NUEVA: ¿Qué correlativas tienen Análisis Matemático II y Cálculo Numérico?\n"
+    "RETRIEVAL: SI\n"
+    "PREGUNTA: correlativas de Análisis Matemático II y Cálculo Numérico Ingeniería en Sistemas\n"
     "ESTRATEGIA: decompose\n"
     "RAZON: pregunta sobre dos materias distintas a la vez\n\n"
-    "PREGUNTA NUEVA: materias calculo sistemas\n"
+    "PREGUNTA NUEVA: dame las correlativas, el año y el régimen de Física I\n"
     "RETRIEVAL: SI\n"
-    "PREGUNTA: materias relacionadas con cálculo en Ingeniería en Sistemas\n"
-    "ESTRATEGIA: multi_query\n"
-    "RAZON: pregunta corta y ambigua, conviene generar variantes\n\n"
+    "PREGUNTA: correlativas año régimen de cursado de Física I Ingeniería en Sistemas\n"
+    "ESTRATEGIA: decompose\n"
+    "RAZON: pide tres tipos de datos distintos sobre la misma materia\n\n"
     "PREGUNTA NUEVA: ¿Cuál es el perfil de egreso de Ingeniería Mecatrónica?\n"
     "RETRIEVAL: SI\n"
     "PREGUNTA: perfil de egreso e incumbencias profesionales de Ingeniería Mecatrónica UNLaR\n"
     "ESTRATEGIA: hyde\n"
-    "RAZON: pregunta conceptual sobre normativa, conviene generar documento hipotético"
+    "RAZON: pregunta conceptual/narrativa sobre características generales de la carrera\n\n"
+    "PREGUNTA NUEVA: ¿Qué diferencia hay entre Ingeniería en Sistemas y Licenciatura en Sistemas?\n"
+    "RETRIEVAL: SI\n"
+    "PREGUNTA: diferencias entre Ingeniería en Sistemas y Licenciatura en Sistemas UNLaR perfil egreso incumbencias estructura\n"
+    "ESTRATEGIA: hyde\n"
+    "RAZON: pregunta comparativa y conceptual entre dos carreras\n\n"
+    "PREGUNTA NUEVA: ¿Cómo es el plan de estudios de mecatrónica?\n"
+    "RETRIEVAL: SI\n"
+    "PREGUNTA: estructura curricular plan de estudios Ingeniería Mecatrónica UNLaR\n"
+    "ESTRATEGIA: hyde\n"
+    "RAZON: pregunta narrativa sobre la estructura general de la carrera, sin materia específica"
 )
+
 
 
 class LMStudioError(Exception):
@@ -346,57 +390,148 @@ def detect_career_stems(query: str) -> list[str]:
             unique.append(s)
     return unique
 
-def retrieve_chunks(query: str, db_path: str, collection_name: str, model_name: str, n_results: int, use_hybrid: bool = False, reranker_model: str = None):
+def retrieve_chunks(
+    query: str,
+    db_path: str,
+    collection_name: str,
+    model_name: str,
+    n_results: int,
+    use_hybrid: bool = False,
+    reranker_model: str = None,
+    debug_data: dict = None,
+):
     """Recupera los n_results chunks más relevantes para query, forzando
     además el chunk estructurado de asignatura o de año si la pregunta los menciona.
     Soporta búsqueda híbrida (BM25 + Semántica + RRF) y reranking con CrossEncoder.
+
+    Si se pasa `debug_data` (dict vacío), lo rellena con telemetría de cada paso.
     """
     collection = get_chroma_collection(db_path, collection_name)
+
+    # --- Filtro de Metadatos de Carrera ---
+    where_filter = None
+    q_lower = query.lower()
+    
+    source_patterns = []
+    # 1. Mecatrónica
+    if "mecatronica" in q_lower or "mecatrónica" in q_lower:
+        source_patterns.append("MECATRNICA")
+        
+    # 2. Licenciatura en Sistemas
+    # Si dice explícitamente licenciatura o lic, o si NO dice ingenieria pero sí sistemas
+    if "licenciatura" in q_lower or "lic." in q_lower:
+        source_patterns.append("LIC_EN_SISTEMAS")
+    # 3. Ingeniería en Sistemas
+    elif "ingenieria" in q_lower or "ingeniería" in q_lower or "ing." in q_lower:
+        if "sistemas" in q_lower:
+            source_patterns.append("ING_EN_SISTEMAS")
+            source_patterns.append("Ing_en_Sistemas")
+    # 4. Búsqueda genérica de Sistemas (si solo dice sistemas sin especificar)
+    elif "sistemas" in q_lower:
+        source_patterns.append("SISTEMAS")
+        source_patterns.append("Sistemas")
+
+    if source_patterns:
+        # Si hay un único patrón
+        if len(source_patterns) == 1:
+            where_filter = {"source": {"$contains": source_patterns[0]}}
+        else:
+            # Si hay múltiples patrones compatibles
+            where_filter = {"$or": [{"source": {"$contains": p}} for p in source_patterns]}
 
     if not use_hybrid:
         model = get_embedding_model(model_name)
         query_embedding = model.encode([query]).tolist()
-        results = collection.query(query_embeddings=query_embedding, n_results=n_results)
+        results = collection.query(query_embeddings=query_embedding, n_results=n_results, where=where_filter)
 
         docs = results["documents"][0]
         metas = results["metadatas"][0]
         distances = results["distances"][0]
         retrieved = list(zip(docs, metas, distances))
+
+        if debug_data is not None:
+            debug_data["mode"] = "solo_semantica"
+            debug_data["semantica"] = {
+                "n_candidatos": len(docs),
+                "top_distancias": [round(d, 4) for d in distances[:5]],
+            }
     else:
         # 1. Búsqueda Semántica
         k_candidates = max(n_results * 3, 30)
         model = get_embedding_model(model_name)
         query_embedding = model.encode([query]).tolist()
-        sem_results = collection.query(query_embeddings=query_embedding, n_results=k_candidates)
-        
+        sem_results = collection.query(query_embeddings=query_embedding, n_results=k_candidates, where=where_filter)
+
         sem_docs = sem_results["documents"][0]
         sem_metas = sem_results["metadatas"][0]
-        
+        sem_distances = sem_results["distances"][0]
+
+        if debug_data is not None:
+            debug_data["mode"] = "hibrida"
+            debug_data["semantica"] = {
+                "n_candidatos": len(sem_docs),
+                "top_distancias": [round(d, 4) for d in sem_distances[:5]],
+                "top_fuentes": [
+                    sem_metas[i].get("source", "?") for i in range(min(5, len(sem_metas)))
+                ],
+            }
+
         # 2. Búsqueda Léxica (BM25)
         bm25, bm25_docs, bm25_metas = get_bm25_index(db_path, collection_name)
         tokenized_query = re.findall(r"\w+", query.lower())
         bm25_scores = bm25.get_scores(tokenized_query)
-        
-        # Obtener los top k_candidates índices de BM25
-        top_bm25_idx = sorted(range(len(bm25_scores)), key=lambda i: bm25_scores[i], reverse=True)[:k_candidates]
-        
+
+        # Aplicar el mismo filtro de carrera sobre los scores de BM25
+        filtered_bm25_scores = []
+        for idx, (doc, meta) in enumerate(zip(bm25_docs, bm25_metas)):
+            score = bm25_scores[idx]
+            # Si hay un filtro activo, verificar si el documento coincide con alguna de las palabras clave de carrera
+            if source_patterns:
+                source_name = meta.get("source", "")
+                if not any(pattern in source_name for pattern in source_patterns):
+                    score = -9999.0  # Penalización extrema
+            filtered_bm25_scores.append(score)
+
+        # Obtener los top k_candidates índices de BM25 filtrados
+        top_bm25_idx = sorted(range(len(filtered_bm25_scores)), key=lambda i: filtered_bm25_scores[i], reverse=True)[:k_candidates]
+        # Quitar los penalizados
+        top_bm25_idx = [i for i in top_bm25_idx if filtered_bm25_scores[i] > -9000.0]
+
+        if debug_data is not None:
+            debug_data["bm25"] = {
+                "tokens_query": tokenized_query,
+                "top_scores": [
+                    {"score": round(bm25_scores[i], 4), "fuente": bm25_metas[i].get("source", "?")}
+                    for i in top_bm25_idx[:5]
+                ],
+            }
+
         # 3. Fusión RRF (Reciprocal Rank Fusion)
         rrf_scores = {}
-        
+
         for rank, (doc, meta) in enumerate(zip(sem_docs, sem_metas)):
             if doc not in rrf_scores:
                 rrf_scores[doc] = {"meta": meta, "score": 0.0}
             rrf_scores[doc]["score"] += 1.0 / (60 + rank + 1)
-            
+
         for rank, idx in enumerate(top_bm25_idx):
             doc = bm25_docs[idx]
             meta = bm25_metas[idx]
             if doc not in rrf_scores:
                 rrf_scores[doc] = {"meta": meta, "score": 0.0}
             rrf_scores[doc]["score"] += 1.0 / (60 + rank + 1)
-            
+
         sorted_rrf = sorted(rrf_scores.items(), key=lambda x: x[1]["score"], reverse=True)
         retrieved = [(doc, data["meta"], data["score"]) for doc, data in sorted_rrf[:n_results]]
+
+        if debug_data is not None:
+            debug_data["rrf"] = {
+                "n_docs_fusionados": len(sorted_rrf),
+                "top_resultados": [
+                    {"score_rrf": round(data["score"], 6), "fuente": data["meta"].get("source", "?")}
+                    for _doc, data in sorted_rrf[:5]
+                ],
+            }
 
     forced_ids = []
     # Detect asignaturas and add their specific correlativa IDs
@@ -407,15 +542,16 @@ def retrieve_chunks(query: str, db_path: str, collection_name: str, model_name: 
     # Detect year and add year summary IDs for all stems (or limited to career stems)
     anio = detect_anio_query(query)
     if anio is not None:
-        # Determine which stems are relevant for the query
         career_stems = detect_career_stems(query)
         if career_stems:
             stems_to_use = career_stems
         else:
-            # fallback: all stems present in the asignaturas map
             stems_to_use = set(asig["stem"] for asig in _load_asignaturas_map())
         for stem in stems_to_use:
             forced_ids.append(f"{stem}_anio_{anio:02d}")
+
+    if debug_data is not None:
+        debug_data["forced_ids"] = forced_ids if forced_ids else []
 
     # Retrieve forced chunks, prioritize them
     for chunk_id in forced_ids:
@@ -428,25 +564,35 @@ def retrieve_chunks(query: str, db_path: str, collection_name: str, model_name: 
             forced_meta = forced["metadatas"][0]
             already_present = any(doc == forced_doc for doc, _meta, _dist in retrieved)
             if already_present:
-                # Move forced to front preserving order
                 retrieved = [(forced_doc, forced_meta, None)] + [
                     r for r in retrieved if r[0] != forced_doc
                 ]
             else:
-                # Insert forced at front, dropping last if needed
                 retrieved = [(forced_doc, forced_meta, None)] + retrieved[: max(len(retrieved) - 1, 0)]
 
     # 4. Reranking (opcional)
     if reranker_model:
         reranker = get_reranker(reranker_model)
-        # Evaluar (query, document)
         pairs = [[query, doc] for doc, meta, dist in retrieved]
         scores = reranker.predict(pairs)
-        
-        # Reordenar según score del reranker (mayor es mejor)
+
         scored_retrieved = list(zip(retrieved, scores))
         scored_retrieved.sort(key=lambda x: x[1], reverse=True)
-        
+
+        if debug_data is not None:
+            debug_data["reranking"] = [
+                {
+                    "rank": i + 1,
+                    "score_reranker": round(float(s), 4),
+                    "fuente": item[0][1].get("source", "?"),
+                    "texto_preview": item[0][0][:80].replace("\n", " "),
+                }
+                for i, (item, s) in enumerate(sorted(
+                    zip(scored_retrieved, [x[1] for x in scored_retrieved]),
+                    key=lambda x: x[1], reverse=True
+                )[:5])
+            ]
+
         retrieved = [(item[0][0], item[0][1], float(item[1])) for item in scored_retrieved]
 
     return retrieved
@@ -460,23 +606,25 @@ def retrieve_with_multi_query(
     n_results: int,
     use_hybrid: bool = False,
     reranker_model: str = None,
+    debug_data: dict = None,
 ) -> list:
     """Fusiona los resultados de múltiples queries usando Reciprocal Rank Fusion (RRF).
 
     La primera query de la lista recibe mayor peso (1.5x), asumiendo que es la
     pregunta original o la principal. Las demás son variantes o sub-preguntas.
     Si se pasa un reranker, se aplica al final usando la primera query.
+    Si se pasa `debug_data` (dict vacío), lo rellena con telemetría de cada paso.
     """
     all_docs: dict = {}  # doc_text -> {meta, score}
+    per_query_counts = []
 
     for q_idx, query in enumerate(queries):
-        # La query original (índice 0) tiene mayor peso que las variantes
         weight = 1.5 if q_idx == 0 else 1.0
-        # No rerankeamos acá: lo hacemos una sola vez al final
         results = retrieve_chunks(
             query, db_path, collection_name, model_name, n_results,
             use_hybrid=use_hybrid, reranker_model=None
         )
+        per_query_counts.append({"query": query[:80], "n_resultados": len(results), "peso": weight})
         for rank, (doc, meta, _dist) in enumerate(results):
             if doc not in all_docs:
                 all_docs[doc] = {"meta": meta, "score": 0.0}
@@ -485,6 +633,17 @@ def retrieve_with_multi_query(
     sorted_docs = sorted(all_docs.items(), key=lambda x: x[1]["score"], reverse=True)
     retrieved = [(doc, data["meta"], data["score"]) for doc, data in sorted_docs[:n_results]]
 
+    if debug_data is not None:
+        debug_data["multi_query_rrf"] = {
+            "n_queries": len(queries),
+            "per_query": per_query_counts,
+            "n_docs_fusionados": len(sorted_docs),
+            "top_resultados": [
+                {"score_rrf": round(data["score"], 6), "fuente": data["meta"].get("source", "?")}
+                for _doc, data in sorted_docs[:5]
+            ],
+        }
+
     # Reranking unificado al final con la primera query (la original)
     if reranker_model and retrieved:
         reranker = get_reranker(reranker_model)
@@ -492,6 +651,18 @@ def retrieve_with_multi_query(
         scores = reranker.predict(pairs)
         scored = list(zip(retrieved, scores))
         scored.sort(key=lambda x: x[1], reverse=True)
+
+        if debug_data is not None:
+            debug_data["reranking"] = [
+                {
+                    "rank": i + 1,
+                    "score_reranker": round(float(s), 4),
+                    "fuente": item[1].get("source", "?"),
+                    "texto_preview": item[0][:80].replace("\n", " "),
+                }
+                for i, (item, s) in enumerate(scored[:5])
+            ]
+
         retrieved = [(item[0][0], item[0][1], float(item[1])) for item in scored]
 
     return retrieved
@@ -503,13 +674,10 @@ def generate_multi_queries(
     model: str,
     timeout: int,
     n_queries: int = 5,
+    api_key: str = None,
 ) -> list:
     """Genera hasta `n_queries` preguntas alternativas para cubrir distintos
-    ángulos de búsqueda sobre el mismo tema. Útil cuando la pregunta original
-    puede estar expresada de formas diferentes en los documentos.
-
-    Devuelve una lista de strings (preguntas alternativas, sin incluir la original).
-    """
+    ángulos de búsqueda sobre el mismo tema."""
     prompt = (
         f"Generá {n_queries} formas diferentes de preguntar lo mismo sobre planes de estudios de la UNLaR.\n"
         "Cada variación debe buscar EXACTAMENTE la misma información pero con distintas palabras.\n"
@@ -531,7 +699,7 @@ def generate_multi_queries(
     ]
     raw = call_lmstudio_chat(
         messages, base_url=base_url, model=model,
-        temperature=0.6, timeout=timeout, max_tokens=350
+        temperature=0.6, timeout=timeout, max_tokens=350, api_key=api_key
     )
     queries = []
     for line in raw.strip().splitlines():
@@ -541,22 +709,15 @@ def generate_multi_queries(
     return queries[:n_queries]
 
 
+
 def generate_hyde_document(
     question: str,
     base_url: str,
     model: str,
     timeout: int,
+    api_key: str = None,
 ) -> str:
-    """Genera un documento hipotético de respuesta (HyDE — Hypothetical Document
-    Embeddings) que luego se embeddea en lugar de la pregunta original.
-
-    La intuición: el embedding de un párrafo de respuesta es más parecido al de
-    los chunks reales de la base (que también son respuestas/descripciones) que
-    el embedding de una pregunta. Especialmente útil para corpus técnico-académicos
-    como ordenanzas y tablas de correlatividades.
-
-    Devuelve el texto del documento hipotético (string).
-    """
+    """Genera un documento hipotético de respuesta (HyDE)."""
     prompt = (
         "Escribí un párrafo breve (2-3 oraciones) que podría ser la respuesta a la siguiente "
         "pregunta sobre los planes de estudios de la UNLaR.\n"
@@ -577,8 +738,9 @@ def generate_hyde_document(
     ]
     return call_lmstudio_chat(
         messages, base_url=base_url, model=model,
-        temperature=0.3, timeout=timeout, max_tokens=250
+        temperature=0.3, timeout=timeout, max_tokens=250, api_key=api_key
     ).strip()
+
 
 
 def decompose_query(
@@ -586,15 +748,9 @@ def decompose_query(
     base_url: str,
     model: str,
     timeout: int,
+    api_key: str = None,
 ) -> list:
-    """Descompone una pregunta compleja en sub-preguntas simples e independientes.
-
-    Si la pregunta ya es simple, devuelve [question] sin modificar. Máximo 4
-    sub-preguntas para no inflar el contexto. Útil cuando la pregunta combina
-    múltiples aspectos (año + carrera + tipo de correlativa, etc.).
-
-    Devuelve una lista de strings (sub-preguntas). Siempre devuelve al menos [question].
-    """
+    """Descompone una pregunta compleja en sub-preguntas simples e independientes."""
     prompt = (
         "Analizá la siguiente pregunta sobre planes de estudios de la UNLaR.\n"
         "Si pregunta por UNA SOLA materia o un solo dato, devolvé la pregunta original tal cual.\n"
@@ -610,20 +766,15 @@ def decompose_query(
         "SUB-PREGUNTAS:\n"
         "¿Qué correlativas tiene Análisis Matemático II de Ingeniería en Sistemas?\n"
         "¿Qué correlativas tiene Cálculo Numérico de Ingeniería en Sistemas?\n\n"
-        "EJEMPLO 3 (compleja, separar por dato pedido):\n"
-        "PREGUNTA: ¿Cuántas materias de 3er año de Sistemas son anuales y cuáles tienen correlativas de 2do?\n"
-        "SUB-PREGUNTAS:\n"
-        "¿Qué materias de 3er año de Ingeniería en Sistemas son anuales?\n"
-        "¿Qué materias de 3er año de Ingeniería en Sistemas tienen correlativas de 2do año?\n\n"
         f"PREGUNTA: {question}\n\nSUB-PREGUNTAS:"
     )
     messages = [
-        {"role": "system", "content": "Descomponés preguntas complejas sobre planes de estudios universitarios en sub-preguntas simples."},
+        {"role": "system", "content": "Desponés preguntas complejas sobre planes de estudios universitarios en sub-preguntas simples."},
         {"role": "user", "content": prompt},
     ]
     raw = call_lmstudio_chat(
         messages, base_url=base_url, model=model,
-        temperature=0.1, timeout=timeout, max_tokens=300
+        temperature=0.1, timeout=timeout, max_tokens=300, api_key=api_key
     )
     sub_queries = []
     for line in raw.strip().splitlines():
@@ -631,6 +782,7 @@ def decompose_query(
         if line and len(line) > 10:
             sub_queries.append(line)
     return sub_queries[:4] if sub_queries else [question]
+
 
 
 def build_rag_user_message(query: str, retrieved: list) -> str:
@@ -648,11 +800,22 @@ def build_rag_user_message(query: str, retrieved: list) -> str:
     )
 
 
-def call_lmstudio_chat(messages: list, base_url: str, model: str, temperature: float,
-                        timeout: int, max_tokens: int | None = None) -> str:
-    """Llamada genérica al endpoint /v1/chat/completions de LMStudio.
-    `messages` ya viene armado (system + historial + mensaje actual), no un
-    string único, para poder mandar el historial real de la conversación."""
+def call_lmstudio_chat(
+    messages: list,
+    base_url: str,
+    model: str,
+    temperature: float,
+    timeout: int,
+    max_tokens: int | None = None,
+    api_key: str | None = None,
+) -> str:
+    """Llamada genérica al endpoint /v1/chat/completions (OpenAI-compatible).
+
+    Funciona con LMStudio (local) y con cualquier proveedor que implemente la
+    API de OpenAI: Groq, OpenRouter, Together AI, OpenAI, etc.
+    Si `api_key` es None o string vacío, no se manda header de autorización
+    (compatible con LMStudio local que no requiere auth).
+    """
     url = f"{base_url.rstrip('/')}/v1/chat/completions"
     payload = {
         "model": model,
@@ -661,30 +824,41 @@ def call_lmstudio_chat(messages: list, base_url: str, model: str, temperature: f
     }
     if max_tokens is not None:
         payload["max_tokens"] = max_tokens
+    headers = {"Content-Type": "application/json"}
+    if api_key:
+        headers["Authorization"] = f"Bearer {api_key}"
     try:
-        response = requests.post(url, json=payload, timeout=timeout)
+        response = requests.post(url, json=payload, headers=headers, timeout=timeout)
         response.raise_for_status()
     except requests.exceptions.ConnectionError:
         raise LMStudioError(
-            f"No se pudo conectar a LMStudio en {url}.\n"
-            f"Revisá que LMStudio esté abierto, con un modelo cargado, y el "
-            f"servidor local iniciado (pestaña 'Developer' o 'Local Server')."
+            f"No se pudo conectar al proveedor LLM en {url}.\n"
+            f"Verificá la URL, tu conexión a internet, y que el servidor esté activo."
         )
     except requests.exceptions.ReadTimeout:
         raise LMStudioError(
-            f"LMStudio no respondió dentro de los {timeout}s.\n"
-            f"Con modelos de 13B+ esto puede pasar si no hay suficiente VRAM y el "
-            f"modelo corre parcialmente en CPU. Opciones:\n"
-            f"  - Volvé a intentar con un timeout más alto\n"
-            f"  - Revisá en LMStudio (pestaña Developer/Local Server) si está "
-            f"generando tokens de a poco (lento) o no hay actividad (colgado)\n"
-            f"  - Si está colgado, probá recargar el modelo en LMStudio"
+            f"El proveedor LLM no respondió en {timeout}s.\n"
+            f"Probá aumentar el timeout o usar un modelo más rápido."
         )
     except requests.exceptions.HTTPError as e:
-        raise LMStudioError(f"LMStudio devolvió un error: {e}\nRespuesta: {response.text[:500]}")
+        status = getattr(response, 'status_code', '?')
+        body = getattr(response, 'text', '')[:500]
+        if status == 401:
+            raise LMStudioError(
+                f"API Key inválida o no autorizada (HTTP 401).\n"
+                f"Verificá la API Key ingresada en el sidebar."
+            )
+        elif status == 429:
+            raise LMStudioError(
+                f"Rate limit alcanzado (HTTP 429). Esperá un momento y volvé a intentar.\n"
+                f"En planes gratuitos, el límite de requests por minuto es bajo."
+            )
+        else:
+            raise LMStudioError(f"Error HTTP {status}: {e}\nRespuesta: {body}")
 
     data = response.json()
     return data["choices"][0]["message"]["content"]
+
 
 
 def _is_simple_chitchat(question: str) -> bool:
@@ -748,10 +922,19 @@ def _parse_router_response(raw: str, fallback_question: str) -> tuple[bool, str,
     if m_reason:
         reason = m_reason.group(1).strip().splitlines()[0].strip()
 
+    # Si la razón indica explícitamente que la pregunta está fuera del dominio, forzar RETRIEVAL: NO
+    reason_lower = reason.lower()
+    is_out_of_domain = any(
+        kw in reason_lower
+        for kw in ["ajena", "ajeno", "fuera del dominio", "no pertenece", "no relacionado", "no requiere buscar"]
+    )
+
     if not m_retrieval:
-        return True, fallback_question, strategy, reason
+        return (False if is_out_of_domain else True), fallback_question, strategy, reason
 
     necesita_retrieval = m_retrieval.group(1).upper().startswith("S")
+    if is_out_of_domain:
+        necesita_retrieval = False
 
     if not necesita_retrieval:
         return False, fallback_question, "direct", reason or "no necesita buscar"
@@ -768,55 +951,63 @@ def _parse_router_response(raw: str, fallback_question: str) -> tuple[bool, str,
     return True, fallback_question, strategy, reason
 
 
-def route_query(history: list, question: str, base_url: str, model: str, timeout: int) -> tuple[bool, str, str, str]:
+def route_query(
+    history: list,
+    question: str,
+    base_url: str,
+    model: str,
+    timeout: int,
+    api_key: str = None,
+) -> tuple[bool, str, str, str]:
     """
     Decide si la pregunta nueva necesita retrieval en ChromaDB y, si lo
     necesita, la reformula como pregunta autocontenida usando el historial.
     También decide la estrategia de búsqueda óptima (Adaptive RAG).
-
-    history: lista de mensajes previos [{"role": "user"/"assistant", "content": ...}]
-    Devuelve: (necesita_retrieval, pregunta_para_buscar, strategy, reason)
-        strategy: "direct" | "decompose" | "multi_query" | "hyde"
-        reason: explicación breve de por qué se eligió esa estrategia
     """
-    # Fast-path para chitchat (saludos, agradecimientos)
-    if _is_simple_chitchat(question):
+    q_low = question.lower()
+    # Forzado de búsqueda mediante límites de palabras clave inequívocas del dominio RAG
+    # Evita falsos positivos en saludos o consultas informales ("hola, quería consultar...")
+    import re as _re
+    force_patterns = [
+        r"\bdocumento[s]?\b",
+        r"\bbase\s+de\s+datos\b",
+        r"\bbd\b",
+        r"\barchivo[s]?\b",
+        r"\bpdf[s]?\b",
+        r"\bbuscar\s+en\s+los\s+documentos\b",
+        r"\bconsultar\s+en\s+los\s+documentos\b",
+        r"\bconsultar\s+en\s+la\s+base\b"
+    ]
+    force_retrieval = any(_re.search(pattern, q_low) for pattern in force_patterns)
+
+    if _is_simple_chitchat(question) and not force_retrieval:
         return False, question, "direct", "saludo o chitchat"
 
-    # Sin historial: llamar al router igual para que reformule y elija estrategia
     if not history:
         router_messages = [{"role": "system", "content": ROUTER_SYSTEM_PROMPT}]
-        router_messages.append({
-            "role": "user",
-            "content": f"PREGUNTA NUEVA: {question}",
-        })
+        router_messages.append({"role": "user", "content": f"PREGUNTA NUEVA: {question}"})
         raw = call_lmstudio_chat(
-            router_messages,
-            base_url=base_url,
-            model=model,
-            temperature=0.0,
-            timeout=timeout,
-            max_tokens=200,
+            router_messages, base_url=base_url, model=model,
+            temperature=0.0, timeout=timeout, max_tokens=200, api_key=api_key,
         )
         needs, q, strat, reason = _parse_router_response(raw, fallback_question=question)
-        # Sin historial, si no detectó retrieval necesario, forzar SI
+        if force_retrieval:
+            needs = True
+            reason = f"Forzado por el usuario ({reason or 'consulta explícita'})"
         if not needs and not _is_simple_chitchat(question):
             return True, question, strat, reason
         return needs, q, strat, reason
 
     router_messages = [{"role": "system", "content": ROUTER_SYSTEM_PROMPT}]
     router_messages.extend(history)
-    router_messages.append({
-        "role": "user",
-        "content": f"PREGUNTA NUEVA: {question}",
-    })
+    router_messages.append({"role": "user", "content": f"PREGUNTA NUEVA: {question}"})
 
     raw = call_lmstudio_chat(
-        router_messages,
-        base_url=base_url,
-        model=model,
-        temperature=0.0,
-        timeout=timeout,
-        max_tokens=200,
+        router_messages, base_url=base_url, model=model,
+        temperature=0.0, timeout=timeout, max_tokens=200, api_key=api_key,
     )
-    return _parse_router_response(raw, fallback_question=question)
+    needs, q, strat, reason = _parse_router_response(raw, fallback_question=question)
+    if force_retrieval:
+        needs = True
+        reason = f"Forzado por el usuario ({reason or 'consulta explícita'})"
+    return needs, q, strat, reason

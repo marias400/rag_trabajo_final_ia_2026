@@ -55,20 +55,172 @@ def fuente_label(meta: dict) -> str:
 
 def render_fragmentos(retrieved: list, use_hybrid: bool = False, use_reranker: bool = False,
                       use_multi_query: bool = False, use_decompose: bool = False) -> None:
-    with st.expander("📎 Fragmentos recuperados (fuentes)"):
+    n = len(retrieved)
+    with st.expander(f"📎 Fragmentos recuperados — {n} resultado{'s' if n != 1 else ''}", expanded=False):
         for i, (doc, meta, dist) in enumerate(retrieved, start=1):
+            # --- Badge de método ---
             if dist is None:
-                dist_txt = "forzado (palabra clave)"
+                badge_color = "#121A21"
+                badge_border = "#2196F3"
+                badge_icon  = "📌"
+                badge_text  = "Forzado (keyword)"
+                score_txt   = ""
             elif use_reranker:
-                dist_txt = f"score: {dist:.4f} (reranker)"
+                badge_color = "#201A10"
+                badge_border = "#f39c12"
+                badge_icon  = "🏆"
+                badge_text  = "Reranker"
+                score_txt   = f"score {dist:.4f}"
             elif use_multi_query or use_decompose:
-                dist_txt = f"score: {dist:.4f} (rrf multi-query)"
+                badge_color = "#101F15"
+                badge_border = "#27ae60"
+                badge_icon  = "🔀"
+                badge_text  = "RRF Multi-Query"
+                score_txt   = f"score {dist:.4f}"
             elif use_hybrid:
-                dist_txt = f"score: {dist:.4f} (rrf)"
+                badge_color = "#1B1220"
+                badge_border = "#8e44ad"
+                badge_icon  = "⚖️"
+                badge_text  = "RRF Híbrido"
+                score_txt   = f"score {dist:.4f}"
             else:
-                dist_txt = f"distancia: {dist:.4f}"
-            st.markdown(f"**[{i}] {fuente_label(meta)}** — {dist_txt}")
-            st.text(doc[:400] + ("..." if len(doc) > 400 else ""))
+                badge_color = "#1A1A1A"
+                badge_border = "#7f8c8d"
+                badge_icon  = "🔎"
+                badge_text  = "Semántico"
+                score_txt   = f"dist {dist:.4f}"
+
+            fuente = meta.get("source", "?")
+            pagina = f" · pág. {meta['page']}" if "page" in meta else ""
+
+            st.markdown(
+                f"""
+<div style="
+    border-left: 4px solid {badge_border};
+    background: {badge_color};
+    border-radius: 6px;
+    padding: 10px 14px 10px 14px;
+    margin-bottom: 10px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+">
+<div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:8px;">
+  <span style="font-weight:700; font-size:0.95em; color: #FFFFFF;">
+    {badge_icon} <span style="color:{badge_border}; font-weight: 800;">[{i}]</span> &nbsp;{fuente}{pagina}
+  </span>
+  <span style="
+    background:{badge_border}33;
+    color:{badge_border};
+    border:1px solid {badge_border}88;
+    border-radius:12px;
+    padding:2px 10px;
+    font-size:0.78em;
+    font-weight:700;
+    white-space:nowrap;
+  ">{badge_text}{(' · ' + score_txt) if score_txt else ''}</span>
+</div>
+<pre style="
+    background: #0D0D0D;
+    border: 1px solid #333333;
+    border-radius:4px;
+    padding:10px;
+    font-size:0.85em;
+    font-family: 'Courier New', Courier, monospace;
+    white-space:pre-wrap;
+    word-break:break-word;
+    margin:0;
+    color:#E0E0E0;
+">{doc[:450].replace('<','&lt;').replace('>','&gt;')}{"..." if len(doc) > 450 else ""}</pre>
+</div>
+""",
+                unsafe_allow_html=True,
+            )
+
+
+
+def render_debug_info(debug_data: dict) -> None:
+    """Renderiza en un expander toda la telemetría recolectada del pipeline RAG."""
+    with st.expander("📊 Telemetría del Pipeline RAG", expanded=False):
+        mode = debug_data.get("mode", "?")
+        if mode == "hibrida":
+            st.markdown("**Modo:** 🔀 Búsqueda Híbrida (Semántica + BM25 + RRF)")
+        elif mode == "solo_semantica":
+            st.markdown("**Modo:** 🔎 Búsqueda Solo Semántica")
+
+        # --- Búsqueda Semántica ---
+        if "semantica" in debug_data:
+            sem = debug_data["semantica"]
+            with st.container(border=True):
+                st.markdown("#### 🔎 Búsqueda Semántica (ChromaDB)")
+                st.write(f"- Candidatos recuperados: **{sem['n_candidatos']}**")
+                if sem.get("top_distancias"):
+                    st.write("- Top-5 distancias coseno:", sem["top_distancias"])
+                if sem.get("top_fuentes"):
+                    st.write("- Top-5 fuentes:", sem["top_fuentes"])
+
+        # --- BM25 ---
+        if "bm25" in debug_data:
+            bm = debug_data["bm25"]
+            with st.container(border=True):
+                st.markdown("#### 📝 Búsqueda Léxica (BM25 Okapi)")
+                st.write("- Tokens de la query:", bm["tokens_query"])
+                if bm.get("top_scores"):
+                    import pandas as pd
+                    df_bm25 = pd.DataFrame(bm["top_scores"])
+                    df_bm25.columns = ["Score BM25", "Fuente"]
+                    st.dataframe(df_bm25, use_container_width=True, hide_index=True)
+
+        # --- RRF ---
+        if "rrf" in debug_data:
+            rrf = debug_data["rrf"]
+            with st.container(border=True):
+                st.markdown("#### ⚖️ Fusión RRF (Reciprocal Rank Fusion)")
+                st.write(f"- Documentos únicos fusionados: **{rrf['n_docs_fusionados']}**")
+                if rrf.get("top_resultados"):
+                    import pandas as pd
+                    df_rrf = pd.DataFrame(rrf["top_resultados"])
+                    df_rrf.columns = ["Score RRF", "Fuente"]
+                    st.dataframe(df_rrf, use_container_width=True, hide_index=True)
+
+        # --- Multi-Query RRF ---
+        if "multi_query_rrf" in debug_data:
+            mq = debug_data["multi_query_rrf"]
+            with st.container(border=True):
+                st.markdown("#### 🔀 Multi-Query RRF")
+                st.write(f"- Queries fusionadas: **{mq['n_queries']}**")
+                st.write(f"- Documentos únicos: **{mq['n_docs_fusionados']}**")
+                if mq.get("per_query"):
+                    for entry in mq["per_query"]:
+                        st.caption(f"• peso={entry['peso']} | {entry['n_resultados']} resultados | `{entry['query']}`")
+                if mq.get("top_resultados"):
+                    import pandas as pd
+                    df_mq = pd.DataFrame(mq["top_resultados"])
+                    df_mq.columns = ["Score RRF", "Fuente"]
+                    st.dataframe(df_mq, use_container_width=True, hide_index=True)
+
+        # --- Chunks Forzados ---
+        if "forced_ids" in debug_data:
+            fids = debug_data["forced_ids"]
+            with st.container(border=True):
+                st.markdown("#### 📌 Chunks Forzados (Asignaturas/Año detectados)")
+                if fids:
+                    for fid in fids:
+                        st.caption(f"• `{fid}`")
+                else:
+                    st.caption("Ninguno detectado.")
+
+        # --- Reranking ---
+        if "reranking" in debug_data:
+            with st.container(border=True):
+                st.markdown("#### 🏆 Reranking (Cross-Encoder)")
+                import pandas as pd
+                df_rr = pd.DataFrame(debug_data["reranking"])
+                df_rr = df_rr.rename(columns={
+                    "rank": "Rank",
+                    "score_reranker": "Score Reranker",
+                    "fuente": "Fuente",
+                    "texto_preview": "Preview",
+                })
+                st.dataframe(df_rr, use_container_width=True, hide_index=True)
 
 
 # ---------------------------------------------------------------------------
@@ -132,48 +284,167 @@ with st.sidebar:
             help="Descompone preguntas complejas en sub-preguntas simples."
         )
     
-    st.subheader("LMStudio")
-    lmstudio_url = st.text_input("URL del servidor", value="http://localhost:1234")
-    
-    # Intentar obtener modelos cargados
-    loaded_models = []
-    try:
-        import requests
-        resp = requests.get(f"{lmstudio_url.rstrip('/')}/v1/models", timeout=2)
-        if resp.status_code == 200:
-            data = resp.json()
-            if "data" in data:
-                loaded_models = [m["id"] for m in data["data"] if "embed" not in m["id"].lower()]
-    except Exception:
-        pass
 
-    if loaded_models:
+    # -------------------------------------------------------------------------
+    # Proveedor LLM
+    # -------------------------------------------------------------------------
+    st.subheader("🤖 Proveedor LLM")
+
+    PROVIDERS = {
+        "🖥️ Local (LMStudio)": {
+            "base_url": "http://localhost:1234",
+            "requires_key": False,
+            "models": [],  # se detectan dinámicamente
+            "help": "Servidor local de LMStudio. No requiere API Key.",
+        },
+        "⚡ Groq (gratis)": {
+            "base_url": "https://api.groq.com/openai",
+            "requires_key": True,
+            "models": [
+                "llama-3.3-70b-versatile",
+                "llama-3.1-8b-instant",
+                "llama3-70b-8192",
+                "gemma2-9b-it",
+                "mixtral-8x7b-32768",
+            ],
+            "help": "Groq ofrece un plan gratuito muy generoso. API Key en console.groq.com",
+        },
+        "🌐 OpenRouter (modelos gratis)": {
+            "base_url": "https://openrouter.ai/api",
+            "requires_key": True,
+            "models": [
+                "meta-llama/llama-3.1-8b-instruct:free",
+                "meta-llama/llama-3.3-70b-instruct:free",
+                "google/gemma-2-9b-it:free",
+                "mistralai/mistral-7b-instruct:free",
+                "qwen/qwen-2.5-72b-instruct:free",
+                "deepseek/deepseek-r1-0528:free",
+            ],
+            "help": "OpenRouter da acceso a 200+ modelos. Los marcados :free no cuestan nada. API Key en openrouter.ai/keys",
+        },
+        "🧠 Cerebras (gratis)": {
+            "base_url": "https://api.cerebras.ai/v1",
+            "requires_key": True,
+            "models": [
+                "llama-3.3-70b",
+                "llama3.1-8b",
+                "qwen-3-32b",
+            ],
+            "help": "Cerebras tiene hardware propio (WSE) ultra rápido y plan gratuito. API Key en cloud.cerebras.ai",
+        },
+        "💎 Google Gemini (gratis)": {
+            "base_url": "https://generativelanguage.googleapis.com/v1beta/openai",
+            "requires_key": True,
+            "models": [
+                "gemini-2.0-flash",
+                "gemini-2.5-flash",
+                "gemini-1.5-flash",
+                "gemini-1.5-flash-8b",
+            ],
+            "help": "Gemini Flash tiene tier gratuito generoso. API Key en aistudio.google.com",
+        },
+        "🔑 OpenAI (pago)": {
+            "base_url": "https://api.openai.com",
+            "requires_key": True,
+            "models": [
+                "gpt-4o-mini",
+                "gpt-4o",
+                "gpt-4.1-mini",
+                "gpt-4.1-nano",
+            ],
+            "help": "API de OpenAI. Requiere créditos. gpt-4o-mini es el más barato.",
+        },
+        "🔧 URL personalizada": {
+            "base_url": "",
+            "requires_key": False,
+            "models": [],
+            "help": "Cualquier servidor compatible con la API de OpenAI (Ollama, vLLM, etc.).",
+        },
+    }
+
+    provider_name = st.selectbox(
+        "Proveedor",
+        options=list(PROVIDERS.keys()),
+        index=0,
+        help="Elegí el proveedor de LLM a usar.",
+    )
+    provider = PROVIDERS[provider_name]
+
+    # URL base
+    if provider_name == "🔧 URL personalizada":
+        lmstudio_url = st.text_input("URL base del servidor", value="http://localhost:1234")
+    elif provider_name == "🖥️ Local (LMStudio)":
+        lmstudio_url = st.text_input("URL del servidor LMStudio", value=provider["base_url"])
+    else:
+        lmstudio_url = provider["base_url"]
+        st.caption(f"🔗 `{lmstudio_url}`")
+
+    st.caption(provider["help"])
+
+    # API Key
+    api_key = None
+    if provider["requires_key"]:
+        key_input = st.text_input(
+            "API Key",
+            type="password",
+            value=st.session_state.get("llm_api_key", ""),
+            help="Se guarda solo en la sesión actual, no se persiste.",
+            placeholder="sk-...",
+        )
+        if key_input:
+            st.session_state["llm_api_key"] = key_input
+            api_key = key_input
+        elif st.session_state.get("llm_api_key"):
+            api_key = st.session_state["llm_api_key"]
+
+        if not api_key:
+            st.warning("⚠️ Ingresá una API Key para usar este proveedor.")
+    else:
+        # LMStudio local: intentar detectar modelos cargados
+        if "LMStudio" in provider_name:
+            loaded_models = []
+            try:
+                import requests as _req
+                resp = _req.get(f"{lmstudio_url.rstrip('/')}/v1/models", timeout=2)
+                if resp.status_code == 200:
+                    data = resp.json()
+                    if "data" in data:
+                        loaded_models = [m["id"] for m in data["data"] if "embed" not in m["id"].lower()]
+            except Exception:
+                pass
+            provider["models"] = loaded_models + (["local-model"] if not loaded_models else [])
+
+    # Selector de modelo
+    if provider["models"]:
         lmstudio_model = st.selectbox(
-            "Modelo cargado",
-            options=loaded_models + ["local-model"],
+            "Modelo",
+            options=provider["models"],
             index=0,
-            help="Selecciona automáticamente el modelo de la lista de los cargados en LMStudio.",
+            help="Modelos disponibles para este proveedor.",
         )
     else:
         lmstudio_model = st.text_input(
-            "Nombre del modelo cargado",
+            "Nombre del modelo",
             value="local-model",
-            help="Usa 'local-model' para apuntar al modelo activo, o escribí el ID explícito.",
+            help="ID exacto del modelo (ej: 'llama-3.1-8b-instant').",
         )
+
     temperature = st.slider(
         "Temperatura", min_value=0.0, max_value=1.0, value=0.20, step=0.05,
-        help="Para llama-3.2-3b-instruct se recomienda 0.20.",
     )
     timeout = st.number_input(
-        "Timeout respuesta final (s)", min_value=10, max_value=600, value=90, step=10,
+        "Timeout respuesta final (s)", min_value=10, max_value=600, value=60, step=10,
     )
     router_timeout = st.number_input(
-        "Timeout llamadas cortas (s)", min_value=5, max_value=300, value=30, step=5,
-        help="Timeout para llamadas cortas al LLM: router, multi-query, HyDE, decompose.",
+        "Timeout llamadas cortas (s)", min_value=5, max_value=300, value=20, step=5,
+        help="Timeout para el router, multi-query, HyDE y decompose.",
     )
+
 
     st.subheader("Debug")
     show_prompt = st.checkbox("Mostrar prompt y decision del router", value=False)
+    show_debug_pipeline = st.checkbox("📊 Mostrar telemetría del pipeline", value=False,
+                                      help="Muestra los detalles de cada paso: búsqueda semántica, BM25, RRF y reranking.")
 
     if st.button("🗑️ Borrar historial de chat"):
         st.session_state.messages = []
@@ -240,6 +511,9 @@ for msg in st.session_state.messages:
                     msg.get("use_decompose", False),
                 )
 
+            if show_debug_pipeline and msg.get("debug_data"):
+                render_debug_info(msg["debug_data"])
+
 question = st.chat_input("Escribi tu pregunta sobre el plan de estudios...")
 
 if question:
@@ -256,10 +530,12 @@ if question:
         sub_queries = None
         variants = None
         current_message = ""
+        debug_data = None
         try:
             with st.spinner("Analizando pregunta y decidiendo estrategia..."):
                 necesita_retrieval, pregunta_busqueda, strategy, reason = rag_core.route_query(
-                    recent_history, question, lmstudio_url, lmstudio_model, router_timeout
+                    recent_history, question, lmstudio_url, lmstudio_model, router_timeout,
+                    api_key=api_key,
                 )
 
             # Si modo agente, aplicar la estrategia decidida por el router
@@ -289,7 +565,8 @@ if question:
                     with st.spinner("Descomponiendo pregunta en sub-preguntas..."):
                         try:
                             sub_queries = rag_core.decompose_query(
-                                pregunta_busqueda, lmstudio_url, lmstudio_model, router_timeout
+                                pregunta_busqueda, lmstudio_url, lmstudio_model, router_timeout,
+                                api_key=api_key,
                             )
                         except rag_core.LMStudioError:
                             sub_queries = []
@@ -303,7 +580,8 @@ if question:
                     with st.spinner("Generando preguntas alternativas (Multi-Query)..."):
                         try:
                             variants_alt = rag_core.generate_multi_queries(
-                                pregunta_busqueda, lmstudio_url, lmstudio_model, router_timeout
+                                pregunta_busqueda, lmstudio_url, lmstudio_model, router_timeout,
+                                api_key=api_key,
                             )
                         except rag_core.LMStudioError:
                             variants_alt = []
@@ -319,7 +597,8 @@ if question:
                     with st.spinner("Generando documento hipotetico (HyDE)..."):
                         try:
                             hyde_doc = rag_core.generate_hyde_document(
-                                pregunta_busqueda, lmstudio_url, lmstudio_model, router_timeout
+                                pregunta_busqueda, lmstudio_url, lmstudio_model, router_timeout,
+                                api_key=api_key,
                             )
                             all_queries.append(hyde_doc)
                         except rag_core.LMStudioError:
@@ -328,16 +607,19 @@ if question:
                         with st.expander("💡 HyDE: documento hipotetico generado", expanded=False):
                             st.text(hyde_doc)
 
+                debug_data = {} if show_debug_pipeline else None
                 with st.spinner(f"Recuperando fragmentos relevantes ({len(all_queries)} queries)..."):
                     if len(all_queries) > 1:
                         retrieved = rag_core.retrieve_with_multi_query(
                             all_queries, db_path, collection_name, embedding_model_name, n_results,
-                            use_hybrid=use_hybrid, reranker_model=reranker_model
+                            use_hybrid=use_hybrid, reranker_model=reranker_model,
+                            debug_data=debug_data,
                         )
                     else:
                         retrieved = rag_core.retrieve_chunks(
                             pregunta_busqueda, db_path, collection_name, embedding_model_name, n_results,
-                            use_hybrid=use_hybrid, reranker_model=reranker_model
+                            use_hybrid=use_hybrid, reranker_model=reranker_model,
+                            debug_data=debug_data,
                         )
 
                 current_message = rag_core.build_rag_user_message(pregunta_busqueda, retrieved)
@@ -352,9 +634,10 @@ if question:
             messages.extend(recent_history)
             messages.append({"role": "user", "content": current_message})
 
-            with st.spinner(f"Consultando LMStudio en {lmstudio_url}..."):
+            with st.spinner(f"Generando respuesta ({provider_name})..."):
                 answer = rag_core.call_lmstudio_chat(
-                    messages, lmstudio_url, lmstudio_model, temperature, timeout
+                    messages, lmstudio_url, lmstudio_model, temperature, timeout,
+                    api_key=api_key,
                 )
         except rag_core.LMStudioError as e:
             st.error(str(e))
@@ -363,6 +646,8 @@ if question:
         st.markdown(answer)
         if retrieved:
             render_fragmentos(retrieved, use_hybrid, use_reranker, use_multi_query, use_decompose)
+        if show_debug_pipeline and debug_data:
+            render_debug_info(debug_data)
 
     st.session_state.history.append({"role": "user", "content": question})
     st.session_state.history.append({"role": "assistant", "content": answer})
@@ -383,4 +668,5 @@ if question:
         "current_message": current_message if necesita_retrieval else None,
         "strategy": strategy if necesita_retrieval else None,
         "reason": reason if necesita_retrieval else None,
+        "debug_data": debug_data if show_debug_pipeline else None,
     })
